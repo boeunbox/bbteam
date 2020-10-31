@@ -1,14 +1,30 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>
+        {% block contents %}
+        보은박스
+        {% endblock %}
+    </title>
 </head>
 
 <body>
-    글로벌 네비게이션 바 페이지입니다
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="{% url 'mission' %}">보은박스</a></li>
+                <li class="nav-item"><a href="{% url 'subscr' %}">보은 시작하기</a></li>
+                <li class="nav-item"><a href="{% url 'product' %}">전체상품보기</a></li>
+                <li class="nav-item"><a href="{% url 'cscenter' %}">고객센터</a></li>
+                <li class="nav-item"><a href="{% url 'myboeun' %}">나의 보은</a></li>
+                <li class="nav-item"><a href="{% url 'signup' %}">로그인/회원가입</a></li>
+            </ul>
+        </div>
+    </nav>
 </body>
 
 </html>
