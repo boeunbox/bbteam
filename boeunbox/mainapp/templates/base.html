@@ -11,6 +11,9 @@
         {% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    {%block extrahead %}
+    <!-- 페이지별로 특정 css나 head에 들어가야하는 애를 작성해줍니다. -->
+    {%endblock%}
 </head>
 
 <body>
@@ -21,7 +24,7 @@
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
-                Menu
+                메뉴
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -36,6 +39,10 @@
             </div>
         </div>
     </nav>
+
+    {% block contents %}
+    <!-- 페이지별로 다르게 보일 content를 입력하는 block -->
+    {% endblock %}
 
     <!-- 공통 FOOTER -->
     <footer class="footer-item">
