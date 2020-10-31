@@ -38,6 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainapp',
+    'cscenterapp',
+    'missionapp',
+    'myboeunapp',
+    'productapp',
+    'signupapp',
+    'subscrapp',
 ]
 
 MIDDLEWARE = [

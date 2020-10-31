@@ -20,4 +20,11 @@ from mainapp.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
+    path('cscenter/', cscenter, name="cscenter"),
+    path('mission/', mission, name="mission"),
+    path('myboeun/', myboeun, name="myboeun"),
+    path('product/', product, name="product"),
+    path('signup/', signup, name="signup"),
+    path('login/', login, name="login"),
+    path('subscr/', subscr, name="subscr"),
 ]
