@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- 공통 필수 -->
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>임시 메인 홈</title>
-</head>
+<!-- 타이틀 -->
+{% block title %}
+보은박스 - 메인
+{% endblock %}
 
-<body>
-    <h1>임시 메인 홈입니다</h1>
-    <a href="{% url 'subscr' %}">보은시작하기</a>
-</body>
+<!-- head 작성 시작 -->
+{% block extrahead %}
+{% endblock %}
 
-</html>
+<!-- body 작성 시작 -->
+{% block contents %}
+<h1>임시 메인 홈입니다</h1>
+{% endblock %}

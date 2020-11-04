@@ -22,6 +22,8 @@ from myboeunapp.views import myboeun
 from productapp.views import product
 from signupapp.views import signup, login
 from subscrapp.views import subscr
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,4 +35,4 @@ urlpatterns = [
     path('signup/', signup, name="signup"),
     path('login/', login, name="login"),
     path('subscr/', subscr, name="subscr"),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
