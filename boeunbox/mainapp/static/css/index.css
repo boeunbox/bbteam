@@ -4,9 +4,19 @@
     height: auto;
     min-height: 35rem;
     padding: 15rem 0;
-    background: url("{% static 'image/hands.jpeg' %}");
+    background: url("/static/image/hands.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+}
+
+.top h1{
+    font-family: 'MapoFlowerIsland';
+    font-size: 2.5rem;
+}
+
+.top h2{
+    font-family: 'MapoFlowerIsland';
+    font-size: 1rem;
 }

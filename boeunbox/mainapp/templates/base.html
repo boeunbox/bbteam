@@ -12,7 +12,15 @@
     </title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     {%block extrahead %}
-    <!-- 페이지별로 특정 css나 head에 들어가야하는 애를 작성해줍니다. -->
+    <!-- 눈누 웹폰트 '마포꽃섬' -->
+    <style>
+        @font-face {
+            font-family: 'MapoFlowerIsland';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
     {%endblock%}
 </head>
 
