@@ -1,3 +1,23 @@
+/* 공통 */
+.container{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn{
+    display: inline-block;
+    color: #E6E6E6;
+    font-weight: 400;
+    border: 0;
+    border-radius: 6px 6px;
+    padding:  18px 20px;
+    background-color: #356869;
+}
+
+/* 헤더 */
 .top{
     position: relative;
     width: 100%;
@@ -21,6 +41,18 @@
     font-size: 1rem;
 }
 
-.container{
-    text-align: center;
+/* 섹션1 */
+.s1{
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 15rem 0;
+    background: url("/static/image/seniors.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
 }
+
+/* 섹션2 */

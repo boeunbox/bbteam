@@ -23,6 +23,10 @@
 
 <!-- body 작성 시작 -->
 {% block contents %}
+<!-- 자바스크립트 -->
+<script src="{% static 'js/scripts.js' %}"></script>
+
+<!-- 헤더 -->
 <header class="top">
     <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
@@ -32,13 +36,19 @@
         </div>
     </div>
 </header>
-<section>
+
+<!-- 섹션1 -->
+<section class="s1">
     <div class="container">
-        <p>푸른 하늘보다 높고 푸른 바다보다 넓은 당신의 은혜에 보답할 방법을 찾고 있나요?</p>
-        <a class="btn btn-primary js-scroll-trigger" href="{% url 'subscr' %}">더 알아보기</a>
+        <p>푸른 하늘보다 높고 푸른 바다보다 넓은 당신의 은혜</p>
+        <p>어떻게 하면 일상 속에서 보답할 수 있을까?</p>
+        <p>마음과 마음을 이어주기 위해서 보은박스가 탄생했습니다.</p>
+        <a class="btn btn-primary js-scroll-trigger" href="{% url 'mission' %}">더 알아보기</a>
     </div>
 </section>
-<section>
+
+<!-- 섹션2 -->
+<section class="s2">
     <div class="container">
         <p>보은박스 소개</p>
     </div>
