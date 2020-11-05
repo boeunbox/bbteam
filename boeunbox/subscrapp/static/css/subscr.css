@@ -1,0 +1,184 @@
+.startB_img {
+    width: 60%;
+    height: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.title {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* 선택형 정기배송의 장점 */
+
+#advantage_bg {
+    background-color: #FDEBD0;
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+
+.advantage_box {
+    box-sizing: content-box;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-bottom: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #B3B6B7;
+}
+
+.advantage {
+    font-size: 1rem;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.advantage_txt {
+    font-size: 12px;
+}
+
+.advantage_line {
+    width : 50%;
+}
+
+
+/* 보은 시작하기 */
+
+#step_bg {
+    background-color: #D7DBDD;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#see_detail {
+    text-align: right;
+    font-size: 11px;
+}
+
+#step_title {
+    color: #154360;
+}
+
+.step_box {
+    box-sizing: content-box;
+    width: 40%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.step {
+    font-size: 1rem;
+    font-weight: bolder;
+    color: #154360;
+    margin-bottom: 5px;
+}
+
+.step_txt {
+    font-size: 12px;
+    color: #154360;
+}
+
+.blank {
+    display: block;
+    margin: 1px 5;
+}
+
+
+/* 구독 기간 및 서비스 안내 */
+
+#detail_bg {
+    background-color: #F8F9F9;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 50%;
+}
+
+#month_box_2 {
+    box-sizing: content-box;
+    border: 2px solid #B3B6B7;
+    width: 250px;
+    height: 250px;
+    padding: 15px;
+}
+
+#month_box_6 {
+    box-sizing: content-box;
+    border: 2px solid #B3B6B7;
+    width: 250px;
+    height: 250px;
+    padding: 15px;
+}
+
+#month_box_12 {
+    box-sizing: content-box;
+    border: 2px solid #B3B6B7;
+    width: 250px;
+    height: 250px;
+    padding: 15px;
+}
+
+#month_box_p12 {
+    box-sizing: content-box;
+    border: 2px solid #F7DC6F ;
+    width: 250px;
+    height: 250px;
+    padding: 15px;
+}
+
+.month {
+    text-align: center;
+    font-size: 17px;
+}
+
+.price_box {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.price {
+    font-size: 25px;
+    font-weight: bolder;
+
+}
+
+.permonth {
+    font-size: 14px;
+}
+
+.price_detail {
+    font-size: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #B3B6B7;
+}
+
+.price_detail_box {
+    text-align: center;
+}
+
+li {
+    font-size: 14px;
+    padding-right: 15px;
+}
+
+.p_color {
+    color: #F7DC6F;
+}
