@@ -8,13 +8,13 @@ menuicon.addEventListener('click', () => {
 
 
 // Scrolling Effect
-$(document).ready(function () {
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > 150) {
-            $('.navbar').addClass('black');
-        }
-        else {
-            $('.navbar').removeClass('black');
-        }
-    });
-});
+// $(document).ready(function(){
+// $(window).on("scroll", function () {
+//     if ($(this).scrollTop()) {
+//         $(".navbar").addClass("black");
+//     }
+//     else {
+//         $(".navbar").removeClass("black");
+
+//     });
+// });
