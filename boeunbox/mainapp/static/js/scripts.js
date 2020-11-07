@@ -1,12 +1,4 @@
-// 메뉴 펼치기
-// const menuicon = document.querySelector('.menu-icon');
-// const menu = document.querySelector('.menu');
-
-// menuicon.addEventListener('click', () => {
-//     menu.classList.toggle('active');
-// });
-
-
+// Scroll 효과
 document.addEventListener("DOMContentLoaded", function () {
     // Transition effect for navbar 
     window.addEventListener('scroll', function (e) {
@@ -19,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Responsive Collapsed Navbar 효과
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
