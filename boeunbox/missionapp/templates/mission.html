@@ -1,18 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% block title %}
+보은박스 - 메인
+{% endblock %}
 
-<body>
-    mission 페이지입니다
+{% block extrahead %}
 
-    -김진호 ‘가족사진’
+{% endblock %}
 
+<!-- body 작성 시작 -->
+{% block contents %}
+<!-- 자바스크립트 -->
+<script src="{% static 'js/scripts.js' %}"></script>
 
-</body>
-
-</html>
+<div class="wrap">
+    <!-- 섹션1 -->
+    <div class="top">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0">보은박스</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">보은박스는 마음을 담습니다.</h2>
+                <a class="btn btn-primary js-scroll-trigger" href="{% url 'product' %}">상자 채우기</a>
+            </div>
+        </div>
+    </div>
+    <!-- 섹션2 -->
+    <div class="s1">
+        <div class="container">
+            <p>내용</p>
+            
+            <a class="btn btn-primary js-scroll-trigger" href="{% url 'mission' %}">더 알아보기</a>
+        </div>
+    </div>
+    <!-- 섹션3 -->
+    <div class="s2">
+        <div class="container">
+            <p>보은박스</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
