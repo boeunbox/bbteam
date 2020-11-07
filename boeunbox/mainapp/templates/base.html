@@ -28,19 +28,21 @@
 
 <body>
     <!-- 공통 NAV BAR -->
-    <nav class="navbar fixed-top">
+    <nav class="navbar fixed-top" id="id_nav">
         <div class="logo">
             <a href="{% url 'index' %}"><i class="fas fa-gift"></i>&nbsp;보은박스</a>
         </div>
-        <ul class="menu">
-            <li><a href="{% url 'mission' %}">보은박스 소개</a></li>
-            <li><a href="{% url 'subscr' %}">보은 시작하기</a></li>
-            <li><a href="{% url 'product' %}">전체 상품 보기</a></li>
-            <li><a href="{% url 'cscenter' %}">고객센터</a></li>
-            <li><a href="{% url 'myboeun' %}">나의 보은</a></li>
-            <li><a href="{% url 'login' %}">로그인/회원가입</a></li>
-        </ul>
-        <div class="menu-icon"><i class="fas fa-bars"></i></div>
+        <div class="navbar-collapse">
+            <ul class="collapsed-content" id="myCollapsed">
+                <li><a href="{% url 'mission' %}">보은박스 소개</a></li>
+                <li><a href="{% url 'subscr' %}">보은 시작하기</a></li>
+                <li><a href="{% url 'product' %}">전체 상품 보기</a></li>
+                <li><a href="{% url 'cscenter' %}">고객센터</a></li>
+                <li><a href="{% url 'myboeun' %}">나의 보은</a></li>
+                <li><a href="{% url 'login' %}">로그인/회원가입</a></li>
+            </ul>
+        </div>
+        <button class="btn-collapse" id="myCollapsed" onclick="myFunction()"><i class="fas fa-bars"></i></button>
     </nav>
 
     {% block contents %}
