@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block contents %}
+
+<form action="" method="POST" enctype="multipart/form-data"></form>
+    {% csrf_token %}
+    {{FAQFofm}}
+    <input type="submit" value="작성">
+
+{% endblock %}
