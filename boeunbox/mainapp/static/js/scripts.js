@@ -1,4 +1,4 @@
-// Scroll 효과
+// Scroll 내릴 때 효과
 document.addEventListener("DOMContentLoaded", function () {
     // Transition effect for navbar 
     window.addEventListener('scroll', function (e) {
