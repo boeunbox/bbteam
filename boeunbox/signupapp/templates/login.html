@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 <!--template 상속,확장하는 경우에는 extends를 먼저 작성해줍니다.-->
 {% load static %}
@@ -46,3 +47,33 @@ index page
 </form> -->
 
 {% endblock %}
+=======
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+</head>
+<body>
+  <form method = "POST" action="{%url 'login'%}">
+    <label class="id">
+      <span>
+        <img src="{% static 'image/login_icon.jpg' %}" alt="사진을 찾을수 없습니다"/>
+      </span>
+      <input type="text" name="" id="">    
+    </label>
+    
+    <label class="id">
+      <span>
+        <img src="{% static 'image/login_pw_icon.jpg' %}" alt="사진을 찾을수 없습니다"/>
+      </span>
+      <input type="text" name="" id="">    
+    </label>
+    <a href="{%url 'signup' %}">회원가입</a>
+  </form>
+</body>
+</html>
+>>>>>>> 5724908e2ddaec86826cd0f8efcd415e27401849

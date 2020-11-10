@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% block title %}
 
-<body>
-    회원가입 페이지입니다
-</body>
+{% endblock %}
 
-</html>
+{% block contents %}
+
+<form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <p>e-mail</p>
+    <input type="text" name="email">
+    <br>
+    <p>password</p>
+    <input type="text" name="password">
+    <br>
+    <p>confirm</p>
+    <input type="text" name="confirm">
+    <br>
+    <input type="submit" value="회원가입">
+</form>
+
+{% endblock %}

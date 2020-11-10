@@ -2,9 +2,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-}
-
-header, footer{
   font-family: 'MapoFlowerIsland';
 }
 
@@ -19,7 +16,6 @@ header, footer{
 
 a{
   text-decoration: none;
-  color: #e6e6e6;
 }
 .navbar{
   display: flex;
@@ -27,75 +23,99 @@ a{
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
+  list-style: none;
   padding: 8px 15rem;
-}
-
-.navbar.black{
-  background-color: #e6e6e6;
-  color: #102836;
+  transition: background-color 0.5s ease 0s;
 }
 
 .logo{
-  font-size: 1.3rem;
+  font-size: 1.34rem;
   color: #b1b34d;
+  font-weight: bold;
 }
 
 .logo a{
   color: #b1b34d;
 }
 
-.menu{
+.collapsed-content{
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   padding-left: 0;
 }
 
-.menu li{
-  padding: 4px 15px;
-  display: inline-block;
-  font-size: 1rem;
+.collapsed-content a{
+  color: #102836;
 }
 
-.menu li a:hover{
+.collapsed-content li{
+  padding: 4px 15px;
+  display: inline-block;
+  font-size: 1.03rem;
+  font-weight: 600;
+}
+
+.collapsed-content li a:hover{
+  color: #e6e6e6;
+}
+
+.btn-collapse{
+  position: absolute;
+  text-align: right;
+  right: 12px;
+  font-size: 1.2rem;
+  color: #b1b34d;
+  display: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+}
+
+/* Navbar Scroll 효과적용 */
+.navbar.black{
+  background-color: #102836;
+  color: #e6e6e6;
+}
+
+.navbar.black .collapsed-content a {
+  color: #e6e6e6;
+}
+
+.navbar.black .collapsed-content a:hover {
   color: #b1b34d;
 }
 
-.menu-icon{
-  position: absolute;
-  text-align: right;
-  right: 8px;
-  font-size: 1.2rem;
-  color: #e6e6e6;
-  display: none;
-  cursor: pointer;
-}
-
-@media screen and (max-width:768px){
+/* MediaQuery */
+@media screen and (max-width: 1543px){
   .navbar {
     flex-direction: column;
     align-items: flex-start;
     padding: 12px 10px;
   }
 
-  .menu {
+  .collapsed-content {
     flex-direction: column;
     align-items: left;
     width: 100%;
     display: none;
   }
 
-  .menu li{
+  .collapsed-content a{
+    color: #102836;
+  }
+
+  .collapsed-content li{
     width: 100%;
     text-align: left;
   }
 
-  .menu-icon{
+  .btn-collapse{
     display: block;
   }
 
-  .menu.active{
-    display: flex;
+  .collapsed-content.active{
+    display: block;
   }
 }
 
@@ -104,4 +124,28 @@ a{
   padding: 5rem 0;
   background-color: #102836;
   color: #e6e6e6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+}
+
+.copyright {
+  display: inline-block;
+  position: relative;
+}
+
+.terms {
+  display: inline-block;
+  position: relative;
+}
+
+.terms a {
+  text-decoration: none;
+  color: #e6e6e6
+}
+
+a {
+  padding: 0 15px;
 }
