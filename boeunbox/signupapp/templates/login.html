@@ -1,7 +1,9 @@
-{% extends 'base.html' %} <!--template 상속,확장하는 경우에는 extends를 먼저 작성해줍니다.-->
-{% load static %}  <!--static 요소들을 가져오기 위해서 load해줍니다.-->
+{% extends 'base.html' %}
+<!--template 상속,확장하는 경우에는 extends를 먼저 작성해줍니다.-->
+{% load static %}
+<!--static 요소들을 가져오기 위해서 load해줍니다.-->
 
-{%block title %} 
+{%block title %}
 index page
 {%endblock%}
 <!-- base.html에서 만들었던 title block부분에 각 페이지별로 다른 title을 입려해줄수 있습니다. -->
@@ -23,7 +25,8 @@ index page
 
 <h1>{{i.title}}</h1>
 
-{% if i.pic %} <!--사진이 없으면 attribute 에러가뜨는데 사진이 있을때만 img tag를 쓰기 위한 if문(model에서 default값을 설정해줘도 된다)-->
+{% if i.pic %}
+<!--사진이 없으면 attribute 에러가뜨는데 사진이 있을때만 img tag를 쓰기 위한 if문(model에서 default값을 설정해줘도 된다)-->
 
 <p><img src="{{i.pic.url}}" alt="고양이사진"></p>
 <!-- media요소로, 기존에 가지고 있던 사진이 아닌 외부로 부터 받은 사진을 보여주는 부분 -->

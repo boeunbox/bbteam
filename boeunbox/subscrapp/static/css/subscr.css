@@ -1,3 +1,7 @@
+body {
+    font-family: 'MapoFlowerIsland';
+}
+
 .startB_img {
     width: 60%;
     height: 60%;
@@ -15,14 +19,21 @@
 /* 선택형 정기배송의 장점 */
 
 #advantage_bg {
-    background-color: #FDEBD0;
+    background-color: #E6E6E6;
     padding-top: 40px;
     padding-bottom: 50px;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#advantage_title {
+    color: #102836;
 }
 
 .advantage_box {
     box-sizing: content-box;
-    width: 40%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -30,30 +41,33 @@
     padding-left: 25px;
     padding-right: 25px;
     padding-bottom: 30px;
-    border-bottom: 2px solid #B3B6B7;
+    border-bottom: 2px solid #8a97a0;
 }
 
 .advantage {
     font-size: 1rem;
     font-weight: bolder;
     margin-bottom: 10px;
+    color: #102836
 }
 
 .advantage_txt {
-    font-size: 12px;
+    font-size: 18px;
+    color: #102836;
 }
 
-.advantage_line {
-    width : 50%;
-}
+
 
 
 /* 보은 시작하기 */
 
 #step_bg {
-    background-color: #D7DBDD;
+    background-color: #EEEBDA;
     padding-top: 50px;
     padding-bottom: 50px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #see_detail {
@@ -62,12 +76,12 @@
 }
 
 #step_title {
-    color: #154360;
+    color:#102836;
 }
 
 .step_box {
     box-sizing: content-box;
-    width: 40%;
+    width: 70%;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -77,18 +91,26 @@
     padding-bottom: 15px;
     margin-bottom: 10px;
     background-color: white;
+    box-shadow:
+    0 2.2px 2.2px rgba(0, 0, 0, 0.020),
+    0 5.3px 5.3px rgba(0, 0, 0, 0.030),
+    0 10px 10px rgba(0, 0, 0, 0.04),
+    0 17.0px 17.9px rgba(0, 0, 0, 0.060),
+    0 33.4px 33.4px rgba(0, 0, 0, 0.070),
+    0 80px 80px rgba(0, 0, 0, 0.1)
+  ;
 }
 
 .step {
     font-size: 1rem;
     font-weight: bolder;
-    color: #154360;
+    color: #102836;
     margin-bottom: 5px;
 }
 
 .step_txt {
     font-size: 12px;
-    color: #154360;
+    color:  #102836;
 }
 
 .blank {
@@ -103,43 +125,48 @@
     background-color: #F8F9F9;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
-    width: 50%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#month_box_2 {
+.month_background {
+    background: #dddddd;
+    width: 1000px;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.month_wrap {
+    width: 650px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;  /* 상하정렬 */
+    justify-content: center; /* 좌우정렬 */
+    background-color: transparent;
+    /* border: 1px solid blue; */
+}
+
+
+.month_box {
     box-sizing: content-box;
     border: 2px solid #B3B6B7;
     width: 250px;
     height: 250px;
     padding: 15px;
+    margin: 5px;
 }
 
-#month_box_6 {
-    box-sizing: content-box;
-    border: 2px solid #B3B6B7;
-    width: 250px;
-    height: 250px;
-    padding: 15px;
-}
-
-#month_box_12 {
-    box-sizing: content-box;
-    border: 2px solid #B3B6B7;
-    width: 250px;
-    height: 250px;
-    padding: 15px;
-}
-
-#month_box_p12 {
+.month_box_p12 {
     box-sizing: content-box;
     border: 2px solid #F7DC6F ;
     width: 250px;
     height: 250px;
     padding: 15px;
+    margin: 5px;
 }
 
 .month {
@@ -182,3 +209,33 @@ li {
 .p_color {
     color: #F7DC6F;
 }
+
+#start_button {
+    cursor: pointer;
+    padding: .6rem 0;
+    min-width: 200px;
+    border: solid 1px #dabf55;
+    background-color:#F7DC6F;
+    font-size: 14px;
+    font-weight: bolder;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: 0;
+    text-align: center;
+    color: rgb(78, 76, 76);
+    border-radius: 0;
+}
+
+
+
+
+@media(max-width: 750px) {
+    #advantage_bg{
+        width:600px;
+    }
+    .month_wrap{
+        width: 300px;
+    }
+}
+
