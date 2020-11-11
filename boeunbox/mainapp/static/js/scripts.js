@@ -1,5 +1,5 @@
+// Scroll 내릴 때 효과
 document.addEventListener("DOMContentLoaded", function () {
-    // Scroll 내릴 때 효과
     window.addEventListener('scroll', function (e) {
         if (window.scrollY > 100) {
             document.getElementById("id_nav").classList.add("black")
