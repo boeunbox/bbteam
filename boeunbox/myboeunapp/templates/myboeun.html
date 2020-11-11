@@ -1,14 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% block title %}
+보은박스 - 나의 보은
+{% endblock %}
+
+
+
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/myboeun.css' %}" />
+<script src="https://kit.fontawesome.com/0b88962ca7.js" crossorigin="anonymous"></script>
+<!-- 눈누 웹폰트 '마포꽃섬' -->
+<style>
+    @font-face {
+        font-family: 'MapoFlowerIsland';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+</style>
+{%endblock%}
+
+
+{% block contents %}
 
 <body>
-    나의 보은 페이지입니다
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="list_box_main">
+        <div class="list_box_title">
+            <h3>나의 보은</h3>
+        </div>
+
+        <div class="list_box">
+            <h5>내 구독내역</h5>
+        </div>
+
+        <div class="list_box">
+            <h5>내 주문내역</h5>
+        </div>
+
+        <div class="list_box">
+            <h5>마일리지</h5>
+        </div>
+
+        <div class="list_box">
+            <h5>개인정보 수정</h5>
+        </div>
+
+        <div class="list_box">
+            <h5>배송지 관리</h5>
+        </div>
+
+        <div class="list_box">
+            <h5>문의하기</h5>
+        </div>
+    </div>
 </body>
 
-</html>
+{% endblock %}
