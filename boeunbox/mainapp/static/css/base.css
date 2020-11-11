@@ -72,6 +72,7 @@ a{
   cursor: pointer;
   background-color: transparent;
   border: 0;
+  outline: 0;
 }
 
 /* Navbar Scroll 효과적용 */
