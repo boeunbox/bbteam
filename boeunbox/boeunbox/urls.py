@@ -15,24 +15,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from mainapp.views import index
 from cscenterapp.views import cscenter
 from missionapp.views import mission
 from myboeunapp.views import myboeun
 from productapp.views import product
-from signupapp.views import signup, login
+from signupapp.views import signup, login_page
 from subscrapp.views import subscr
+
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
-    path('cscenter/', cscenter, name="cscenter"),
+    # path('cscenter/', cscenter, name="cscenter"),
     path('mission/', mission, name="mission"),
     path('myboeun/', myboeun, name="myboeun"),
     path('product/', product, name="product"),
     path('signup/', signup, name="signup"),
-    path('login/', login, name="login"),
+    path('login_page/', login_page, name="login_page"),
     path('subscr/', subscr, name="subscr"),
+    path('auth/', include("signupapp.urls")),
+    path('cscenter/', include('cscenterapp.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

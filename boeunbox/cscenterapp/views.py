@@ -4,9 +4,8 @@ from .forms import FAQform
 
 def cscenter(request):
     context = dict()
-    cscenterapp = cscenterapp.objects.all()
-    context['all_cscenterapp'] = cscenterapp
-    
+    all_FAQform = FAQform.objects.all()
+    context['all_FAQform'] = all_FAQform
     return render(request, 'cscenter.html', context)
 
 def create(request):

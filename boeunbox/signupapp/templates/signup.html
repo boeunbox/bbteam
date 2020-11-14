@@ -7,18 +7,7 @@
 
 {% block contents %}
 
-<form method="POST" action="{% url 'signup' %}">
-    {% csrf_token %}
-    <p>e-mail</p>
-    <input type="text" name="email">
-    <br>
-    <p>password</p>
-    <input type="text" name="password">
-    <br>
-    <p>confirm</p>
-    <input type="text" name="confirm">
-    <br>
-    <input type="submit" value="회원가입">
-</form>
+
+siginup
 
 {% endblock %}

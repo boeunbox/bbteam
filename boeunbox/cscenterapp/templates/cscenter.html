@@ -2,23 +2,25 @@
 {% load static %}
 
 {% block title %}
-
+cscenter page
 {% endblock %}
 
 {% block contents %}
 <h1>FAQ</h1>
 
-<a href="{% url 'create'%}">
+<a href="{% url 'create' %}">
     <h2>글쓰기</h2>
 </a>
+
+{%for i in all_FAQform %}
 <a href="{% url 'detail' i.id %}">
     <h1>{{i.tiltie}}</h1>
 </a>
 
 <p>{{i.desc}}</p>
 <p>{{i.created_at}}</p>
-<hr />
-<hr />
+
+{% endfor %}
 
 
 {% endblock %}

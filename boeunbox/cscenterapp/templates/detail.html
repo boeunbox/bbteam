@@ -3,8 +3,8 @@
 {% block contents %}
 
 <h1>상세 페이지</h1>
-<a href="{% url 'update' one_memo.id %}">수정</a>
-<a href="{% url 'delete' one_memo.id %}">삭제</a>
+<a href="{% url 'update' one_FAQ.id %}">수정</a>
+<a href="{% url 'delete' one_FAQ.id %}">삭제</a>
 <h2>제목 : {{one_FAQ.title}}</h2>
 <p>본문 : {{one_FAQ.desc}}</p>
 <p>시간 : {{one_FAQ.crated_at}}</p>
