@@ -26,40 +26,51 @@
 {% block contents %}
 
 <body>
+    <hr id=top_line>
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <div class="list_box_main">
-        <div class="list_box_title">
-            <h3>나의 보은</h3>
+    <div class="subs_wrap">
+        <div class="list_box_main">
+            <div class="list_box_title">
+                <div>나의 보은</div>
+            </div>
+
+            <div class="list_box">
+                <div>내 구독내역</div>
+            </div>
+
+            <div class="list_box">
+                <div>내 주문내역</div>
+            </div>
+
+            <div class="list_box">
+                <div>마일리지</div>
+            </div>
+
+            <div class="list_box">
+                <div>개인정보 수정</div>
+            </div>
+
+            <div class="list_box">
+                <div>배송지 관리</div>
+            </div>
+
+            <div class="list_box">
+                <div>문의하기</div>
+            </div>
         </div>
 
-        <div class="list_box">
-            <h5>내 구독내역</h5>
-        </div>
-
-        <div class="list_box">
-            <h5>내 주문내역</h5>
-        </div>
-
-        <div class="list_box">
-            <h5>마일리지</h5>
-        </div>
-
-        <div class="list_box">
-            <h5>개인정보 수정</h5>
-        </div>
-
-        <div class="list_box">
-            <h5>배송지 관리</h5>
-        </div>
-
-        <div class="list_box">
-            <h5>문의하기</h5>
+        <div class="mysubs_container">
+            <div class="mysubs_container_title">내 구독내역</div>
+            <div class=container_default_txt>
+                <p>아직 구독 내역이 없습니다. 지금 보은박스를 시작할까요?</p>
+            </div>
+            <a class=a_button href="{% url 'subscr' %}"><button id="infor_button">보은박스 자세히 알아보기</button></a>
+            <a class=a_button href="{% url 'login' %}"><button id="start_button">보은박스 구독 시작하기</button></a>
         </div>
     </div>
+
 </body>
 
 {% endblock %}
