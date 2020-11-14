@@ -24,12 +24,12 @@ a{
   align-items: center;
   background-color: transparent;
   list-style: none;
-  padding: 8px 15rem;
+  padding: 8px 300px;
   transition: background-color 0.5s ease 0s;
 }
 
 .logo{
-  font-size: 1.34rem;
+  font-size: 1.31rem;
   color: #b1b34d;
   font-weight: bold;
 }
@@ -43,6 +43,7 @@ a{
   flex-wrap: wrap;
   list-style: none;
   padding-left: 0;
+  margin: 8px 0;
 }
 
 .collapsed-content a{
@@ -50,9 +51,11 @@ a{
 }
 
 .collapsed-content li{
-  padding: 4px 15px;
+  padding-top: 5px;
+  padding-left: 30px;
+  padding-bottom: 5px;
   display: inline-block;
-  font-size: 1.03rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -70,6 +73,7 @@ a{
   cursor: pointer;
   background-color: transparent;
   border: 0;
+  outline: 0;
 }
 
 /* Navbar Scroll 효과적용 */
@@ -87,18 +91,21 @@ a{
 }
 
 /* MediaQuery */
-@media screen and (max-width: 1543px){
+@media screen and (max-width: 1433px){
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 12px 10px;
+    padding: 12px 15px;
   }
 
   .collapsed-content {
     flex-direction: column;
-    align-items: left;
+    align-items: center;
     width: 100%;
     display: none;
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
   .collapsed-content a{
@@ -108,6 +115,10 @@ a{
   .collapsed-content li{
     width: 100%;
     text-align: left;
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 0;
+    padding-left: 16px;
   }
 
   .btn-collapse{
@@ -146,6 +157,6 @@ a{
   color: #e6e6e6
 }
 
-a {
+.terms-content {
   padding: 0 15px;
 }

@@ -1,28 +1,35 @@
 /* 공통 */
-.container{
-    text-align: center;
+body{
+    margin: 0;
+    font-family: 'MapoFlowerIsland';
 }
 
 a{
     text-decoration: none;
 }
 
-body{
-    margin: 0;
-    font-family: 'MapoFlowerIsland';
+.text-container{
+    text-align: center;
 }
 
 .btn{
     display: inline-block;
     color: #E6E6E6;
     font-weight: 400;
+    font-size: 1rem;
+    outline: 0;
     border: 0;
     border-radius: 6px 6px;
     padding: 18px 20px;
     background-color: #356869;
+    text-decoration: none;
 }
 
-/* 헤더 */
+.btn a{
+    color: #E6E6E6;
+}
+
+/* 섹션1 */
 .top{
     position: relative;
     width: 100%;
@@ -45,7 +52,7 @@ body{
     font-size: 1rem;
 }
 
-/* 섹션1 */
+/* 섹션2 */
 .s1{
     position: relative;
     width: 100%;
@@ -60,4 +67,4 @@ body{
     background-size: cover;
 }
 
-/* 섹션2 */
+/* 섹션3 */

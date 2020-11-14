@@ -7,9 +7,10 @@
 
 {% block contents %}
 
-<form action="" method="POST" enctype="multipart/form-data"></form>
+<form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {{FAQFofm}}
+    {{FAQFofm.as_p}}
     <input type="submit" value="작성">
+</form>
 
 {% endblock %}
