@@ -40,4 +40,5 @@ urlpatterns = [
     path('subscr/', subscr, name="subscr"),
     path('auth/', include("signupapp.urls")),
     path('cscenter/', include('cscenterapp.urls')),
+    path('myboeun/', include('myboeunapp.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

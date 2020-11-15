@@ -29,7 +29,7 @@
 
             <div class="list_box">
                 <a href="{% url 'myboeun' %}">
-                    <div><strong>내 구독내역</strong></div>
+                    <div>내 구독내역</div>
                 </a>
             </div>
 
@@ -53,19 +53,17 @@
 
             <div class="list_box">
                 <a href="{% url 'E_review' %}">
-                    <div>리뷰 관리</div>
+                    <div><strong>리뷰 관리</strong></div>
                 </a>
             </div>
-
         </div>
 
         <div class="mysubs_container">
-            <div class="mysubs_container_title">내 구독내역</div>
+            <div class="mysubs_container_title">리뷰 관리</div>
             <div class=container_default_txt>
-                <p>아직 구독 내역이 없습니다. 지금 보은박스를 시작할까요?</p>
+                <p></p>
             </div>
-            <a class=a_button href="{% url 'subscr' %}"><button id="infor_button">보은박스 자세히 알아보기</button></a>
-            <a class=a_button href="{% url 'login' %}"><button id="start_button">보은박스 구독 시작하기</button></a>
+
         </div>
     </div>
 
