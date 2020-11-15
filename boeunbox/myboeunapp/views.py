@@ -21,3 +21,7 @@ def D_address(request):
 
 def E_review(request):
     return render(request, 'E_review.html')
+
+
+def withdrawal(request):
+    return render(request, 'withdrawal.html')
