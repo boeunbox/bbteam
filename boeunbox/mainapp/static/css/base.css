@@ -100,9 +100,7 @@ a{
 
   .collapsed-content {
     flex-direction: column;
-    align-items: center;
     width: 100%;
-    display: none;
     margin: 0;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -114,11 +112,13 @@ a{
 
   .collapsed-content li{
     width: 100%;
-    text-align: left;
+    float: right;
+    display: block;
+    right: 10px;
     margin: 0;
     padding-top: 12px;
     padding-bottom: 0;
-    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .btn-collapse{
