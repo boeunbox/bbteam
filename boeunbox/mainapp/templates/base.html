@@ -31,13 +31,13 @@
 </head>
 
 <body>
-    <!-- 공통 NAV BAR -->
+    <!-- 상단 NAV BAR 1462px 이상 -->
     <nav class="navbar fixed-top" id="id_nav">
-        <div class="logo">
+        <div class="navbar-logo">
             <a href="{% url 'index' %}"><i class="fas fa-gift"></i>&nbsp;보은박스</a>
         </div>
-        <div class="navbar-collapse">
-            <ul class="collapsed-content" id="myCollapsed">
+        <div class="navbar-container">
+            <ul class="navbar-list">
                 <li><a href="{% url 'mission' %}">보은박스 소개</a></li>
                 <li><a href="{% url 'subscr' %}">보은 시작하기</a></li>
                 <li><a href="{% url 'product' %}">전체 상품 보기</a></li>
@@ -46,7 +46,22 @@
                 <li><a href="{% url 'login' %}">로그인/회원가입</a></li>
             </ul>
         </div>
-        <button class="btn-collapse" id="myCollapsed" onclick="myFunction()"><i class="fas fa-bars"></i></button>
+        <button class="btn-sidebar" id="myBtn" onclick="myFunction()"><i class="fas fa-bars"></i></button>
+    </nav>
+    <!-- 상단 NAV BAR 1462px 미만 -->
+    <nav class="modal-navbar" id="modal_nav">
+        <div class="modal-sidebar" id="mySidebar">
+            <button class="btn-exit" onclick="myFunction()"><i class="fas fa-times"></i></button>
+            <ul class="modal-list">
+                <li><a href="{% url 'mission' %}">보은박스 소개</a></li>
+                <li><a href="{% url 'subscr' %}">보은 시작하기</a></li>
+                <li><a href="{% url 'product' %}">전체 상품 보기</a></li>
+                <li><a href="{% url 'cscenter' %}">고객센터</a></li>
+                <li><a href="{% url 'myboeun' %}">나의 보은</a></li>
+                <li><a href="{% url 'login' %}">로그인/회원가입</a></li>
+            </ul>
+        </div>
+        <div class="overlay" onclick="myFunction()"></div>
     </nav>
 
     {% block contents %}

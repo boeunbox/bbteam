@@ -12,10 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Responsive Collapsed Navbar 효과
 function myFunction() {
-    var navButton = document.getElementById("myCollapsed")
+    var navButton = document.getElementById("mySidebar")
+    var pageOverlay = document.getElementsByClassName("overlay")
+
     if (navButton.classList.contains('active')) {
         navButton.classList.remove('active');
+        pageOverlay[0].style.display = "none";
     } else {
         navButton.classList.add("active");
+        pageOverlay[0].style.display = "block";
     }
 }
