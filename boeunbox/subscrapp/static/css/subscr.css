@@ -3,8 +3,8 @@ body {
 }
 
 .startB_img {
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -12,7 +12,7 @@ body {
 
 
 .title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-align: center;
 }
 
@@ -22,18 +22,19 @@ body {
     background-color: #E6E6E6;
     padding-top: 40px;
     padding-bottom: 50px;
-    width: 900px;
+    width: 1300px;
     margin-left: auto;
     margin-right: auto;
 }
 
 #advantage_title {
     color: #102836;
+    font-weight: bolder;
 }
 
 .advantage_box {
     box-sizing: content-box;
-    width: 60%;
+    width: 65%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -45,15 +46,17 @@ body {
 }
 
 .advantage {
-    font-size: 1rem;
+    font-size: 18px;
     font-weight: bolder;
     margin-bottom: 10px;
     color: #102836
 }
 
 .advantage_txt {
-    font-size: 18px;
+    margin-left: 20px;
+    font-size: 16px;
     color: #102836;
+    font-weight: bolder;
 }
 
 
@@ -65,14 +68,14 @@ body {
     background-color: #EEEBDA;
     padding-top: 50px;
     padding-bottom: 50px;
-    width: 70%;
+    width: 1300px;
     margin-left: auto;
     margin-right: auto;
 }
 
 #see_detail {
     text-align: right;
-    font-size: 11px;
+    font-size: 14px;
 }
 
 #step_title {
@@ -81,7 +84,7 @@ body {
 
 .step_box {
     box-sizing: content-box;
-    width: 70%;
+    width: 65%;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -91,26 +94,21 @@ body {
     padding-bottom: 15px;
     margin-bottom: 10px;
     background-color: white;
-    box-shadow:
-    0 2.2px 2.2px rgba(0, 0, 0, 0.020),
-    0 5.3px 5.3px rgba(0, 0, 0, 0.030),
-    0 10px 10px rgba(0, 0, 0, 0.04),
-    0 17.0px 17.9px rgba(0, 0, 0, 0.060),
-    0 33.4px 33.4px rgba(0, 0, 0, 0.070),
-    0 80px 80px rgba(0, 0, 0, 0.1)
-  ;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.070);
+            /* 가로 세로 퍼짐 */
 }
 
 .step {
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-weight: bolder;
     color: #102836;
     margin-bottom: 5px;
 }
 
 .step_txt {
-    font-size: 12px;
+    font-size: 1rem;
     color:  #102836;
+    font-weight: bolder;
 }
 
 .blank {
@@ -122,7 +120,7 @@ body {
 /* 구독 기간 및 서비스 안내 */
 
 #detail_bg {
-    background-color: #F8F9F9;
+    background-color:transparent;
     margin-left: auto;
     margin-right: auto;
     /* border: 1px solid red; */
@@ -132,8 +130,10 @@ body {
 }
 
 .month_background {
-    background: #dddddd;
-    width: 1000px;
+    background: transparent;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 800px;
     margin: 50px;
     display: flex;
     justify-content: center;
@@ -154,8 +154,8 @@ body {
 .month_box {
     box-sizing: content-box;
     border: 2px solid #B3B6B7;
-    width: 250px;
-    height: 250px;
+    width: 15.63rem;
+    height: 15.63rem;
     padding: 15px;
     margin: 5px;
 }
@@ -163,15 +163,15 @@ body {
 .month_box_p12 {
     box-sizing: content-box;
     border: 2px solid #F7DC6F ;
-    width: 250px;
-    height: 250px;
+    width: 15.63rem;
+    height: 15.63rem;
     padding: 15px;
     margin: 5px;
 }
 
 .month {
     text-align: center;
-    font-size: 17px;
+    font-size: 1.2rem;
 }
 
 .price_box {
@@ -180,17 +180,17 @@ body {
 }
 
 .price {
-    font-size: 25px;
+    font-size: 1.6rem;
     font-weight: bolder;
 
 }
 
 .permonth {
-    font-size: 14px;
+    font-size: 0.9rem;
 }
 
 .price_detail {
-    font-size: 12px;
+    font-size: 0.9rem;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 5px;
@@ -202,7 +202,7 @@ body {
 }
 
 li {
-    font-size: 14px;
+    font-size: 1rem;
     padding-right: 15px;
 }
 
@@ -216,21 +216,45 @@ li {
     min-width: 200px;
     border: solid 1px #dabf55;
     background-color:#F7DC6F;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: bolder;
-    font-style: normal;
-    font-stretch: normal;
     line-height: 1.25;
-    letter-spacing: 0;
     text-align: center;
     color: rgb(78, 76, 76);
-    border-radius: 0;
+
 }
 
 
+@media(max-width: 1500px) {
+    #step_bg{
+        width:1100px;
+    }
+    #advantage_bg{
+        width:1100px;
+    }
 
 
-@media(max-width: 750px) {
+@media(max-width: 1080px) {
+    .month_wrap{
+        width: 400px;
+    }
+}
+
+
+@media(max-width: 1024px) {
+    #step_bg{
+        width:800px;
+    }
+    #advantage_bg{
+        width:800px;
+    }
+}
+
+
+@media(max-width: 767px) {
+    #step_bg{
+        width:600px;
+    }
     #advantage_bg{
         width:600px;
     }
@@ -238,4 +262,5 @@ li {
         width: 300px;
     }
 }
+
 

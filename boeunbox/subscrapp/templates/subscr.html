@@ -10,16 +10,6 @@
 
 {% block extrahead %}
 <link rel="stylesheet" href="{% static 'css/subscr.css' %}" />
-<script src="https://kit.fontawesome.com/0b88962ca7.js" crossorigin="anonymous"></script>
-<!-- 눈누 웹폰트 '마포꽃섬' -->
-<style>
-    @font-face {
-        font-family: 'MapoFlowerIsland';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-</style>
 {%endblock%}
 
 
@@ -36,6 +26,7 @@
 <div id="advantage_bg">
     <div id="advantage_title" class=title>선택형 정기배송의 장점</div>
     <br>
+    <br>
     <div class="advantage_box">
         <div class="advantage">1. 합리적인 가격</div>
         <div class="advantage_txt">정기구독 방식을 통해 소비자는 최대 30%이상 저렴한 가격으로 제품들을 받아보실 수 있습니다.</div>
@@ -43,12 +34,12 @@
 
     <div class="advantage_box">
         <div class="advantage">2. 고객 선택, 고객 맞춤</div>
-        <div class="advantage_txt">만약 보은MD들이 선정한 제품들이 마음에 들지 않으신다면 소비자는 20일 이내에 언제든 같은 등급의 다른 제품으로 변경하실 수 있습니다. </div>
+        <div class="advantage_txt">만약 보은MD들이 선정한 제품들이 마음에 들지 않으신다면 회원님은 20일 이내에 언제든 같은 등급의 다른 제품으로 변경하실 수 있습니다. </div>
     </div>
 
     <div class="advantage_box">
         <div class="advantage">3. 엄선된 제품</div>
-        <div class="advantage_txt">이달의 박스 제품을 포함한 보은박스의 모든 제품들은 보은 MD들이 엄선한 것들입니다.</div>
+        <div class="advantage_txt">다음 달의 박스 제품을 포함한 보은박스의 모든 제품들은 보은MD들이 엄선한 것들입니다.</div>
         <div class="advantage_txt">내 부모님께 드릴 선물이라는 마음으로 부모님들께서 딱 좋아하실 만한 구성으로 준비했습니다.</div>
     </div>
 </div>
@@ -70,8 +61,8 @@
     <div class="step_box">
         <div class="step">두 번째 걸음</div>
         <div class="step_txt">홈페이지에서 보은MD들이 선정한 다음 달의 박스 제품들을 확인해주세요.</div>
-        <br class="" blank"">
-        <br class="" blank"">
+        <br class="blank">
+        <br class="blank">
     </div>
 
     <div class="step_box">
@@ -84,7 +75,7 @@
 
     <div class="step_box">
         <div class="step">네 번째 걸음</div>
-        <div class="step_txt">이후 매월 20일 지나면 고객님의 부모님들께 보은박스가 일괄배송됩니다.</div>
+        <div class="step_txt">이후 매월 20일이 지나면 고객님의 부모님들께 보은박스가 일괄배송됩니다.</div>
         <br class="blank">
         <br class="blank">
     </div>
@@ -105,7 +96,6 @@
 <div id="detail_bg">
     <div class="month_background">
         <h3 id="detail" class="title">구독 기간 및 서비스 안내</h3>
-        <br>
         <div class="month_wrap">
             <div class="month_box">
                 <div class="month">2개월</div>
@@ -158,11 +148,11 @@
                     <span class="price_detail">총 1,560,000원 한 번에 결제시</span>
                 </div>
                 <ul>
-                    <li>매월 ♥X200개 사용 가능</li>
+                    <li>매월 <strong>♥X200개</strong> 사용 가능</li>
                     <li>무료배송</li>
-                    <li>프리미엄 전용 박스에 포장</li>
-                    <li>각종 기념일과 명절마다 다양한 증정품 제공</li>
-                    <li>보은몰에서 단일제품 구매시 10% 할인</li>
+                    <li><strong>프리미엄 전용 박스</strong>에 포장</li>
+                    <li>각종 기념일과 명절마다 <strong>시즌별 증정품</strong> 제공</li>
+                    <li>보은몰에서 단일제품 구매시 <strong>10% 할인</strong></li>
                 </ul>
             </div>
         </div>
@@ -170,7 +160,7 @@
         <!-- <input type="button" value="보은 시작하기" style="width:200px" onclick="
                 "> -->
 
-
+        <br>
         <a href="{% url 'login' %}"><button id="start_button">보은 시작하기</button></a>
     </div>
 </div>
