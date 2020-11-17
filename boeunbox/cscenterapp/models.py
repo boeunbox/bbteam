@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class FAQform(models.Model):
+class FAQ(models.Model):
     title = models.CharField('제목',max_length=200)
     desc = models.TextField('본문',blank=True)
     pic = models.ImageField('사진', blank=True)

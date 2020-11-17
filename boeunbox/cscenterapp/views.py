@@ -1,11 +1,12 @@
 from django.shortcuts import render,redirect
 from .forms import FAQform
+from .models import FAQ
 # Create your views here.
 
 def cscenter(request):
     context = dict()
-    all_FAQform = FAQform.objects.all()
-    context['all_FAQform'] = all_FAQform
+    all_FAQ = FAQ.objects.all()
+    context['all_FAQform'] = all_FAQ
     return render(request, 'cscenter.html', context)
 
 def create(request):
@@ -18,5 +19,5 @@ def create(request):
             return redirect('cscenter')
         else:
             context['FAQform'] = myform
-    return render(request,'creat.html',context)
+    return render(request,'create.html',context)
     
