@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from mainapp.views import index
 from cscenterapp.views import cscenter
@@ -26,7 +26,6 @@ from subscrapp.views import subscr
 
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -39,5 +38,6 @@ urlpatterns = [
     path('login_page/', login_page, name="login_page"),
     path('subscr/', subscr, name="subscr"),
     path('auth/', include("signupapp.urls")),
-    path('cscenter/', include('cscenterapp.urls')),
+    path('cscenterapp/', include('cscenterapp.urls')),
+    path('myboeun/', include('myboeunapp.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

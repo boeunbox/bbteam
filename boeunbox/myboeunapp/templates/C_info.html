@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+
+보은박스 - 나의 보은
+{% endblock %}
+
+
+
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/myboeun.css' %}" />
+{%endblock%}
+
+
+{% block contents %}
+
+<body>
+    <hr id=top_line>
+    <br>
+    <br>
+    <br>
+    <div class="subs_wrap">
+        <div class="list_box_main">
+            <div class="list_box_title">
+                <div>나의 보은</div>
+            </div>
+
+            <div class="list_box">
+                <a href="{% url 'myboeun' %}">
+                    <div>내 구독내역</div>
+                </a>
+            </div>
+
+            <div class="list_box">
+                <a href="{% url 'B_mileage' %}">
+                    <div>마일리지</div>
+                </a>
+            </div>
+
+            <div class="list_box">
+                <a href="{% url 'C_info' %}">
+                    <div><strong>회원정보 수정</strong></div>
+                </a>
+            </div>
+
+            <div class="list_box">
+                <a href="{% url 'D_address' %}">
+                    <div>배송지 관리</div>
+                </a>
+            </div>
+
+            <div class="list_box">
+                <a href="{% url 'E_review' %}">
+                    <div>리뷰 관리</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="mysubs_container">
+            <div class="mysubs_container_title">회원정보 수정</div>
+            <div>
+                <div>이름</div>
+                <div>생년월일</div>
+                <div>성별</div>
+                <div>아이디(이메일 주소)</div>
+                <div>비밀번호</div>
+                <div>휴대전화 번호</div>
+            </div>
+            <div>
+                <div>보은박스를 더이상 이용하지 않으신다면 <a id="a_withdrawal" href="{% url 'withdrawal' %}">회원탈퇴 바로가기 ▶</a></div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+>>>>>>> 9609ecb8168a834a34a476247fab8ffe3e43fa87
+{% endblock %}
