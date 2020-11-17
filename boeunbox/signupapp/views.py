@@ -1,27 +1,29 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 
 def signup(request):
-    return render(request, 'signup.html')
-
-def login_page(request):
-    return render(request, 'login_page.html')
-
-
-def login_view(request):
+    context = dict()
     if request.method == "POST":
-        username = request.POST["username"]
-        password = request.POST["password"]
-        user = authenticate(username = username, password = password)
-        if user is not None :
-            print("인증성공")
-            login(request, user)
-        else:
-            print("인증실패")
-    return render(request,"login_page.html")
+        save_form = UserCreationForm(request.POST)
+        if save_form.is_valid():
+            save_form.save()
 
-def logout_view(request):
-    logout(request)
-    return redirect()
+            user = authenticate(username = save_form.cleande_data['username'], password = save_form.cleande_data['password1'])
+            
+            login(request,user)
+
+            return redirect('index')
+
+        else:
+            context['userForm'] = save_form
+            return render(request, 'registration/signup.html')
+
+    context['userForm'] = UserCreationForm()
+    return render(request, 'registration/signup.html', context)
+
+
+
+

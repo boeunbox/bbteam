@@ -21,7 +21,7 @@ from cscenterapp.views import cscenter
 from missionapp.views import mission
 from myboeunapp.views import myboeun
 from productapp.views import product
-from signupapp.views import signup, login_page
+from signupapp.views import signup, login
 from subscrapp.views import subscr
 
 from django.conf import settings
@@ -34,10 +34,8 @@ urlpatterns = [
     path('mission/', mission, name="mission"),
     path('myboeun/', myboeun, name="myboeun"),
     path('product/', product, name="product"),
-    path('signup/', signup, name="signup"),
-    path('login_page/', login_page, name="login_page"),
     path('subscr/', subscr, name="subscr"),
-    path('auth/', include("signupapp.urls")),
+    path('signupapp/', include("signupapp.urls")),
     path('cscenterapp/', include('cscenterapp.urls')),
     path('myboeun/', include('myboeunapp.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
