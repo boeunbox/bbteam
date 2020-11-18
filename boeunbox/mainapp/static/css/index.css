@@ -16,18 +16,25 @@ a{
 .btn{
     display: inline-block;
     color: #E6E6E6;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1rem;
     outline: 0;
-    border: 0;
+    border: 1px solid #e6e6e6;
     border-radius: 6px 6px;
-    padding: 18px 20px;
-    background-color: #356869;
+    padding: 1rem 0.8rem;
+    background-color: transparent;
     text-decoration: none;
+    margin-top: 2rem;
 }
 
 .btn a{
     color: #E6E6E6;
+    padding: 0.9rem 0.9rem;
+}
+
+.btn:hover {
+    border: 0;
+    background-color: #366869;
 }
 
 /* 섹션1 */
@@ -47,19 +54,42 @@ a{
 
 .top-title{
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 800;
     margin: 0;
     padding-top: 4.5rem;
+    color: #102836;
     
 }
 
 .top-text{
     font-size: 1rem;
     font-weight: bold;
+    color: #102836;
 }
 
 /* 섹션2 */
-.s1{
+.middle{
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 15rem 0;
+    border: 0;
+    background: url("/static/image/giftbox.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.middle-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #102836;
+}
+
+/* 섹션3 */
+.bottom {
     position: relative;
     width: 100%;
     height: auto;
@@ -73,4 +103,8 @@ a{
     background-size: cover;
 }
 
-/* 섹션3 */
+.bottom-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #E6E6E6;
+}
