@@ -8,6 +8,12 @@ a{
     text-decoration: none;
 }
 
+.wrap {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
 .text-container{
     text-align: center;
     align-items: center;
@@ -39,9 +45,8 @@ a{
 
 /* 섹션1 */
 .top{
-    position: relative;
-    width: 100%;
     height: auto;
+    position: relative;
     min-height: 35rem;
     padding: 15rem 0;
     border: 0;
@@ -69,9 +74,8 @@ a{
 
 /* 섹션2 */
 .middle{
-    position: relative;
-    width: 100%;
     height: auto;
+    position: relative;
     min-height: 35rem;
     padding: 15rem 0;
     border: 0;
@@ -90,9 +94,8 @@ a{
 
 /* 섹션3 */
 .bottom {
-    position: relative;
-    width: 100%;
     height: auto;
+    position: relative;
     min-height: 35rem;
     padding: 15rem 0;
     border: 0;
@@ -107,4 +110,50 @@ a{
     font-size: 1rem;
     font-weight: 600;
     color: #E6E6E6;
+}
+
+/* 사이드 네비게이션 바 */
+.fixed-right {
+    position: fixed;
+    right: 20px;
+}
+
+.sidenav{
+    top: 45vh;
+    margin: 0;
+}
+
+.sidenav-container {
+    align-items: center;
+    text-align: center;
+}
+
+.sidenav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidenav li {
+    font-size: 0.625rem;
+    padding-bottom: 0.5rem;
+    text-decoration: none;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+
+.sidenav li a {
+    color: rgba(53, 104, 105, 0.7);
+}
+
+.sidenav li:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
 }

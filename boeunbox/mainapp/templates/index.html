@@ -25,7 +25,7 @@
 {% block contents %}
 <div class="wrap">
     <!-- 섹션1 -->
-    <div class="top">
+    <div class="top" id="s1">
         <div class="text-container">
             <p class="top-title">보은박스</p>
             <p class="top-text">보은박스는 마음을 담습니다.</p>
@@ -33,14 +33,15 @@
         </div>
     </div>
     <!-- 섹션2 -->
-    <div class="middle">
+    <div class="middle" id="s2">
         <div class="text-container">
-            <p class="middle-text">매달 내가 바로 곁에서 챙겨드리는 것처럼.</p>
+            <p class="middle-text">매달 내가 바로 곁에서 챙겨드리는 것처럼</p>
+            <p class="middle-text">한 달에 한 번 보은박스</p>
             <button class="btn"><a href="{% url 'subscr' %}">구독 시작하기</a></button>
         </div>
     </div>
     <!-- 섹션3 -->
-    <div class="bottom">
+    <div class="bottom" id="s3">
         <div class="text-container">
             <p class="bottom-text">푸른 하늘보다 높고, 푸른 바다보다 넓은 당신의 은혜</p>
             <p class="bottom-text">어떻게 하면 일상 속에서 보답할 수 있을까?</p>
@@ -49,4 +50,14 @@
         </div>
     </div>
 </div>
+
+<nav class="sidenav fixed-right">
+    <div class="sidenav-container">
+        <ul class="sidenav-list">
+            <li><a href="#s1"><i class="fas fa-circle"></i></a></li>
+            <li><a href="#s2"><i class="fas fa-circle"></i></a></li>
+            <li><a href="#s3"><i class="fas fa-circle"></i></a></li>
+        </ul>
+    </div>
+</nav>
 {% endblock %}
