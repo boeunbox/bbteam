@@ -38,4 +38,5 @@ urlpatterns = [
     path('signupapp/', include("signupapp.urls")),
     path('cscenterapp/', include('cscenterapp.urls')),
     path('myboeun/', include('myboeunapp.urls')),
+    path('accounts/', include('allauth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

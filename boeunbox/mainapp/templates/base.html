@@ -1,4 +1,5 @@
 {%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +62,7 @@
                 
                 {% if user.is_authenticated %}
                 <span>{{user}}</span>
-                <a href="#">로그아웃</a>
+                <a href="{% url 'logout' %}">로그아웃</a>
                 {% else %}
                 <li><a href="{% url 'login' %}">로그인/회원가입</a></li>
                 {% endif %}
