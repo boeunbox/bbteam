@@ -11,18 +11,54 @@
     justify-content: center;
 }
 
+
+#mysubs_btn, #mileage_btn, #information_btn, #address_btn, #review_btn {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+#withdrawal_btn {
+    background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+    outline: inherit;
+    color: #B1B34D;
+    font-weight: bold;
+}
+
+
+#mysubs_container, #mileage_container, #information_container, #address_container, #review_container, #withdrawal_container {
+    width:800px;
+    height: 400px;
+    
+}
+
+#mileage_container, #information_container, #address_container, #review_container {
+    display: none;
+}
+
+
+/* #menuBtn:checked ~ .mysubs_container {
+    display: block; */
+
 .list_box_main {
     margin-right: 100px;
     margin-bottom: 50px; 
-    width: 120px;   
+    width: 120px;  
+    list-style: none; 
 }
 
 .list_box_title {
     border-bottom: 2px solid #000000;
     font-size: 1.2rem;
     font-weight: bolder;
-    padding-bottom: 1rem;
-    
 }
 
 .list_box {
@@ -30,21 +66,18 @@
     font-size: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    cursor: pointer;
 }
 
 
 
-.mysubs_container {
-    width:800px;
-    height: 400px;
-    
-}
 
 .mysubs_container_title {
     font-weight: bolder;
     font-size: 1.5rem;
-    
+}
+
+.container_txt {
+    margin-top: 1rem;
 }
 
 #infor_button {
@@ -88,12 +121,37 @@
 a {
     color: black;
     text-decoration: none;
+    cursor: pointer;
 }
 
 #a_withdrawal {
     color: #B1B34D;
     font-weight: bold;
 }
+
+@media(max-width: 1500px) {
+    #mysubs_container, #mileage_container, #information_container, #address_container, #review_container, #withdrawal_container {
+        width: 650px;
+    }
+    
+}
+
+
+@media(max-width: 1024px) {
+    #mysubs_container, #mileage_container, #information_container, #address_container, #review_container, #withdrawal_container {
+        width: 500px;
+    }
+    
+}
+
+@media(max-width: 767px) {
+    #mysubs_container, #mileage_container, #information_container, #address_container, #review_container, #withdrawal_container {
+        width: 400px;
+    }
+}
+
+
+
 /* #a_subs_button {
     background-color: rgb(68, 0, 255);
     color: #fff;

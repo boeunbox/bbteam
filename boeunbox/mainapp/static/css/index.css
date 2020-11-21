@@ -8,32 +8,45 @@ a{
     text-decoration: none;
 }
 
+.wrap {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
 .text-container{
     text-align: center;
+    align-items: center;
 }
 
 .btn{
     display: inline-block;
     color: #E6E6E6;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1rem;
     outline: 0;
-    border: 0;
+    border: 1px solid #e6e6e6;
     border-radius: 6px 6px;
-    padding: 18px 20px;
-    background-color: #356869;
+    padding: 1rem 0.8rem;
+    background-color: transparent;
     text-decoration: none;
+    margin-top: 2rem;
 }
 
 .btn a{
     color: #E6E6E6;
+    padding: 0.9rem 0.9rem;
+}
+
+.btn:hover {
+    border: 0;
+    background-color: #366869;
 }
 
 /* 섹션1 */
 .top{
-    position: relative;
-    width: 100%;
     height: auto;
+    position: relative;
     min-height: 35rem;
     padding: 15rem 0;
     border: 0;
@@ -44,19 +57,45 @@ a{
     background-size: cover;
 }
 
-.top h1{
+.top-title{
     font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+    padding-top: 4.5rem;
+    color: #102836;
+    
 }
 
-.top h2{
+.top-text{
     font-size: 1rem;
+    font-weight: bold;
+    color: #102836;
 }
 
 /* 섹션2 */
-.s1{
-    position: relative;
-    width: 100%;
+.middle{
     height: auto;
+    position: relative;
+    min-height: 35rem;
+    padding: 15rem 0;
+    border: 0;
+    background: url("/static/image/giftbox.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.middle-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #102836;
+}
+
+/* 섹션3 */
+.bottom {
+    height: auto;
+    position: relative;
     min-height: 35rem;
     padding: 15rem 0;
     border: 0;
@@ -67,4 +106,54 @@ a{
     background-size: cover;
 }
 
-/* 섹션3 */
+.bottom-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #E6E6E6;
+}
+
+/* 사이드 네비게이션 바 */
+.fixed-right {
+    position: fixed;
+    right: 20px;
+}
+
+.sidenav{
+    top: 45vh;
+    margin: 0;
+}
+
+.sidenav-container {
+    align-items: center;
+    text-align: center;
+}
+
+.sidenav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidenav li {
+    font-size: 0.625rem;
+    padding-bottom: 0.5rem;
+    text-decoration: none;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+
+.sidenav li a {
+    color: rgba(53, 104, 105, 0.7);
+}
+
+.sidenav li:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}

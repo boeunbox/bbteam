@@ -22,47 +22,22 @@
     <br>
     <br>
     <div class="subs_wrap">
-        <nav>
-            <div class="list_box_main">
-                <div class="list_box_title">
-                    <div>나의 보은</div>
-                </div>
-
-                <div class="list_box">
-                    <a href="{% url 'myboeun' %}">
-                        <div>내 구독내역</div>
-                    </a>
-                </div>
-
-                <div class="list_box">
-                    <a href="{% url 'B_mileage' %}">
-                        <div>마일리지</div>
-                    </a>
-                </div>
-
-                <div class="list_box">
-                    <a href="{% url 'C_info' %}">
-                        <div>회원정보 수정</div>
-                    </a>
-                </div>
-
-                <div class="list_box">
-                    <a href="{% url 'D_address' %}">
-                        <div>배송지 관리</div>
-                    </a>
-                </div>
-
-                <div class="list_box">
-                    <a href="{% url 'E_review' %}">
-                        <div>리뷰 관리</div>
-                    </a>
-                </div>
+        <div class="list_box_main">
+            <div class="list_box_title">
+                <p>나의 보은</p>
             </div>
-        </nav>
 
-        <div class="mysubs_container">
+            <div class="list_box">
+                <a href="{% url 'myboeun' %}">
+                    <div>내 구독내역으로 돌아가기</div>
+                </a>
+            </div>
+        </div>
+
+
+        <div id="withdrawal_container">
             <div class="mysubs_container_title">회원탈퇴</div>
-            <div class=container_default_txt>
+            <div class="container_txt">
                 <div>회원탈퇴를 신청하기 전에 안내 사항을 꼭 확인해주세요.</div>
             </div>
         </div>

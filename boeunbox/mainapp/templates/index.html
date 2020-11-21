@@ -23,32 +23,41 @@
 
 <!-- body 작성 시작 -->
 {% block contents %}
-<!-- 자바스크립트 -->
-<script src="{% static 'js/scripts.js' %}"></script>
-
 <div class="wrap">
     <!-- 섹션1 -->
-    <div class="top">
+    <div class="top" id="s1">
         <div class="text-container">
-            <h1 class="mx-auto my-0">보은박스</h1>
-            <h2 class="text-white-50 mx-auto mt-2 mb-5">보은박스는 마음을 담습니다.</h2>
+            <p class="top-title">보은박스</p>
+            <p class="top-text">보은박스는 마음을 담습니다.</p>
             <button class="btn"><a href="{% url 'product' %}">상자 채우기</a></button>
         </div>
     </div>
     <!-- 섹션2 -->
-    <div class="s1">
+    <div class="middle" id="s2">
         <div class="text-container">
-            <p>푸른 하늘보다 높고 푸른 바다보다 넓은 당신의 은혜</p>
-            <p>어떻게 하면 일상 속에서 보답할 수 있을까?</p>
-            <p>마음과 마음을 이어주기 위해서 보은박스가 탄생했습니다.</p>
-            <button class="btn"><a href="{% url 'mission' %}">더 알아보기</a></button>
+            <p class="middle-text">매달 내가 바로 곁에서 챙겨드리는 것처럼</p>
+            <p class="middle-text">한 달에 한 번 보은박스</p>
+            <button class="btn"><a href="{% url 'subscr' %}">구독 시작하기</a></button>
         </div>
     </div>
     <!-- 섹션3 -->
-    <div class="s2">
+    <div class="bottom" id="s3">
         <div class="text-container">
-            <p>보은박스 소개</p>
+            <p class="bottom-text">푸른 하늘보다 높고, 푸른 바다보다 넓은 당신의 은혜</p>
+            <p class="bottom-text">어떻게 하면 일상 속에서 보답할 수 있을까?</p>
+            <p class="bottom-text">마음과 마음을 이어주기 위해서 보은박스가 탄생했습니다.</p>
+            <button class="btn"><a href="{% url 'mission' %}">더 알아보기</a></button>
         </div>
     </div>
 </div>
+
+<nav class="sidenav fixed-right">
+    <div class="sidenav-container">
+        <ul class="sidenav-list">
+            <li><a href="#s1"><i class="fas fa-circle"></i></a></li>
+            <li><a href="#s2"><i class="fas fa-circle"></i></a></li>
+            <li><a href="#s3"><i class="fas fa-circle"></i></a></li>
+        </ul>
+    </div>
+</nav>
 {% endblock %}
