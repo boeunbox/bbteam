@@ -110,6 +110,13 @@ a{
 /* MediaQuery */
 @media screen and (max-width: 1462px){
   .navbar {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media screen and (max-width: 1062px){
+  .navbar {
     flex-direction: column;
     align-items: center;
     padding: 0;
@@ -189,7 +196,7 @@ a{
     background: rgba(0, 0, 0, 0.3);
     z-index: 998;
     display: none;  
-}
+  }
 }
 
 /* footer */
