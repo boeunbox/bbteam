@@ -8,19 +8,19 @@ def myboeun(request):
 
 
 def B_mileage(request):
-    return render(request, 'B_mileage.html')
+    return render(request, 'mileage.html')
 
 
 def C_info(request):
-    return render(request, 'C_info.html')
+    return render(request, 'information.html')
 
 
 def D_address(request):
-    return render(request, 'D_address.html')
+    return render(request, 'address.html')
 
 
 def E_review(request):
-    return render(request, 'E_review.html')
+    return render(request, 'review.html')
 
 
 def withdrawal(request):

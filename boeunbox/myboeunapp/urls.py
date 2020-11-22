@@ -1,12 +1,12 @@
 from django.urls import path
-from myboeunapp.views import myboeun, B_mileage, C_info, D_address, E_review, withdrawal
+from myboeunapp.views import myboeun, mileage, information, address, review, withdrawal
 
 
 urlpatterns = [
     path('', myboeun, name="myboeun"),
-    path('B_mileage/', B_mileage, name="B_mileage"),
-    path('C_info/', C_info, name="C_info"),
-    path('D_address/', D_address, name="D_address"),
-    path('E_review/', E_review, name="E_review"),
+    path('mileage/', mileage, name="mileage"),
+    path('information/', information, name="info"),
+    path('address/', address, name="address"),
+    path('review/', review, name="review"),
     path('withdrawal/', withdrawal, name="withdrawal"),
 ]
