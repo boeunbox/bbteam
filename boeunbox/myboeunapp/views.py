@@ -7,19 +7,19 @@ def myboeun(request):
     return render(request, 'myboeun.html')
 
 
-def B_mileage(request):
+def mileage(request):
     return render(request, 'mileage.html')
 
 
-def C_info(request):
+def information(request):
     return render(request, 'information.html')
 
 
-def D_address(request):
+def address(request):
     return render(request, 'address.html')
 
 
-def E_review(request):
+def review(request):
     return render(request, 'review.html')
 
 

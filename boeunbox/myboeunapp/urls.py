@@ -5,7 +5,7 @@ from myboeunapp.views import myboeun, mileage, information, address, review, wit
 urlpatterns = [
     path('', myboeun, name="myboeun"),
     path('mileage/', mileage, name="mileage"),
-    path('information/', information, name="info"),
+    path('information/', information, name="information"),
     path('address/', address, name="address"),
     path('review/', review, name="review"),
     path('withdrawal/', withdrawal, name="withdrawal"),

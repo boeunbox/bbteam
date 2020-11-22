@@ -17,7 +17,7 @@
 {% block contents %}
 
 <body>
-    <hr id=top_line>
+    <hr id="top_line">
     <br>
     <br>
     <br>
@@ -26,13 +26,13 @@
             <div class="list_box_title">
                 <p>나의 보은</p>
             </div>
-
-            <div class="list_box">
-                <a href="{% url 'myboeun' %}">
-                    <div>내 구독내역으로 돌아가기</div>
-                </a>
-            </div>
+            <div class="list_box"><a href="{% url 'myboeun' %}">내 구독내역</a></div>
+            <div class="list_box"><a href="{% url 'mileage' %}">마일리지</a></div>
+            <div class="list_box"><a href="{% url 'information' %}"><strong>회원정보 수정</strong></a></div>
+            <div class="list_box"><a href="{% url 'address' %}">배송지 관리</a></div>
+            <div class="list_box"><a href="{% url 'review' %}">리뷰 관리</a></div>
         </div>
+
 
 
         <div id="withdrawal_container">

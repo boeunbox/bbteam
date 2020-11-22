@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
 {% block title %}
@@ -17,7 +18,7 @@
 {% block contents %}
 
 <body>
-    <hr id=top_line>
+    <hr id="top_line">
     <br>
     <br>
     <br>
@@ -27,7 +28,7 @@
                 <li class="list_box_title">
                     <p>나의 보은</p>
                 </li>
-                <li class="list_box"><input id="mysubs_btn" type="button" value="내 구독내역" onclick="document
+                <!-- <li class="list_box"><input id="mysubs_btn" type="button" value="내 구독내역" onclick="document
                 if(document.querySelector('#mysubs_btn').value === '내 구독내역') {
                     document.querySelector('#mysubs_btn').style.fontWeight = 'bold';
                     document.querySelector('#mileage_btn').style.fontWeight = 'normal';
@@ -114,14 +115,14 @@
                     } else {
                         pass
                     }
-                ">
+                "> -->
 
 
 
-                    <!-- <li class="list_box"><a href="{% url 'B_mileage' %}">마일리지</a></li>
-                <li class="list_box"><a href="{% url 'C_info' %}">회원정보 수정</a></li>
-                <li class="list_box"><a href="{% url 'D_address' %}">배송지 관리</a></li>
-                <li class="list_box"><a href="{% url 'E_review' %}">리뷰 관리</a></li> -->
+                <!-- <li class="list_box"><a href="{% url 'mileage' %}">마일리지</a></li>
+                <li class="list_box"><a href="{% url 'information' %}">회원정보 수정</a></li>
+                <li class="list_box"><a href="{% url 'address' %}">배송지 관리</a></li>
+                <li class="list_box"><a href="{% url 'review' %}">리뷰 관리</a></li> -->
             </ul>
         </nav>
 
@@ -173,7 +174,7 @@
             </div>
         </div>
 
-        <div id="address_container">
+        <!-- <div id="address_container">
             <div class="mysubs_container_title">배송지 관리</div>
             <div class="container_txt">
                 <div>받으시는 분1의 이름</div>
@@ -184,7 +185,7 @@
                 <div></div>
                 <div></div>
             </div>
-        </div>
+        </div> -->
 
         <div id="review_container">
             <div class="mysubs_container_title">리뷰 관리</div>
@@ -193,7 +194,7 @@
             </div>
         </div>
     </div>
-
+    <a href="{% url 'review' %}">리뷰가기</a>
 </body>
 
 >>>>>>> 9609ecb8168a834a34a476247fab8ffe3e43fa87
