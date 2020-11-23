@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    
     #kakao login
     'allauth.socialaccount.providers.kakao',
 
