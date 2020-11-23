@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+signup
+{% endblock %}
+
+{% block contents %}
+
+<h1>회원가입</h1>
+<form action="" method = "POST">
+    {% csrf_token %}
+    {{userForm}}
+    <input type="submit" value = "회원가입">
+</form>
+
+{% endblock %}
