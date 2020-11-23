@@ -1,7 +1,7 @@
 // Scroll 내릴 때 효과
 document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', function (e) {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 30) {
             document.getElementById("id_nav").classList.add("black")
         } else {
             document.getElementById("id_nav").classList.remove('black');
