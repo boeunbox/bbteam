@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'cscenter.css' %}" />
+{% endblock %}
+
 {% block title %}
-cscenter page
+보은박스 - 고객센터
 {% endblock %}
 
 {% block contents %}
