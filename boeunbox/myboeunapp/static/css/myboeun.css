@@ -1,7 +1,7 @@
 
 #top_line {
     border-top: 1px solid rgb(210, 210, 210);
-    margin-top: 49px;
+    margin-top: 50px;
 }
 
 .subs_wrap {
@@ -11,42 +11,20 @@
     justify-content: center;
 }
 
-
-#mysubs_btn, #mileage_btn, #information_btn, #address_btn, #review_btn {
-    background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-}
-
-#withdrawal_btn {
-    background: none;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-    outline: inherit;
-    color: #B1B34D;
-    font-weight: bold;
-}
-
-
-#mysubs_container, #mileage_container, #information_container, #address_container, #review_container, #withdrawal_container {
+.container {
     width:800px;
     height: 400px;
-    
 }
 
-#mileage_container, #information_container, #address_container, #review_container {
-    display: none;
+.container_title {
+    font-weight: bolder;
+    font-size: 1.5rem;
 }
 
+.container_txt {
+    margin-top: 1rem;
+}
 
-/* #menuBtn:checked ~ .mysubs_container {
-    display: block; */
 
 .list_box_main {
     margin-right: 100px;
@@ -68,17 +46,41 @@
     padding-bottom: 1rem;
 }
 
-
-
-
-.mysubs_container_title {
-    font-weight: bolder;
-    font-size: 1.5rem;
+.a_li {
+    color: black;
 }
 
-.container_txt {
-    margin-top: 1rem;
+
+@media(max-width: 1500px) {
+    .container {
+        width: 650px;
+    }
+    
 }
+
+
+@media(max-width: 1024px) {
+    .container {
+        width: 500px;
+    }
+    
+}
+
+@media(max-width: 767px) {
+    .container {
+        width: 400px;
+    }
+    .list_box_main {
+        display: none;
+    }
+
+    #start_button {
+        margin-top: 0.6rem;
+    }
+}
+
+
+/* -----------단독------------- */
 
 #infor_button {
     display: block;
@@ -112,52 +114,5 @@
     color: rgb(78, 76, 76);
 }
 
-.a_button {
-    background-color: red;
-    color: #fff;
-    text-decoration: none;
-    outline: none
-}
-a {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#a_withdrawal {
-    color: #B1B34D;
-    font-weight: bold;
-}
-
-@media(max-width: 1500px) {
-    #mysubs_container, #mileage_container, #information_container, #address_container, #review_container, #withdrawal_container {
-        width: 650px;
-    }
-    
-}
 
 
-@media(max-width: 1024px) {
-    #mysubs_container, #mileage_container, #information_container, #address_container, #review_container, #withdrawal_container {
-        width: 500px;
-    }
-    
-}
-
-@media(max-width: 767px) {
-    #mysubs_container, #mileage_container, #information_container, #address_container, #review_container, #withdrawal_container {
-        width: 400px;
-    }
-}
-
-
-
-/* #a_subs_button {
-    background-color: rgb(68, 0, 255);
-    color: #fff;
-    text-decoration: none;
-    outline: none
-} */
-
-
-/* .a_button:hover, .a_button:active {text-decoration: none; color:#fff; background-color:#f59000;} */

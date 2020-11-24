@@ -21,6 +21,7 @@ body {
 a{
   text-decoration: none;
 }
+
 .navbar{
   display: flex;
   flex-wrap: wrap;
@@ -229,3 +230,29 @@ a{
 .terms-content {
   padding: 0 15px;
 }
+
+/* ---------나의 보은 사이드바 포함------- */
+
+.myboeun_btn {
+  background: none;
+  color: #e6e6e6;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.submenu {
+  display:none;
+  color: #e6e6e6;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.submenu_li {
+  padding: 0rem !important; 
+}
+
+
+
