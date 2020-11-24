@@ -25,7 +25,7 @@ SECRET_KEY = '3s$iemsny7z7hfxl=b4xg^#z_@*vae)!^a56c*hjck)5c6)s0+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'productapp',
     'signupapp',
     'subscrapp',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -153,3 +154,5 @@ AUTH_USER_MODEL = 'signupapp.User'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
