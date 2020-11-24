@@ -6,7 +6,7 @@ from .models import FAQ
 def cscenter(request):
     context = dict()
     all_FAQ = FAQ.objects.all()
-    context['all_FAQform'] = all_FAQ
+    context['all_FAQ'] = all_FAQ
     return render(request, 'cscenter.html', context)
 
 def create(request):

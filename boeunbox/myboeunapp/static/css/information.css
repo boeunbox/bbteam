@@ -1,0 +1,91 @@
+/* -----------공통------------- */
+
+#top_line {
+    border-top: 1px solid rgb(210, 210, 210);
+    margin-top:50px;
+}
+
+.subs_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+    justify-content: center;
+}
+
+.list_box_main {
+    margin-right: 100px;
+    margin-bottom: 50px; 
+    width: 120px;  
+    list-style: none; 
+}
+
+.list_box_title {
+    border-bottom: 2px solid #000000;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.list_box {
+    border-bottom: 1px solid rgb(210, 210, 210);
+    font-size: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.container {
+    width:800px;
+    height: 400px;
+    
+}
+
+
+.container_title {
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+.container_txt {
+    margin-top: 1rem;
+}
+
+
+a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+@media(max-width: 1500px) {
+    .container {
+        width: 650px;
+    }
+    
+}
+
+
+@media(max-width: 1024px) {
+    .container {
+        width: 500px;
+    }
+    
+}
+
+@media(max-width: 767px) {
+    .list_box_main {
+        display: none;
+    }
+
+    .container {
+        width: 400px;
+    }
+}
+
+/* -----------단독------------- */
+
+#a_withdrawal {
+    color: #B1B34D;
+    font-weight: bold;
+}
+

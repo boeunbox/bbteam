@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"> 
+{% load socialaccount %}
+
+{% block extrahead %}
+
+{% endblock%}
 
 {% block contents %}
 <h2>login</h2>
@@ -9,6 +15,7 @@
         <input type="submit" value = "로그인"/>
     </form>
 <a href="{% url 'signup' %}">회원가입</a>
+<a href="{% provider_login_url 'kakao' %}">kakao</a>
 {% endblock%}
 
 

@@ -1,26 +1,37 @@
+<!-- 공통 필수 -->
 {% extends 'base.html' %}
 {% load static %}
 
+<!-- 타이틀 -->
 {% block title %}
-cscenter page
+보은박스 - 고객센터
+{% endblock %}
+
+<!-- head 작성 시작 -->
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/cscenter.css' %}" />
 {% endblock %}
 
 {% block contents %}
-<h1>FAQ</h1>
+<hr id="top_line">
+<div class="wrap">
+    <div class="faq">
+        <div class="container">
+            <p class="text-title">자주 묻는 질문</p>
+            <button class="btn"><a href="{% url 'create' %}">글쓰기</a></button>
 
-<a href="{% url 'create' %}">
-    <h2>글쓰기</h2>
-</a>
+            {{all_FAQ}}
+            {% for i in all_FAQ %}
+            <a href="{% url 'detail' i.id %}">
+                <h1>{{i.title}}</h1>
+            </a>
 
-{%for i in all_FAQform %}
-<a href="{% url 'detail' i.id %}">
-    <h1>{{i.tiltie}}</h1>
-</a>
-
-<p>{{i.desc}}</p>
-<p>{{i.created_at}}</p>
-
-{% endfor %}
+            <p>{{i.desc}}</p>
+            <p>{{i.created_at}}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}

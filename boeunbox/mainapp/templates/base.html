@@ -1,4 +1,5 @@
 {%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +32,7 @@
 </head>
 
 <body>
-    <!-- NAV BAR 1462px 이상 -->
+    <!-- NAV BAR 1063px 이상 -->
     <nav class="navbar fixed-top" id="id_nav">
         <div class="navbar-logo">
             <a href="{% url 'index' %}"><i class="fas fa-gift"></i>&nbsp;보은박스</a>
@@ -48,7 +49,7 @@
         </div>
         <button class="btn-sidebar" id="myBtn" onclick="myFunction()"><i class="fas fa-bars"></i></button>
     </nav>
-    <!-- NAV BAR 1462px 미만 -->
+    <!-- NAV BAR 1063px 미만 -->
     <nav class="modal-navbar" id="modal_nav">
         <div class="modal-sidebar" id="mySidebar">
             <button class="btn-exit" onclick="myFunction()"><i class="fas fa-times"></i></button>
@@ -57,11 +58,29 @@
                 <li><a href="{% url 'subscr' %}">보은 시작하기</a></li>
                 <li><a href="{% url 'product' %}">전체 상품 보기</a></li>
                 <li><a href="{% url 'cscenter' %}">고객센터</a></li>
-                <li><a href="{% url 'myboeun' %}">나의 보은</a></li>
-                
+                <li><input class="myboeun_btn" type="button" value="나의 보은 ▼" onclick="document
+                    if(document.querySelector('.myboeun_btn').value === '나의 보은 ▼') {
+                        document.querySelector('.submenu').style.display = 'block';
+                        this.value = '나의 보은 ▲'
+                    } else {
+                        document.querySelector('.myboeun_btn').value === '나의 보은 ▲'
+                        document.querySelector('.submenu').style.display = 'none';
+                        this.value = '나의 보은 ▼'
+                    }
+                    ">
+                    <ul class="submenu">
+                        <li class="submenu_li"><a href="{% url 'myboeun' %}">내 구독내역</a></li>
+                        <li class="submenu_li"><a href="{% url 'mileage' %}">마일리지</a></li>
+                        <li class="submenu_li"><a href="{% url 'information' %}">회원정보 수정</a></li>
+                        <li class="submenu_li"><a href="{% url 'address' %}">배송지 관리</a></li>
+                        <li class="submenu_li"><a href="{% url 'review' %}">리뷰 관리</a></li>
+                    </ul>
+                </li>
+
+
                 {% if user.is_authenticated %}
                 <span>{{user}}</span>
-                <a href="#">로그아웃</a>
+                <a href="{% url 'logout' %}">로그아웃</a>
                 {% else %}
                 <li><a href="{% url 'login' %}">로그인/회원가입</a></li>
                 {% endif %}
