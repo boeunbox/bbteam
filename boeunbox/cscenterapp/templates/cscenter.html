@@ -19,6 +19,15 @@
         <div class="container">
             <p class="text-title">자주 묻는 질문</p>
             <button class="btn"><a href="{% url 'create' %}">글쓰기</a></button>
+            <table class="faqtable" cellspacing=1>
+                <tr>
+                    <td class="cell">
+                        123
+                    </td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                </tr>
+            </table>
 
             {{all_FAQ}}
             {% for i in all_FAQ %}
