@@ -9,11 +9,18 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
 from pathlib import Path
-
+import os
+import json
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+CONFIG_SECRET_DIR = os.path.join(BASE_DIR, '.config_secret')
+BASE_JSON = os.path.join(CONFIG_SECRET_DIR, 'base.json')
+base_file = json.loads(open(BASE_JSON).read())
+base_file['secret_key']
+
+print(CONFIG_SECRET_DIR, "########################")
 
 
 # Quick-start development settings - unsuitable for production
@@ -22,6 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!시크릿 키 지움!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+SECRET_KEY = base_file['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

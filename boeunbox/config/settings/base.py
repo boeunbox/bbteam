@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 import json
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 
 CONFIG_SECRET_DIR = os.path.join(BASE_DIR, '.config_secret')
 BASE_JSON = os.path.join(CONFIG_SECRET_DIR, 'base.json')
