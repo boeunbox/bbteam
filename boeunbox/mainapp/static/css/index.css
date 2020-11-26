@@ -136,6 +136,7 @@ a{
 .sidenav-container {
     align-items: center;
     text-align: center;
+    scroll-behavior: smooth;
 }
 
 .sidenav-list {
