@@ -23,3 +23,21 @@ function myFunction() {
         pageOverlay[0].style.display = "block";
     }
 }
+
+
+// Submenu - 나의 보은
+function dropFunction() {
+    var subContent = document.getElementsByClassName("submenu")
+    var upButton = document.getElementsByClassName("fa-caret-up");
+    var downButton = document.getElementsByClassName("fa-caret-down");
+
+    if (subContent[0].style.display == "block") {
+        subContent[0].style.display = "none";
+        upButton[0].style.display = "none";
+        downButton[0].style.display = "inline-block"
+    } else {
+        subContent[0].style.display = "block";
+        upButton[0].style.display = "inline-block";
+        downButton[0].style.display = "none";
+    }
+}
