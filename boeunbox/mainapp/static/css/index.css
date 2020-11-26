@@ -1,4 +1,8 @@
 /* 공통 */
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
 }
@@ -136,7 +140,6 @@ a{
 .sidenav-container {
     align-items: center;
     text-align: center;
-    scroll-behavior: smooth;
 }
 
 .sidenav-list {
