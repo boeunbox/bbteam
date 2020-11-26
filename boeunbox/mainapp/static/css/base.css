@@ -217,14 +217,14 @@ a{
   .submenu {
     display: none;
     color: #e6e6e6;
-    padding-top: 1rem;
+    padding-top: 0.7rem;
     font-size: 0.9rem;
     padding-left: 0;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out; 
   }
 
   .submenu_li {
-    padding: 0rem !important;
+    padding: 0 !important; 
   }
 
   .fa-caret-up {
