@@ -26,6 +26,7 @@ from subscrapp.views import subscr
 
 from django.conf import settings
 from django.conf.urls.static import static
+from django_summernote.widgets import SummernoteWidget
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,4 +39,5 @@ urlpatterns = [
     path('cscenterapp/', include('cscenterapp.urls')),
     path('myboeun/', include('myboeunapp.urls')),
     path('accounts/', include('allauth.urls')),
+   
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
