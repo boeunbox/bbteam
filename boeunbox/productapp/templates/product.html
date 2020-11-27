@@ -548,30 +548,7 @@
     </script>
     
     
-    <script src="https://res.kurly.com/js/polifill/customeEvent.js"></script>
-    <script>
-        window.addEventListener('load', function () {
-            // KM-1238 branch
-            (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
-        var BRANCHKEY = 'key_live_meOgzIdffiVWvdquf7Orkacksxa2LneN';
-        if(!webStatus.is_release_build){
-          BRANCHKEY = 'key_test_joIkrHgomhL3qaEreXL5QdigzEn6Ucd4';
-        }
-        branch.init(BRANCHKEY);
-            branch.setIdentity(uuidCheck);
-            branch.track("pageview");
-    
-            // branchReady
-            var _eventBranchReady = new CustomEvent("branchReady", {
-                detail:{ // 전달 할께 있으면 반드시 detail 오브젝트에 넣어야 함
-                    val:'1',
-                }
-            });
-            document.dispatchEvent(_eventBranchReady);
-            // END branchReady
-        }, false);
-    </script>
-    
+   
     
     
     
