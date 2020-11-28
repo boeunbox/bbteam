@@ -33,7 +33,7 @@ urlpatterns = [
     path('', index, name="index"),
     path('mission/', mission, name="mission"),
     path('myboeun/', myboeun, name="myboeun"),
-    path('productapp/', include("productapp.urls")),
+    path('productapp/', include('productapp.urls')),
     path('subscr/', subscr, name="subscr"),
     path('signupapp/', include("signupapp.urls")),
     path('cscenterapp/', include('cscenterapp.urls')),
