@@ -28,8 +28,8 @@ function myFunction() {
 // Submenu - 나의 보은
 function dropFunction() {
     var subContent = document.getElementsByClassName("submenu")
-    var upButton = document.getElementsByClassName("fa-caret-up");
-    var downButton = document.getElementsByClassName("fa-caret-down");
+    var upButton = document.getElementsByClassName("up");
+    var downButton = document.getElementsByClassName("down");
 
     if (subContent[0].style.display == "block") {
         subContent[0].style.display = "none";

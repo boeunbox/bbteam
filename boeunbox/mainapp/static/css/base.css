@@ -229,11 +229,11 @@ a{
     padding: 0 !important; 
   }
 
-  .fa-caret-up {
+  .up {
     display: none;
   }
 
-  .fa-caret-down {
+  .down {
     display: inline-block;
   }
 }
