@@ -15,29 +15,31 @@
 {% block contents %}
 <hr id="top_line">
 <div class="wrap">
-    <div class="faq">
-        <div class="container">
+    <div class="container">
+        <div class="content">
             <p class="text-title">자주 묻는 질문</p>
+            <div class="table-board">
+                {% for i in all_FAQ %}
+                <table class="faqtable">
+                    <tr>
+                        <td class="cell-title">
+                            <a href="{% url 'detail' i.id %}">
+                                <p>{{i.title}}</p>
+                            </a>
+                        </td>
+                        <td class="cell-time" rowspan="2">
+                            <p>{{i.created_at}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cell-content">
+                            <p>{{i.desc}}</p>
+                        </td>
+                    </tr>
+                </table>
+                {% endfor %}
+            </div>
             <button class="btn"><a href="{% url 'create' %}">글쓰기</a></button>
-            <table class="faqtable" cellspacing=1>
-                <tr>
-                    <td class="cell">
-                        123
-                    </td>
-                    <td class="cell"></td>
-                    <td class="cell"></td>
-                </tr>
-            </table>
-
-            {{all_FAQ}}
-            {% for i in all_FAQ %}
-            <a href="{% url 'detail' i.id %}">
-                <h1>{{i.title}}</h1>
-            </a>
-
-            <p>{{i.desc}}</p>
-            <p>{{i.created_at}}</p>
-            {% endfor %}
         </div>
     </div>
 </div>
