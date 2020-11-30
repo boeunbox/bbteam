@@ -25,7 +25,7 @@
 }
 
 .text-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 800;
     margin: 0;
 }
@@ -37,7 +37,7 @@
     font-size: 1rem;
     font-weight: 530;
     padding: 0;
-    width: 300px;
+    width: 350px;
     height: 50px;
     background-color: #356869;
     border-radius: 50px;
@@ -52,7 +52,7 @@
     color: #3a1d1d;
     font-size: 1rem;
     font-weight: 530;
-    width: 300px;
+    width: 350px;
     height: 50px;
     padding: 0;
     background-color: #f7e600;
