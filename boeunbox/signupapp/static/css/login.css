@@ -1,7 +1,81 @@
-body{
-    background-color: black;
+.top-line {
+    margin-top: 49px;
+    border-top: 1px solid rgb(210, 210, 210);
 }
 
-h2{
-    color: blue;
+.wrap {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.container {
+    width: 768px;
+    height: 700px;
+    position: relative;
+}
+
+.content {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.btn-login {
+    display: block;
+    text-decoration: none;
+    color: #e6e6e6;
+    font-size: 1rem;
+    font-weight: 530;
+    padding: 0;
+    width: 350px;
+    height: 50px;
+    background-color: #356869;
+    border-radius: 50px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.btn-kakao {
+    display: block;
+    text-decoration: none;
+    color: #3a1d1d;
+    font-size: 1rem;
+    font-weight: 530;
+    width: 350px;
+    height: 50px;
+    padding: 0;
+    background-color: #f7e600;
+    border-radius: 50px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-kakao a {
+    color: #3a1d1d;
+    text-decoration: none;
+}
+
+.go-signup {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.go-signup a{
+    text-decoration: none;
+    color: black;
 }

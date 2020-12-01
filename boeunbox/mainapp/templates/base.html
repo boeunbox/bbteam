@@ -59,8 +59,10 @@
                 <li><a href="{% url 'product' %}">전체 상품 보기</a></li>
                 <li><a href="{% url 'cscenter' %}">고객센터</a></li>
                 <li>
-                    <button class="myboeun_btn" id="myDropdown" onclick="dropFunction()">나의 보은 <i
-                            class="fas fa-caret-down"></i><i class="fas fa-caret-up"></i></button>
+                    <button class="myboeun_btn" id="myDropdown" onclick="dropFunction()">나의 보은 <div class="down"><i
+                                class="fas fa-caret-down"></i></div>
+                        <div class="up"><i class="fas fa-caret-up"></i></div>
+                    </button>
                     <ul class="submenu">
                         <li class="submenu_li"><a href="{% url 'myboeun' %}">- 내 구독내역</a></li>
                         <li class="submenu_li"><a href="{% url 'mileage' %}">- 마일리지</a></li>

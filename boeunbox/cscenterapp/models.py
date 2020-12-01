@@ -10,3 +10,11 @@ class FAQ(models.Model):
     
     def __str__(self):
         return self.title
+
+class Comment(models.Model):
+    faq = models.ForeignKey(FAQ,on_delete=models.CASCADE, null=True, related_name='comment')
+    desc = models.CharField('댓글내용',max_length=100)
+    created_at = models.DateTimeField('생성날짜', auto_now_add=True)
+
+    def __str__(self):
+        return self.desc
