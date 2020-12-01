@@ -1,5 +1,5 @@
 from django.urls import path
-from myboeunapp.views import myboeun, mileage, information, address, review, withdrawal
+from myboeunapp.views import myboeun, mileage, information, address, review, withdrawal, update, people
 
 
 urlpatterns = [
@@ -9,4 +9,6 @@ urlpatterns = [
     path('address/', address, name="address"),
     path('review/', review, name="review"),
     path('withdrawal/', withdrawal, name="withdrawal"),
+    path('update/', update, name="update"),
+    path('people/', people, name="people"),
 ]

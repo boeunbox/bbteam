@@ -1,4 +1,8 @@
-from django.shortcuts import render
+from django.contrib.auth.forms import UserChangeForm
+from .forms import CustomUserChangeForm
+from django.contrib.auth.decorators import login_required
+
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
@@ -27,21 +31,19 @@ def withdrawal(request):
     return render(request, 'withdrawal.html')
 
 
-def update(request):
-    if request.method == "POST":
-        # updating
-        user_change_form = UserChangeForm(
-            data=request.POST, instance=request.user)
+def people(request):
+    return render(request, 'people.html')
 
-        if user_change_form.is_valid() and profile_form.is_valid():
-            user = user_change_form.save()
+
+# @login_required
+def update(request):
+    if request.method == 'POST':
+        user_change_form = CustomUserChangeForm(
+            request.POST, instance=request.user)
+        if user_change_form.is_valid():
+            user_change_form.save()
+            return redirect('accounts:people', request.user.username)
 
     else:
-        # editting
-        user_change_form = UserChangeForm(instance=request.user)
-
-        context = {
-            'user_change_form': user_change_form,
-        }
-
-        return render(request, 'information.html', context)
+        user_change_form = CustomUserChangeForm(instance=request.user)
+        return render(request, 'myboeunapp/update.html', {'user_change_form': user_change_form})
