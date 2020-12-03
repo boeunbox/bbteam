@@ -44,7 +44,13 @@
                 <li><a href="{% url 'product' %}">전체 상품 보기</a></li>
                 <li><a href="{% url 'cscenter' %}">고객센터</a></li>
                 <li><a href="{% url 'myboeun' %}">나의 보은</a></li>
+                </li>
+                {% if user.is_authenticated %}
+                <span>{{user}}</span>
+                <a href="{% url 'logout' %}">로그아웃</a>
+                {% else %}
                 <li><a href="{% url 'login' %}">로그인/회원가입</a></li>
+                {% endif %}
             </ul>
         </div>
         <button class="btn-sidebar" id="myBtn" onclick="myFunction()"><i class="fas fa-bars"></i></button>
