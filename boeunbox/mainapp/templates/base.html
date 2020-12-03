@@ -44,10 +44,15 @@
                 <li><a href="{% url 'product' %}">전체 상품 보기</a></li>
                 <li><a href="{% url 'cscenter' %}">고객센터</a></li>
                 <li><a href="{% url 'myboeun' %}">나의 보은</a></li>
+<<<<<<< HEAD
                 </li>
                 {% if user.is_authenticated %}
                 <span>{{user}}</span>
                 <a href="{% url 'logout' %}">로그아웃</a>
+=======
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">로그아웃</a></li>
+>>>>>>> a55d5ec59cb1df8c9b33d76affd98d189c4bd8d6
                 {% else %}
                 <li><a href="{% url 'login' %}">로그인/회원가입</a></li>
                 {% endif %}
@@ -78,8 +83,7 @@
                     </ul>
                 </li>
                 {% if user.is_authenticated %}
-                <span>{{user}}</span>
-                <a href="{% url 'logout' %}">로그아웃</a>
+                <li><a href="{% url 'logout' %}">로그아웃</a></li>
                 {% else %}
                 <li><a href="{% url 'login' %}">로그인/회원가입</a></li>
                 {% endif %}
