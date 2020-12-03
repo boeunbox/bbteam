@@ -7,11 +7,11 @@
 
 {% block contents %}
 
-<h1>FAQ</h1>
+<h1>1:1문의하기</h1>
 
 <form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {{FAQform.as_p}}
+    {{QNAform.as_p}}
     <input type="submit" value="작성">
 </form>
 
