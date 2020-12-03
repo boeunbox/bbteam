@@ -1,31 +1,34 @@
 from django.shortcuts import render,redirect
-from .forms import FAQform
-from .models import FAQ
+from .forms import QNAform
+from .models import QNA
 # Create your views here.
 
 def cscenter(request):
+    return render(request, 'cscenter.html')
+
+def enquiry(request):
     context = dict()
-    all_FAQ = FAQ.objects.all()
-    context['all_FAQ'] = all_FAQ
-    return render(request, 'cscenter.html', context)
+    all_QNA = QNA.objects.all()
+    context['all_QNA'] = all_QNA
+    return render(request, 'enquiry.html', context)
 
 def create(request):
     context=dict()
-    context['FAQform'] = FAQform()
+    context['QNAform'] = QNAform()
     if request.method == 'POST':
-        myform = FAQform(request.POST, request.FILES)
+        myform = QNAform(request.POST, request.FILES)
         if myform.is_valid():
             myform.save()
-            return redirect('cscenter')
+            return redirect('enquiry')
         else:
-            context['FAQform'] = myform
+            context['QNAform'] = myform
     return render(request,'create.html',context)
 
 def detail(request,detail_id):
     context={}
-    one_FAQ = FAQ.objects.get(id=detail_id) #예를 들면 5번 id 글을 가져오겠다
+    one_QNA = QNA.objects.get(id=detail_id) #예를 들면 5번 id 글을 가져오겠다
     
-    context['one_FAQ'] = one_FAQ
+    context['one_QNA'] = one_QNA
     context['comment_form'] = CommentForm()
 
     return render(request, 'detail.html', context)
@@ -33,9 +36,9 @@ def detail(request,detail_id):
 def update(request,upadte_id):
 
     context={}
-    context['baboform'] = BaboForm(instance=FAQ.objects.get(id=update_id))
+    context['baboform'] = BaboForm(instance=QNA.objects.get(id=update_id))
     if request.method=="POST":
-        tempform = BaboForm(request.POST, request.FILES, instance=FAQ.objects.get(id=update_id))
+        tempform = BaboForm(request.POST, request.FILES, instance=QNA.objects.get(id=update_id))
         if tempform.is_valid():
             tempform.save()
             return redirect('index')
@@ -46,17 +49,17 @@ def update(request,upadte_id):
 
 def delete(request,delete_id):
 
-    one_FAQ = FAQ.objects.get(id=delete_id)
-    one_FAQ.delete()
+    one_QNA = QNA.objects.get(id=delete_id)
+    one_QNA.delete()
     return redirect('index')
 
-def create_comment(request,FAQ_id):
+def create_comment(request,QNA_id):
     context = dict()
     if request.method == "POST":
         tmp_comment = CommentForm(request.POST)
         if tmp_comment.is_valid():
             save_comment = tmp_comment.save(commit=False)
-            save_comment.FAQ = FAQ.objects.get(id=FAQ_id)
+            save_comment.QNA = QNA.objects.get(id=QNA_id)
             save_comment.save()
-        return redirect('detail', FAQ_id)
+        return redirect('detail', QNA_id)
     return redirect('index')
