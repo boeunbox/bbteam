@@ -15,40 +15,110 @@ a {
     justify-content: center;
 }
 
-.container {
-    width: 768px;
-    height: 700px;
-    position: relative;
-}
-
 .content {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: auto;
+    align-items: center;
 }
 
 .text-title {
     font-size: 1.6rem;
     font-weight: 800;
-    margin: 0;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     display: block;
+}
+
+/* FAQ게시판 */
+.accordion {
+    max-width: 750px;
+    width: auto;
+}
+
+input[id*="faq"] {
+    display: none;
+}
+
+label {
+    position: relative;
+}
+
+input[id*="faq"] + label {
+    display: block;
+    padding: 20px;
+    border: 1px solid #EBEBF1;
+    border-bottom: 0;
+    color: #102836;
+    font-size: 1.1rem;
+    font-weight: 900;
+    background: #D9E4E7;
+    cursor: pointer;
+}
+
+input[id*="faq"] + label + div {
+    max-height: 0;
+    transition: all 0.35s;
+    overflow: hidden;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 1px solid #EBEBF1;
+    border-top: 0;
+    background-color: #EBEBF1;
+}
+
+input[id*="faq"] + label + div p {
+    display: inline-block;
+    margin: 0;
+}
+
+.text-answer {
+    padding: 20px;
+}
+
+input[id*="faq"]:checked + label + div {
+    max-height: 200px;
+}
+
+input[id*="faq"]:checked + label:before {
+    content: "\f106";
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    right: 20px;
+}
+
+input[id*="faq"] + label:before {
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    right: 20px;
+}
+
+/* 1:1문의하기 링크 */
+.to-enquiry {
+    text-align: right;
+}
+
+.text-enquiry {
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    margin: 0;
+    padding-right: 0.5rem;
+
 }
 
 .btn {
     border: 0;
     outline: 0;
-    padding: 1rem 0.8rem;
+    padding: 0.7rem 2rem;
     border-radius: 6px 6px;
-    background-color: #366869;
+    background-color: #FDE1A9;
     font-size: 1rem;
     font-weight: 800;
-    color: #e6e6e6;
-    display: block;
-    margin-top: 1rem;
+    color: #102836;
+    display: inline-block;
+    margin: 1rem 0;
 }
 
 .btn a {
-    color: #e6e6e6;
+    color: #853F41;
 }
