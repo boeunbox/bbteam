@@ -158,6 +158,9 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 AUTH_USER_MODEL = 'signupapp.User'
 
+LOGIN_URL = '/signupapp/login/'
+
+
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
