@@ -222,11 +222,10 @@ a{
     padding-top: 0.7rem;
     font-size: 0.9rem;
     padding-left: 0;
-    transition: all 0.5s ease-in-out; 
   }
 
   .submenu_li {
-    padding: 0 !important; 
+    padding: 0 !important;
   }
 
   .up {

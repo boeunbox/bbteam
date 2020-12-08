@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+from django.contrib.auth.models import BaseUserManager 
 # Create your models here.
 
 
@@ -12,5 +12,15 @@ from django.contrib.auth.models import AbstractUser
 
 #     def __str__(self):
 #         return self.title
+
+# class UserManager(BaseUserManager):
+#     def create_superuser(self, *args, **kwargs):
+#         return super().create_superuser(age=30, *args, **kwargs)
+
+
+
 class User(AbstractUser):
+    # objects = UserManager()
     pass
+
+

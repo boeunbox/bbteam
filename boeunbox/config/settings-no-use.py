@@ -158,7 +158,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
-AUTH_USER_MODEL = 'signupapp.User'
+# AUTH_USER_MODEL = 'signupapp.User'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

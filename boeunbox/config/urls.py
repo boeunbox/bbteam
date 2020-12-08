@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from mainapp.views import index
+from mainapp.views import index, termsofuse
 from cscenterapp.views import cscenter
 from missionapp.views import mission
 from myboeunapp.views import myboeun
 from productapp.views import product
-from signupapp.views import signup, login
+# from signupapp.views import signup, login
 from subscrapp.views import subscr
 
 from django.conf import settings
@@ -31,6 +31,7 @@ from django_summernote.widgets import SummernoteWidget
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
+    path('terms-of-use/', termsofuse, name="termsofuse"),
     path('mission/', mission, name="mission"),
     path('myboeun/', myboeun, name="myboeun"),
     path('productapp/', include('productapp.urls')),
