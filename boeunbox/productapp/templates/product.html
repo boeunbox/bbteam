@@ -20,6 +20,7 @@
         <meta name="author" content="Colorlib">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         
+        {% load static %}
         <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
         <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CLibre+Baskerville:400,400italic,700" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="{% static 'css/clear.css' %}">
@@ -242,7 +243,7 @@
                 </div>
         
                 <div class="featured-image-holder">
-                    <div class="featured-post-image" style="background-image: url(demo-images/featured-image.jpg)"></div>
+                    <div class="featured-post-image" style="background-image: url({% static 'demo-images/featured-image.jpg' %})"></div>
         
                 </div>
                 <div class="clear"></div>

@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class FAQ(models.Model):
+class QNA(models.Model):
     title = models.CharField('제목',max_length=200)
     desc = models.TextField('본문',blank=True)
     pic = models.ImageField('사진', blank=True)
@@ -12,7 +12,7 @@ class FAQ(models.Model):
         return self.title
 
 class Comment(models.Model):
-    faq = models.ForeignKey(FAQ,on_delete=models.CASCADE, null=True, related_name='comment')
+    qna = models.ForeignKey(QNA,on_delete=models.CASCADE, null=True, related_name='comment')
     desc = models.CharField('댓글내용',max_length=100)
     created_at = models.DateTimeField('생성날짜', auto_now_add=True)
 

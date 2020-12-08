@@ -1,22 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
-    <link rel="stylesheet" href="{% static 'css/login.css' %}"> 
 {% load socialaccount %}
 
-{% block extrahead %}
+{% block title %}
+보은박스 - 로그인
+{% endblock %}
 
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% endblock%}
 
 {% block contents %}
-<h2>login</h2>
-    <form method = "POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value = "로그인"/>
-    </form>
-<a href="{% url 'signup' %}">회원가입</a>
-<a href="{% provider_login_url 'kakao' %}">kakao</a>
+<hr class="top-line">
+<div class="wrap">
+    <div class="container">
+        <div class="content">
+            <p class="text-title">로그인</p>
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn-login" type="submit">로그인</button>
+            </form>
+            <button class="btn-kakao"><a href="{% provider_login_url 'kakao' %}"><i class="fas fa-comment"></i> 카카오아이디로
+                    로그인</a></button>
+            <div class="go-signup"><a href="{% url 'signup' %}">회원가입</a></div>
+        </div>
+    </div>
+</div>
 {% endblock%}
-
-
-    

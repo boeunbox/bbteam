@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import cscenter,create,detail,update,delete,create_comment
+from .views import cscenter,create,detail,update,delete,create_comment,enquiry
 
 
 urlpatterns = [
@@ -8,5 +8,6 @@ urlpatterns = [
     path('detail/<int:detail_id>/', detail, name="detail"),
     path('update/<int:update_id>/', update, name="update"),
     path('delete/<int:delete_id>/', delete, name="delete"),
+    path('enquiry/', enquiry, name="enquiry"),
 ]
 

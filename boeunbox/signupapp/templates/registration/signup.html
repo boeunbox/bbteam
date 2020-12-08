@@ -2,16 +2,25 @@
 {% load static %}
 
 {% block title %}
-signup
+보은박스 - 회원가입
+{% endblock %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
 {% endblock %}
 
 {% block contents %}
-
-<h1>회원가입</h1>
-<form action="" method = "POST">
-    {% csrf_token %}
-    {{userForm}}
-    <input type="submit" value = "회원가입">
-</form>
-
+<hr class="top-line">
+<div class="wrap">
+    <div class="container">
+        <div class="content">
+            <p class="text-title">회원가입</p>
+            <form method="POST" class="form-signup">
+                {% csrf_token %}
+                {{userForm}}
+                <button class="btn-signup" type="submit">회원가입</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
