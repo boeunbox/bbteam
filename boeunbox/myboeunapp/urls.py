@@ -10,5 +10,5 @@ urlpatterns = [
     path('review/', review, name="review"),
     path('withdrawal/', withdrawal, name="withdrawal"),
     path('update/', update, name="update"),
-    path('people/', people, name="people"),
+    path('people/', update, name="people"),
 ]
