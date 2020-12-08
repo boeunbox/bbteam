@@ -22,7 +22,7 @@
             <table class="qnatable">
                 <tr>
                     <td class="cell-title">
-                        <a href="{% url 'detail' i.id %}">
+                        <a href="{% url 'cscenterapp:detail' i.id %}">
                             <p>{{i.title}}</p>
                         </a>
                     </td>
@@ -38,7 +38,7 @@
             </table>
             {% endfor %}
         </div>
-        <button class="btn"><a href="{% url 'create' %}">글쓰기</a></button>
+        <button class="btn"><a href="{% url 'cscenterapp:create' %}">글쓰기</a></button>
     </div>
 </div>
 {% endblock %}

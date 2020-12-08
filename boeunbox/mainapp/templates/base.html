@@ -42,7 +42,7 @@
                 <li><a href="{% url 'mission' %}">보은박스 소개</a></li>
                 <li><a href="{% url 'subscr' %}">보은 시작하기</a></li>
                 <li><a href="{% url 'product' %}">전체 상품 보기</a></li>
-                <li><a href="{% url 'cscenter' %}">고객센터</a></li>
+                <li><a href="{% url 'cscenterapp:cscenter' %}">고객센터</a></li>
                 <li><a href="{% url 'myboeun' %}">나의 보은</a></li>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'logout' %}">로그아웃</a></li>
@@ -61,7 +61,7 @@
                 <li><a href="{% url 'mission' %}">보은박스 소개</a></li>
                 <li><a href="{% url 'subscr' %}">보은 시작하기</a></li>
                 <li><a href="{% url 'product' %}">전체 상품 보기</a></li>
-                <li><a href="{% url 'cscenter' %}">고객센터</a></li>
+                <li><a href="{% url 'cscenterapp:cscenter' %}">고객센터</a></li>
                 <li>
                     <button class="myboeun_btn" id="myDropdown" onclick="dropFunction()">나의 보은 <div class="down"><i
                                 class="fas fa-caret-down"></i></div>
