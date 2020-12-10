@@ -252,6 +252,7 @@ a{
 .copyright {
   display: inline-block;
   position: relative;
+  font-size: 0.8rem;
 }
 
 .terms {
@@ -265,7 +266,9 @@ a{
 }
 
 .terms-content {
-  padding: 0 15px;
+  padding: 0 8px;
+  font-size: 0.8rem;
+  display: inline-block;
 }
 
 
