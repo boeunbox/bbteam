@@ -1,11 +1,12 @@
-# Create your views here.
 from django.shortcuts import render,redirect
-# from .forms import FAQform
-# from .models import FAQ
+from productapp.models import Category, Post
+
+
 
 def product(request):
+    post_latest = Post.objects.order_by("-createDate")[:6]
     context = {
-
+        "post_latest": post_latest
     }
 
     return render(request, 'product.html', context)

@@ -23,3 +23,11 @@ class Post(models.Model):
     #1번 글의 경우 -> single/1
     def get_absolute_url(self):
         return reverse("single", args==[str(self.id)])
+
+    def is_content_more300(self):
+        return len(self.content) > 300
+
+    def get_content_under300(self):
+        return self.content[:300]
+
+
