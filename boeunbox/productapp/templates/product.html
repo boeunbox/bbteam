@@ -127,9 +127,8 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="entry-date published">{{ post.createDate }}</div>
                                         <h2 class="entry-title">
-                                            <a href="{% url 'single' %}">{{ post.title }}</a>
+                                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                                         </h2>
                                         <div class="excerpt">
                                             {% if post.is_content_more300 %}
@@ -137,7 +136,7 @@
                                             {% else %}
                                                 {{ post.content }}
                                             {% endif %}
-                                            <a class="read-more" href="{% url 'single' %}"></a>
+                                            <a class="read-more" href="{{ post.get_absolute_url }}"></a>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -148,8 +147,16 @@
                                 <div class="entry-content relative">
                                     <div class="content-1170 center-relative">
                                         <h2 class="entry-title">
-                                            <a href="{% url 'single' %}">{{ post.title }}</a>
+                                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                                         </h2>
+                                        <div class="excerpt">
+                                            {% if post.is_content_more300 %}
+                                                {{ post.get_content_under300 }}
+                                            {% else %}
+                                                {{ post.content }}
+                                            {% endif %}
+                                            <a class="read-more" href="{{ post.get_absolute_url }}"></a>
+                                        </div>
                                         <div class="cat-links">
                                             <ul>
                                                 <li>
@@ -164,7 +171,6 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="entry-date published">{{ post.createDate }}</div>
                                         <div class="clear"></div>
                                     </div>
                                 </div>

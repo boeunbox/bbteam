@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import product, single
+from .views import product
 from django.conf.urls import include
 # from django.views.generic import RedirecView
 from django.conf import settings
@@ -9,6 +9,6 @@ from productapp import views
 # app_name = 'productapp'
 urlpatterns = [
     path('', product, name="product"),
-    path('single/', views.single, name="single"),
+    path('post/<int:pk>', views.PostDetailView.as_view(), name="post"),
     ]
 
