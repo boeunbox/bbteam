@@ -10,7 +10,12 @@ def product(request):
 
     return render(request, 'product.html', context)
 
+def single(request):
+    context = {
 
+    }
+
+    return render(request, 'single.html', context)
 
 # def profile(request, pk):
 #     user = User.objects.get(pk=pk)
