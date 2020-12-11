@@ -61,7 +61,7 @@
             </div>
             <nav id="header-main-menu">
                 <ul class="main-menu sm sm-clean" data-smartmenus-id="1606580002074183">
-                    <li><a href="index.html" class="current">Home</a></li>
+                    <li><a href="{% url 'product' %}" class="current">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="scroll.html">Scroll</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -127,6 +127,11 @@
                     <div class="content-wrap content-660 center-relative">
                         {{ post.content }}
                         <div class="clear"></div>
+                    </div>
+
+                    {% if post.title_image %}
+                    <div class="post-full-width">
+                        <img src="{{ post.title_image.url }}" alt="">
                     </div>
 
 

@@ -58,17 +58,20 @@
                         </label>
                     </div>
                     <div class="site-info-holder">
-                        <h1 class="site-title">Suppablog</h1>
+                        <h1 class="site-title">보은박스</h1>
                         <p class="site-description">
-                            Suppablog is simple and yet cool wordpress theme to lorem ipsum dolor sit.
+                            보은박스는 마음을 담습니다.
                         </p>
                     </div>
                     <nav id="header-main-menu">
                         <ul class="main-menu sm sm-clean" data-smartmenus-id="16065535904678486">
-                            <li><a href="product.html" class="current">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="scroll.html">Scroll</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="{% url 'product' %}" class="current">이달의 MDPick</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="about.html">나의 보은님 맞춤 추천</a></li>
+                            {% else %}
+                            <!-- 로그인 연결시키기 -->
+                            <li><a href="login.html">로그인</a></li>
+                            {% endif %}
                         </ul>
                     </nav>
                     <footer>
@@ -79,7 +82,7 @@
                 </div>
                 <div class="menu-right-part">
                     <div class="logo-holder">
-                        <a href="product.html">
+                        <a href="{% url 'product' %}">
                             <img src="{% static 'images/logo.png' %}" alt="Suppablog WP">
                         </a>
                     </div>
@@ -90,12 +93,8 @@
                     </div>
                     <div class="social-holder">
                         <div class="social-list">
-                            <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
                             <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-vimeo"></i></a>
-                            <a href="#"><i class="fa fa-behance"></i></a>
-                            <a href="#"><i class="fa fa-rss"></i></a>
                         </div>
                     </div>
                     <div class="fixed scroll-top"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></div>
