@@ -1,0 +1,83 @@
+a {
+    text-decoration: none;
+}
+
+#top_line {
+    border-top: 1px solid #d2d2d2;
+    margin-top: 49px;
+}
+
+.wrap {
+    min-height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    margin: auto;
+    align-items: center;
+}
+
+.text-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.table-board {
+    display: block;
+    margin-top: 1rem;
+}
+
+.qnatable {
+    width: 700px;
+    height: 80px;
+}
+
+.cell-title {
+    border: 1px solid black;
+    width: 100px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    color: #366869;
+}
+
+.cell-title a {
+    color: #366869;
+}
+
+.cell-content {
+    border: 1px solid black;
+    width: 100px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.cell-time {
+    border: 1px solid black;
+    width: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.btn {
+    border: 0;
+    outline: 0;
+    padding: 1rem 0.8rem;
+    border-radius: 6px 6px;
+    background-color: #366869;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #e6e6e6;
+    display: block;
+    margin: 1rem 0;
+}
+
+.btn a {
+    color: #e6e6e6;
+}

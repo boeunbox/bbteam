@@ -11,7 +11,7 @@ class Category(models.Model):
 # 세부글 (제목, 작성일, 대표이미지, 내용, 카테고리)
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    title_image = models.ImageField(blank=True)
+    title_image = models.ImageField(blank=True, upload_to ="posts")
     content = models.TextField()
     createDate = models.DateTimeField(auto_now_add=True)
     updateDate = models.DateTimeField(auto_now_add=True)
