@@ -25,15 +25,16 @@ class User(AbstractUser):
 
 class Boeun_user(models.Model):
     name = models.CharField('이름', max_length=200)
-    address = models.TextField('주소', blank = True)
-    contact = models.TextField('연락처', blank = True)
-    relation = models.TextField('관계', blank = True)
-    date_of_birth = models.TextField('생년월일', blank = True)
-    anniversary = models.TextField('기념일', blank = True)
-    health = models.TextField('건강상태', blank = True)
-    etc = models.TextField('기타사항', blank = True)
+    address = models.CharField('주소', blank = True, max_length=200)
+    contact = models.CharField('연락처', blank = True, max_length=200)
+    relation = models.CharField('관계', blank = True, max_length=200)
+    date_of_birth = models.CharField('생년월일', blank = True, max_length=200)
+    anniversary = models.CharField('기념일', blank = True, max_length=200)
+    health = models.CharField('건강상태', blank = True, max_length=200)
+    etc = models.CharField('기타사항', blank = True, max_length=200)
     created_at = models.DateTimeField('생성날짜', auto_now_add=True)  
-    modified_at = models.DateTimeField('수정날짜', auto_now=True)  
+    modified_at = models.DateTimeField('수정날짜', auto_now=True)
+    family = models.ForeignKey(to=User, related_name='family', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.name

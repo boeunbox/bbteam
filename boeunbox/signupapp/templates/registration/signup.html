@@ -18,7 +18,8 @@
             <form method="POST" class="form-signup">
                 {% csrf_token %}
                 {{userForm.as_p}}
-                {{BoeunForm.as_p}}
+                <p class="boeun-data">보은님 정보</p>
+                {{boeunForm.as_p}}
                 <button class="btn-signup" type="submit">회원가입</button>
             </form>
         </div>

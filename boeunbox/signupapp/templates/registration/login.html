@@ -21,7 +21,7 @@
                 {{form.as_p}}
                 <button class="btn-login" type="submit">로그인</button>
             </form>
-            <button class="btn-kakao"><a href="{% provider_login_url 'kakao' %}"><i class="fas fa-comment"></i> 카카오아이디로
+            <button class="btn-kakao"><a href="{% provider_login_url 'kakao' method='oauth2' %}"><i class="fas fa-comment"></i> 카카오아이디로
                     로그인</a></button>
             <div class="go-signup"><a href="{% url 'signup' %}">회원가입</a></div>
         </div>
