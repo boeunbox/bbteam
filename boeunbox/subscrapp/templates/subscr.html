@@ -162,7 +162,11 @@
                 "> -->
 
         <br>
-        <a href="{% url 'login' %}"><button id="start_button">보은 시작하기</button></a>
+        {% if user.is_authenticated %}
+        <a href="https://boeunbox.cafe24.com/" target="_blank"><button id="start_button">보은박스 구독 시작하기</button></a>
+        {% else %}
+        <a href="{% url 'login' %}"><button id="start_button">보은박스 구독 시작하기</button></a>
+        {% endif %}
     </div>
 </div>
 
