@@ -68,9 +68,11 @@
                             <li><a href="{% url 'product' %}" class="current">이달의 MDPick</a></li>
                             {% if user.is_authenticated %}
                             <li><a href="about.html">나의 보은님 맞춤 추천</a></li>
+                            <li><link href="http://boeunbox.cafe24.com/">"지난 보은상품 전체보기</a></li>
                             {% else %}
                             <!-- 로그인 연결시키기 -->
                             <li><a href="{% url 'login' %}">로그인</a></li>
+                            <li><link href="http://boeunbox.cafe24.com/">지난 보은상품 전체보기</a></li>
                             {% endif %}
                         </ul>
                     </nav>
