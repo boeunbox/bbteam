@@ -1,0 +1,35 @@
+#top-line {
+    border-top: 1px solid #d2d2d2;
+    margin-top: 49px;
+}
+
+.wrap {
+    min-height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    margin: auto;
+    align-items: center;
+    width: 1000px;
+    padding: 1rem;
+}
+
+.content-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 1rem 0;
+}
+
+.content-article {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.content-term {
+    font-size: 1rem;
+    line-height: 1.5;
+}
