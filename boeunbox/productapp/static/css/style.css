@@ -14,6 +14,10 @@ body
     background-color: #fff;
 }
 
+#instagram {
+    font-size: 4rem;
+}
+
 .montserrat
 {
     font-family: 'Montserrat', sans-serif, Arial;
@@ -523,16 +527,16 @@ body.open .site-content
 .featured-image-holder
 {
     width: 50%;
-    float: right;
+    position: absolute;
+    top: 57px;
+    right: 70px;
 }
 
 .featured-post-image
 {
-    position: fixed;
-    height: 100%;
+    height: 90%;
     width: 50%;
     width: calc(50% - 50px);
-    background-size: cover;
     background-position: center center;
 }
 
