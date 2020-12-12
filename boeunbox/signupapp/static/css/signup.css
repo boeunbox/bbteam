@@ -31,6 +31,13 @@
     display: block;
 }
 
+.boeun-data {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0;
+    display: block;
+}
+
 .form-signup {
     display: block;
     margin: 1rem 0;

@@ -32,6 +32,7 @@ def signup(request):
             return render(request, 'registration/signup.html')
 
     context['userForm'] = SignUpForm()
+    context['boeunForm'] = BoeunForm()
     return render(request, 'registration/signup.html', context)
 
 
