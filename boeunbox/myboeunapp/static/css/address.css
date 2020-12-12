@@ -1,5 +1,9 @@
 /* -----------공통------------- */
 
+button {
+    outline: 0;
+}
+
 #top_line {
     border-top: 1px solid rgb(210, 210, 210);
     margin-top:49px;
@@ -83,3 +87,28 @@ a {
 }
 
 /* -----------단독------------- */
+
+.ad_txt {
+    margin-top: 15px;
+}
+
+
+.save_btn {
+    margin-top: 15px;
+    display: block;
+    float: left;
+    cursor: pointer;
+    padding: .4rem 0;
+    min-width: 100px;
+    border: solid 1px #dabf55;
+    background-color:#F7DC6F;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    line-height: 1.25;
+    text-align: center;
+    color: rgb(78, 76, 76);
+}
+
+#bold_ad {
+    font-weight: bold;
+}
