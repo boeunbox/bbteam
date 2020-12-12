@@ -22,18 +22,12 @@
     <br>
     <br>
     <br>
-    <div class="subs_wrap">
-        <div class="list_box_main">
-            <div class="list_box_title">
-                <p>나의 보은</p>
-            </div>
 
-            <div class="list_box"><a class="a_li" href="{% url 'myboeun' %}"><strong>내 구독내역</strong></a></div>
-            <div class="list_box"><a class="a_li" href="{% url 'mileage' %}">마일리지</a></div>
-            <div class="list_box"><a class="a_li" href="{% url 'people' %}">회원정보 수정</a></div>
-            <div class="list_box"><a class="a_li" href="{% url 'address' %}">배송지 관리</a></div>
-            <div class="list_box"><a class="a_li" href="{% url 'review' %}">리뷰 관리</a></div>
-        </div>
+    <div class="subs_wrap">
+
+        {% include "side_nav.html" %}
+
+
 
         <div class="container">
             <div class="container_title">내 구독내역</div>
@@ -42,7 +36,11 @@
             </div>
             <br>
             <a href="{% url 'subscr' %}"><button id="infor_button">보은박스 자세히 알아보기</button></a>
+            {% if user.is_authenticated %}
+            <a href="https://boeunbox.cafe24.com/" target="_blank"><button id="start_button">보은박스 구독 시작하기</button></a>
+            {% else %}
             <a href="{% url 'login' %}"><button id="start_button">보은박스 구독 시작하기</button></a>
+            {% endif %}
         </div>
     </div>
 
