@@ -15,7 +15,38 @@
 <div class="wrap">
     <div class="content">
         <p class="content-text">나의 보은님에게는 어떤 일이?</p>
+        <form method="GET" name="category_checked" id="target-form">
+            {% for category in all_category %}
+            <div>
+                <label for="{{category.id}}">{{category.name}}</label>
+                {% if category.id|slugify in prev_category %}
+                <input type="checkbox" name="target_category" value="{{category.id}}" id="{{category.id}}" checked=true>
+                {% else %}
+                <input type="checkbox" name="target_category" value="{{category.id}}" id="{{category.id}}">
+                {% endif %}
+            </div>
         
+            {% endfor %}
+            <input type="submit" value="확인">
+        </form>
+
+        <br>
+        {% if posts %}
+            {% for post in posts %}
+            {{post.title}} 
+                {% if post.title_image %}
+                <img width="300px" src="{{post.title_image.url}}" >
+                {% endif%}//////
+            {% endfor %}
+        {% endif %}
     </div>
 </div>
+
+<!-- <script>
+    checkboxInputAll = document.querySelectorAll('input')
+    for (let i = 0; i<checkboxInputAll.length; i++) {
+        checkboxInputAll[i].addEventListener('change', function() {
+            document.querySelector('#target-form').submit()
+    }
+</script> -->
 {% endblock %}
