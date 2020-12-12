@@ -23,4 +23,17 @@ class User(AbstractUser):
     # objects = UserManager()
     pass
 
+class Boeun_user(models.Model):
+    name = models.CharField('이름', max_length=200)
+    address = models.TextField('주소', blank = True)
+    contact = models.TextField('연락처', blank = True)
+    relation = models.TextField('관계', blank = True)
+    date_of_birth = models.TextField('생년월일', blank = True)
+    anniversary = models.TextField('기념일', blank = True)
+    health = models.TextField('건강상태', blank = True)
+    etc = models.TextField('기타사항', blank = True)
+    created_at = models.DateTimeField('생성날짜', auto_now_add=True)  
+    modified_at = models.DateTimeField('수정날짜', auto_now=True)  
 
+    def __str__(self):
+        return self.name

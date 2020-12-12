@@ -1,6 +1,6 @@
 from django import forms
 # from django.conf import settings
-from .models import User
+from .models import User, Boeun_user
 # from django.contrib.auth.models import User
 
 class SignUpForm(forms.ModelForm):
@@ -16,6 +16,12 @@ class SignUpForm(forms.ModelForm):
         self.fields['username'].widget.attrs.update({
             'placeholder': "아이디를 입력하세요"
         })
+
+class BoeunForm(forms.ModelForm):
+
+    class Meta:
+        model = Boeun_user
+        fields = ('name', 'address', 'contact', 'relation', 'date_of_birth', 'anniversary', 'health', 'etc',)
 
 
         

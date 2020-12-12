@@ -30,7 +30,7 @@ a{
   align-items: center;
   background-color: transparent;
   list-style: none;
-  padding: 0 300px;
+  padding: 0 380px;
   transition: background-color 0.5s ease 0s;
 }
 
@@ -110,14 +110,14 @@ a{
 }
 
 /* MediaQuery */
-@media screen and (max-width: 1462px){
+@media screen and (max-width: 1497px){
   .navbar {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 150px;
+    padding-right: 150px;
   }
 }
 
-@media screen and (max-width: 1062px){
+@media screen and (max-width: 1037px){
   .navbar {
     flex-direction: column;
     align-items: center;
