@@ -36,7 +36,7 @@
         
     <body class="home blog">
         {% load static %}
-        <script src="{% static 'js/test.js' %}"></script>
+        <!-- <script src="{% static 'js/test.js' %}"></script> -->
 
         <!-- Preloader Gif -->
             <table class="doc-loader" style="display: none;">
@@ -70,7 +70,7 @@
                             <li><a href="about.html">나의 보은님 맞춤 추천</a></li>
                             {% else %}
                             <!-- 로그인 연결시키기 -->
-                            <li><a href="login.html">로그인</a></li>
+                            <li><a href="{% url 'login' %}">로그인</a></li>
                             {% endif %}
                         </ul>
                     </nav>
@@ -180,7 +180,7 @@
         
                     </div>
                     <div class="clear"></div>
-                    <div class="block load-more-holder">LOAD MORE ENTRIES</div>
+                    <div class="block load-more-holder">회원가입 후 맞춤형 제안과 여가도움 서비스를 이용해보세요 :) </div>
                 </div>
         
                 <div class="featured-image-holder">
