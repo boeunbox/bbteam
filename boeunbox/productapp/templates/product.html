@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-보은박스 - 메인
+보은박스 - 전체상품
 {% endblock %}
 
 {% block extrahead %}
@@ -11,498 +11,201 @@
 
 {% block contents %}
 
-<html lang="ko" class=""><head>
-    
-    <title>보은박스</title>
+    <html lang="en-US" style="overflow: hidden;">
+    <head>
+        <title> 전체상품보기 </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Template by Colorlib">
+        <meta name="keywords" content="HTML, CSS, JavaScript, PHP">
+        <meta name="author" content="Colorlib">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         
-    <div id="main">
-    <div id="content">
-    
-    <div id="qnb" class="quick-navigation" style="top: 516px;">
+        {% load static %}
+       
+        <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CLibre+Baskerville:400,400italic,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/clear.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/common.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/carouFredSel.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/sm-clean.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+                
+    </head>
+        
+        
+    <body class="home blog">
+        {% load static %}
+        <!-- <script src="{% static 'js/test.js' %}"></script> -->
+
+        <!-- Preloader Gif -->
+            <table class="doc-loader" style="display: none;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="{% static 'images/ajax-document-loader.gif' %}" alt="Loading...">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <!-- Left Sidebar -->
+            <div id="sidebar" class="sidebar" style="min-height: 1465px;">
+                <div class="menu-left-part" tabindex="0" style="overflow: hidden; outline: none;">
+                    <div class="search-holder">
+                        <label>
+                            <input type="search" class="search-field" placeholder="Type here to search..." value="" name="s" title="Search for:">
+                        </label>
+                    </div>
+                    <div class="site-info-holder">
+                        <h1 class="site-title">보은박스</h1>
+                        <p class="site-description">
+                            보은박스는 마음을 담습니다.
+                        </p>
+                    </div>
+                    <nav id="header-main-menu">
+                        <ul class="main-menu sm sm-clean" data-smartmenus-id="16065535904678486">
+                            <li><a href="{% url 'product' %}" class="current">이달의 MDPick</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'product-recommend' %}">나의 보은님 맞춤 추천</a></li>
+                            <li><a href="http://boeunbox.cafe24.com/" target="_blank">지난 보은상품 전체보기</a></li>
+                            {% else %}
+                            <!-- 로그인 연결시키기 -->
+                            <li><a href="{% url 'login' %}">로그인</a></li>
+                            <li><a href="http://boeunbox.cafe24.com/" target="_blank">지난 보은상품 전체보기</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    
+                </div>
+                <div class="menu-right-part">
+                    <div class="logo-holder">
+                        <a href="{% url 'product' %}">
+                            <img src="{% static 'images/logo.png' %}" alt="Suppablog WP">
+                        </a>
+                    </div>
+                    <div class="toggle-holder">
+                        <div id="toggle">
+                            <div class="menu-line"></div>
+                        </div>
+                    </div>
+                    <div class="social-holder">
+                        <div class="social-list">
+                            <a href="https://www.instagram.com/boeunbox/"><i class="fab fa-instagram" id="instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="fixed scroll-top"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></div>
+                </div>
+                <div class="clear"></div>
+            <div id="ascrail2001" class="nicescroll-rails nicescroll-rails-vr" style="width: 12px; z-index: 3; cursor: default; position: absolute; top: 0px; left: 308px; height: 698px; touch-action: none; opacity: 0; display: none;"><div class="nicescroll-cursors" style="position: relative; top: 0px; float: right; width: 12px; height: 616px; background-color: rgb(91, 91, 91); border: none; background-clip: padding-box; border-radius: 0px; touch-action: none;"></div></div><div id="ascrail2001-hr" class="nicescroll-rails nicescroll-rails-hr" style="height: 12px; z-index: 3; top: 686px; left: 0px; position: absolute; cursor: default; display: none; width: 308px; opacity: 0;"><div class="nicescroll-cursors" style="position: absolute; top: 0px; height: 12px; width: 320px; background-color: rgb(91, 91, 91); border: none; background-clip: padding-box; border-radius: 0px;"></div></div></div>
+        
+            <!-- Home Content -->
+            <div id="content" class="site-content">
+                <div id="blog-wrapper">
+                    <div class="blog-holder center-relative">
+                        {% for post in post_latest %}
+                            {% if forloop.first %}
+                            <article id="post-1" class="blog-item-holder featured-post">
+                                <div class="entry-content relative">
+                                    <div class="content-1170 center-relative">
+                                        <div class="cat-links">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <!-- 카테고리 두개 나타날 수 있게 -->
+                                                        {% for c in post.category.all %}
+                                                            {{ c }}
+                                                            {% if not forloop.last %}
+                                                                ,
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h2 class="entry-title">
+                                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                        </h2>
+                                        <div class="excerpt">
+                                            {% if post.is_content_more300 %}
+                                                {{ post.get_content_under300 }}
+                                            {% else %}
+                                                {{ post.content }}
+                                            {% endif %}
+                                            <a class="read-more" href="{{ post.get_absolute_url }}"></a>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </article>
+                            {% else %}
+                            <article id="post-{{ forloop.counter }}" class="blog-item-holder">
+                                <div class="entry-content relative">
+                                    <div class="content-1170 center-relative">
+                                        <h2 class="entry-title">
+                                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                        </h2>
+                                        <div class="excerpt">
+                                            {% if post.is_content_more300 %}
+                                                {{ post.get_content_under300 }}
+                                            {% else %}
+                                                {{ post.content }}
+                                            {% endif %}
+                                            <a class="read-more" href="{{ post.get_absolute_url }}"></a>
+                                        </div>
+                                        <div class="cat-links">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        {% for c in post.category.all %}
+                                                            {{ c }}
+                                                            {% if not forloop.last %}
+                                                                ,
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </article>
+                            {% endif %}
+                        {% endfor %}
+        
+        
+                    </div>
+                    <div class="clear"></div>
+                    <div class="block load-more-holder">회원가입 후 맞춤형 제안과 여가도움 서비스를 이용해보세요 :) </div>
+                </div>
+        
+                <div class="featured-image-holder">
+                    <img src="{% static 'demo-images/featured-image.jpg' %}" />       
+                </div>
+                <div class="clear"></div>
+            </div>
+        
+        
+        
+            <!--Load JavaScript-->
+            <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/imagesloaded.pkgd.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.smartmenus.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.carouFredSel-6.0.0-packed.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.mousewheel.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.touchSwipe.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+        
+        
+        <div id="ascrail2000" class="nicescroll-rails nicescroll-rails-vr" style="width: 12px; z-index: auto; cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; touch-action: none; opacity: 0; display: block;"><div class="nicescroll-cursors" style="position: relative; top: 0px; float: right; width: 12px; height: 424px; background-color: rgb(91, 91, 91); border: none; background-clip: padding-box; border-radius: 0px; touch-action: none;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails nicescroll-rails-hr" style="height: 12px; z-index: auto; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;"><div class="nicescroll-cursors" style="position: absolute; top: 0px; height: 12px; width: 1536px; background-color: rgb(91, 91, 91); border: none; background-clip: padding-box; border-radius: 0px; left: 0px;"></div></div></body></html>
 
     
-    <div class="bnr_qnb" id="brnQuick"><a href="/shop/event/kurlyEvent.php?htmid=event/2020/1030/imc" id="brnQuickObj">
-        <img class="thumb" src="https://res.kurly.com/pc/service/main/2010/bnr_quick.png" alt="컬리의 생각 Love Food, Love Life">
-    </a>
-    <script>
-        var brnQuickScript = (function(){
-            var $target = $('#brnQuickObj'), $targetThumb = $('#brnQuickObj .thumb');
-            // 시간체크
-            function timeCheck(){
-                var now = brnQuick.nowTime; // 호출 하는 js에서 변수선언되어 가져다 사용
-                if( new Date('2020-10-30T11:00:00+09:00').getTime() <= now && now <= new Date('2020-11-13T23:59:59+09:00').getTime()){
-                    $target.attr('href', '/shop/event/kurlyEvent.php?htmid=event/2020/1030/imc');
-                    $targetThumb.attr('src', 'https://res.kurly.com/pc/service/main/2010/bnr_quick.png');
-                    $targetThumb.attr('alt', '컬리의 생각 Love Food, Love Life');
-                }
-            }
-            return {
-                timeCheck : timeCheck
-            }
-        })();
-        brnQuickScript.timeCheck();
-    </script>
     
-    
-    </div>
-    <script>
-        var brnQuick = {
-            nowTime : '1604933289477',
-            update : function(){
-                $.ajax({
-                    url : campaginUrl + 'pc/service/bnr_quick.html'
-                }).done(function(result){
-                    $('#brnQuick').html(result);
-                });    
-            }
-        }
-        brnQuick.update();
-    </script>
-    
-    <div class="side_menu">
-    <a href="/shop/main/html.php?htmid=event/kurly.htm&amp;name=lovers" class="link_menu ">등급별 혜택</a>
-    <a href="/shop/board/list.php?id=recipe" class="link_menu ">레시피</a>
-    <a href="/shop/goods/goods_review_best.php" class="link_menu ">베스트 후기</a>
-    </div>
-    <div class="side_recent" style="display:none">
-    <strong class="tit">최근 본 상품</strong>
-    <div class="list_goods" data-height="209" style="height: 0px;">
-    <ul class="list"></ul>
-    </div>
-    <button type="button" class="btn btn_up off">최근 본 상품 위로 올리기</button>
-    <button type="button" class="btn btn_down off">최근 본 상품 아래로 내리기</button>
-    </div>
-    <script>
-    /**
-     * 상품상세일때 현재 보고 있는 상품 담기. 상품URL & 상품이미지
-     * 최종 저장 날짜로 부터 24시가 지날시 localStorage 삭제
-     */
-    var getGoodsRecent = (function(){
-        var i, len, getGoodsRecent, item, _nowTime = '1604933289477';
-    
-        _goodsRecent();
-        function _goodsRecent(){
-            if(localStorage.getItem('goodsRecent') === null){
-                return false;
-            }
-            
-            try{
-                getGoodsRecent = JSON.parse(localStorage.getItem("goodsRecent"));
-                len = getGoodsRecent.length;
-                if(addDays(getGoodsRecent[len - 1].time, 1) < _nowTime){
-                    localStorage.removeItem('goodsRecent');
-                }else{
-                    for(i = 0; i < len; i++){
-                        item = '<li><a class="link_goods" href="/shop/goods/goods_view.php?goodsno=' + getGoodsRecent[i].no + '"><img src="' + getGoodsRecent[i].thumb + '" alt=""></a></li>';
-                        $('.side_recent .list').append(item);
-                    }
-                    $('.side_recent').show();
-                }
-            } catch(e){
-                console.log("JSON parse error from the Quick menu goods list!!!", e);
-            }
-        }
-    
-        function addDays(date, days){
-            var result = new Date(date);
-            result.setDate(result.getDate() + days);
-            return result.getTime();
-        }
-        
-        // return {
-        // }
-    })();
-    </script>
-    </div>
-    <style>
-        
-        /* #### */
-        /* 공통 */
-        /* #### */
-        .page_main{overflow:hidden;width:100%;margin:0;opacity:0}
-        .page_main *{color:#333}
-        .page_main .bg{background-color:#f7f7f7}
-        .page_main .tit_goods{padding:79px 0 35px}
-        .page_main .tit_goods.top_short{padding-top:21px}
-        .page_main .tit_goods .tit{font-weight:700;font-size:28px;line-height:32px;letter-spacing:-0.3px;text-align:center}
-        .page_main .tit_goods .name{position:relative;font-weight:700}
-        .page_main .tit_goods a{cursor:pointer}
-        .page_main .tit_goods .name .ico{padding:0 31px;background:url(https://res.kurly.com/pc/service/main/1908/ico_title_link_x1.png) no-repeat 100% 50%;font-weight:700}
-        .page_main .tit_goods .tit_desc{display:block;padding-top:10px;font-weight:400;font-size:16px;color:#999;line-height:20px;text-align:center}
-        .page_main .list_goods a{cursor:pointer}
-        .page_main .list_goods .thumb_goods{display:block;overflow:hidden}
-        .page_main .list_goods .thumb_goods .ico{z-index:1;transition:all 0.3s ease-in-out}
-        .page_main .list_goods .thumb_goods .thumb{display:block;margin:0 auto;background-position:50% 50%;background-size:cover;transform:scale(1);transition:all 0.3s ease-in-out}
-        .page_main .list_goods .thumb_goods:hover .thumb{transform:scale(1.02);transition:all 0.3s ease-in-out}
-    
-        /* 슬라이드_버튼 */
-        .page_main .bx-controls-direction{position:relative;width:1050px;margin:0 auto}
-        .page_main .bx-controls-direction .bx-next,
-        .page_main .bx-controls-direction .bx-prev{overflow:hidden;position:absolute;bottom:316px;width:60px;height:60px;border:0 none;font-size:0;line-height:0;text-indent:-9999px;transition:opacity 0.5s}
-        .page_main .bx-controls-direction .bx-prev{left:-30px;background:url(https://res.kurly.com/pc/service/main/1908/btn_prev_default.png?v=1) no-repeat 50% 50%;transition:background 0.5s}
-        .page_main .bx-controls-direction .bx-prev:hover{background:url(https://res.kurly.com/pc/service/main/1908/btn_prev_default_hover_x1.png?v=1) no-repeat 50% 50%;transition:background 0.5s}
-        .page_main .bx-controls-direction .bx-next{right:-30px;background:url(https://res.kurly.com/pc/service/main/1908/btn_next_default.png?v=1) no-repeat 50% 50%;transition:background 0.5s}
-        .page_main .bx-controls-direction .bx-next:hover{background:url(https://res.kurly.com/pc/service/main/1908/btn_next_default_hover_x1.png?v=1) no-repeat 50% 50%;transition:background 0.5s}
-        .page_main .bg .bx-controls-direction .bx-prev{left:-30px;background:url(https://res.kurly.com/pc/service/main/1908/btn_prev_gray_x1.png?v=1) no-repeat 50% 50%;transition:background 0.5s}
-        .page_main .bg .bx-controls-direction .bx-prev:hover{background:url(https://res.kurly.com/pc/service/main/1908/btn_prev_gray_hover_x1.png?v=1) no-repeat 50% 50%;transition:background 0.5s}
-        .page_main .bg .bx-controls-direction .bx-next{right:-30px;background:url(https://res.kurly.com/pc/service/main/1908/btn_next_gray_x1.png?v=1) no-repeat 50% 50%;transition:background 0.5s}
-        .page_main .bg .bx-controls-direction .bx-next:hover{background:url(https://res.kurly.com/pc/service/main/1908/btn_next_gray_hover_x1.png?v=1) no-repeat 50% 50%;transition:background 0.5s}
-        .page_main .bx-controls-direction .disabled{opacity:0}
-    
-        /* ####### */
-        /* 1종노출 */
-        /* ####### */
-        /* 1종노출+슬라이드+fullsize */
-        .main_type1 .list_goods .thumb_goods{width:100%;height:370px;background-repeat:no-repeat;background-position:50% 50%;background-size:auto auto;font-size:0;line-height:0;text-indent:-9999px}
-        .main_type1 .bx-controls-auto{overflow:hidden;font-size:0;line-height:0;text-indent:-9999px}
-        .main_type1 .bx-controls-direction .bx-next,
-        .main_type1 .bx-controls-direction .bx-prev{bottom:159px;width:52px;height:52px;opacity:0}
-        .main_type1 .bx-controls-direction .bx-prev:hover,
-        .main_type1 .bx-controls-direction .bx-prev{left:-91px;background:url(https://res.kurly.com/pc/service/main/1908/ico_prev1_x1.png) no-repeat 50% 50%;transition:opacity 0.5s}
-        .main_type1 .bx-controls-direction .bx-next:hover,
-        .main_type1 .bx-controls-direction .bx-next{right:-91px;background:url(https://res.kurly.com/pc/service/main/1908/ico_next1_x1.png) no-repeat 50% 50%;transition:opacity 0.5s}
-        .main_type1 .list_goods:hover .bx-next,
-        .main_type1 .list_goods:hover .bx-prev{opacity:1}
-        @media all and (max-width: 1250px){
-            .main_type1 .bx-controls-direction .bx-prev:hover,
-            .main_type1 .bx-controls-direction .bx-prev{left:-26px}
-            .main_type1 .bx-controls-direction .bx-next:hover,
-            .main_type1 .bx-controls-direction .bx-next{right:-26px}
-        }
-    
-        /* ####### */
-        /* 4종노출 */
-        /* ####### */
-        /* 4종노출+슬라이드 */
-        .main_type2 .list_goods{width:1050px;height:506px;margin:0 auto}
-        .main_type2 .list_goods .list{width:99999px}
-        .main_type2 .list_goods li{float:left;width:249px;height:506px;margin-right:18px}
-        .main_type2 .list_goods .thumb_goods{position:relative;background-color:#eee}
-        .main_type2 .list_goods .ico{position:absolute;left:0;top:0;width:62px;height:54px}
-        .main_type2 .list_goods .thumb{width:249px;height:320px}
-        .main_type2 .list_goods .name{display:block;overflow:hidden;max-height:50px;margin-top:11px;
-            text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-wrap:break-word
-        }
-        .main_type2 .list_goods .txt{font-size:16px;line-height:23px}
-        .main_type2 .list_goods .price{display:block;padding-top:6px;font-weight:700;font-size:16px;line-height:20px}
-        .main_type2 .list_goods .cost{display:block;padding-top:4px;font-size:14px;color:#ccc;line-height:18px;text-decoration:line-through}
-        /* 엠디의 추천 */
-        .category_type{padding-bottom:100px}
-        .category_type .list_goods{height:462px}
-        .category_type .list_goods.none{height:0}
-        .category_type .list_goods li{height:462px}
-        .category_type .bx-controls-direction .bx-next,
-        .category_type .bx-controls-direction .bx-prev{bottom:272px}
-        .category_type .category .list_category{width:1050px;max-width:1050px;padding:0 0 20px;margin:0 auto;text-align:center;font-size:0}
-        .category_type .category .list_category li{display:inline-block;padding:0 5px 20px}
-        .category_type .category .list_category .cut:before{content:"";display:block;overflow:hidden;width:100%;height:0}
-        .category_type .category .list_category .menu{display:inline-block;height:40px;padding:9px 20px 0 19px;border:1px solid #f7f7f6;border-radius:20px;background-color:#f7f7f7;font-size:14px;line-height:18px}
-        .category_type .category .list_category .menu:hover{border:1px solid #f7f3f7;background-color:#f7f3f8;color:#5f0080}
-        .category_type .category .list_category .on:hover,
-        .category_type .category .list_category .on{border:1px solid #5f0081;background-color:#5f0080;font-weight:700;color:#fff}
-        .category_type .link_cate{width:516px;margin:0 auto}
-        .category_type .link_cate .link{display:block;overflow:hidden;height:56px;padding-top:16px;border:1px solid #e3e3e3;border-radius:3px;font-size:16px;line-height:20px;text-align:center;letter-spacing:-0.3px;cursor:pointer}
-        .category_type .link_cate .ico{padding:0 18px;background:url(https://res.kurly.com/pc/service/main/1903/ico_more_link_x1.png) no-repeat 100% 3px}
-        .category_type .min .bx-controls{opacity:0}
-        .category_type .list_goods.over{overflow:hidden}
-        .category_type .list_goods.over .bx-controls{opacity:0}
-    
-        /* ####### */
-        /* 3종노출 */
-        /* ####### */
-        .main_type3 .list_goods{width:1050px;margin:0 auto}
-        .main_type3 .list_goods .list{width:99999px}
-        .main_type3 .list_goods li{float:left;width:338px;margin-right:18px}
-        .main_type3 .list_goods .thumb_goods{display:block;position:relative}
-        .main_type3 .list_goods .ico{position:absolute;left:0;top:0;width:62px;height:54px}
-        .main_type3 .list_goods .thumb{width:338px}
-        .main_type3 .list_goods .name{display:block;overflow:hidden}
-        .main_type3 .list_goods .desc{display:block;overflow:hidden;text-align:center;white-space:nowrap;text-overflow:ellipsis}
-        .main_type3 .list_goods .desc .txt{font-size:16px;line-height:20px}
-        /* 3종노출_이벤트 */
-        .main_event .list_goods{overflow:hidden;height:538px}
-        .main_event .list_goods .list{width:1068px}
-        .main_event .list_goods li{height:538px}
-        .main_event .list_goods .thumb{height:338px}
-        .main_event .list_goods .name{max-height:54px;margin-top:17px;text-align:center;
-            text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-wrap:break-word
-        }
-        .main_event .list_goods .name .txt{font-weight:700;font-size:18px;line-height:28px;letter-spacing:-0.3px}
-        .main_event .list_goods .desc{padding-top:8px}
-        .main_event .list_goods .desc .txt{color:#999}
-        .main_event.min .list_goods{text-align:center}
-        .main_event.min .list_goods .list{display:inline-block;width:auto;padding-left:18px}
-        /* 3종노출_레시피 */
-        .main_recipe .list_goods{height:303px}
-        .main_recipe .list_goods li{height:303px}
-        .main_recipe .list_goods .thumb{height:225px}
-        .main_recipe .list_goods .name{padding-top:12px;text-align:center;white-space:nowrap;text-overflow:ellipsis}
-        .main_recipe .list_goods .txt{font-size:16px;line-height:20px}
-        .main_recipe .bx-controls-direction .bx-next,
-        .main_recipe .bx-controls-direction .bx-prev{bottom:160px}
-    
-        /* ####### */
-        /* 6종노출 */
-        /* ####### */
-        /* 6종노출+슬라이드 : 인스타그램전용 */
-        .main_type4 .list_goods{width:1050px;height:175px;margin:0 auto}
-        .main_type4 .list_goods .list{width:99999px}
-        .main_type4 .list_goods li{float:left;width:175px;height:175px}
-        .main_type4 .list_goods .thumb{width:175px;height:175px}
-        .main_type4 .list_goods .thumb_goods:hover .thumb{transform:scale(1)}
-        .main_type4 .bnr{padding:39px 0 100px;font-weight:700;font-size:16px;line-height:29px;text-align:center}
-        .main_type4 .bnr .txt{display:block;font-weight:400;color:#999}
-        .main_type4 .bnr a{font-weight:700}
-        .main_type4 .bx-controls-direction .bx-next,
-        .main_type4 .bx-controls-direction .bx-prev{bottom:58px}
-        .main_type4 .bx-controls-auto{overflow:hidden;font-size:0;line-height:0;text-indent:-9999px}
-    
-        /* ######## */
-        /* 스페셜딜 */
-        /* ######## */
-        .main_special{padding-bottom:88px}
-        .main_special .inner_special{overflow:hidden;width:1050px;margin:0 auto;padding-top:80px;border-top:1px solid #ddd}
-        .main_special .inner_special.no_line{border-top:0 none}
-        .main_special .tit_goods{float:left;width:338px;padding:11px 0 7px 12px}
-        .main_special .tit_goods .tit{height:173px;text-align:left}
-        .main_special .tit_goods .name{font-weight:700;font-size:32px;line-height:48px}
-        .main_special .tit_goods .tit_desc:before{content:"";display:block;width:12px;height:1px;margin:7px 0 16px 2px;background-color:#999;word-break:break-all}
-        .main_special .tit_goods .tit_desc{font-size:16px;line-height:24px;letter-spacing:0;text-align:left;}
-        .main_special .sub_hook{padding:0 0 10px 22px;background:url(https://res.kurly.com/pc/service/main/1907/ico_hook.png) no-repeat 0 2px;font-size:14px;color:#ccc;line-height:20px;letter-spacing:-0.4px}
-        .main_special .list_goods{float:right;width:694px}
-        .main_special .list_goods .list{overflow:hidden;width:712px}
-        .main_special .list_goods li{width:694px}
-        .main_special .list_goods .thumb_goods{position:relative;background-color:#eee}
-        .main_special .list_goods .thumb{display:block;width:694px;height:338px;}
-        .main_special .list_goods .ico{position:absolute;left:0;top:0;width:62px;}
-        .main_special .list_goods .bg{position:absolute;left:0;bottom:0;width:100%;height:40px;opacity:0.6}
-        .main_special .list_goods .count{position:absolute;left:0;bottom:8px;width:100%;text-align:center}
-        .main_special .list_goods .count .num{font-weight:bold;font-size:20px;color:#fff;line-height:24px}
-        .main_special .list_goods .count .txt{font-size:14px;color:#fff;line-height:24px;vertical-align:2px}
-        .main_special .list_goods .info_goods{position:relative}
-        .main_special .list_goods .name{display:block;overflow:hidden;width:100%;padding:13px 0 0 4px;white-space:nowrap;text-overflow:ellipsis}
-        .main_special .list_goods .name .txt{font-size:16px;line-height:24px}
-        .main_special .list_goods .sub_name{display:block;overflow:hidden;width:100%;padding:5px 0 7px 4px;font-size:16px;color:#999;line-height:20px;white-space:nowrap;text-overflow:ellipsis}
-        .main_special .list_goods .dc{position:absolute;right:10px;bottom:4px;font-weight:800;font-size:26px;line-height:30px}
-        .main_special .list_goods .price{padding-left:4px;font-weight:bold;font-size:20px;line-height:30px}
-        .main_special .list_goods .cost{padding-left:4px;font-size:14px;color:#ccc;line-height:30px;text-decoration:line-through}
-        /* sold_out */
-        .main_special .list_goods .sold_out .bg{height:100%;background-color:#000;opacity:0.5}
-        .main_special .list_goods .sold_out .info{position:absolute;left:0;top:50%;width:100%;margin-top:-2px;transform:translate(0, -50%);text-align:center}
-        .main_special .list_goods .sold_out .tit{display:block;font-weight:bold;font-size:28px;color:#fff;line-height:40px}
-        .main_special .list_goods .sold_out .desc{display:block;padding:11px 10px 0;font-size:16px;color:#fff;line-height:24px;word-break:break-all}
-        /* 2개일때 */
-        .main_special .list_goods2 li{float:left;width:338px;margin-right:18px;padding-bottom:3px}
-        .main_special .list_goods2 .thumb{width:338px;height:434px}
-        .main_special .list_goods2 .name{height:66px;padding-top:14px;white-space:normal;
-            display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-wrap:break-word
-        }
-        .main_special .list_goods2 .sub_name{display:none;padding:0}
-    
-        /* #### */
-        /* 배너 */
-        /* #### */
-        .bnr_main{width:1050px;margin:0 auto}
-        .bnr_main .link{display:block;min-height:140px;background-color:#eee;background-position:50% 50%;background-size:cover;cursor:pointer}
-        .bnr_main .tit{display:block;overflow:hidden;width:100%;padding:35px 50px 0;font-weight:700;font-size:28px;line-height:38px;white-space:nowrap;text-overflow:ellipsis}
-        .bnr_main .txt{display:block;overflow:hidden;width:100%;padding:5px 50px 0;font-size:16px;line-height:24px;white-space:nowrap;text-overflow:ellipsis}
-        .bnr_type2 .link{height:160px;padding-top:24px}
-        .bnr_type2 .tit{line-height:40px}
-        .bnr_type2 .txt{padding-top:7px}
-    
-        @media
-        only screen and (-webkit-min-device-pixel-ratio: 1.5),
-        only screen and (min-device-pixel-ratio: 1.5),
-        only screen and (min-resolution: 1.5dppx) {
-            .page_main .bx-controls-direction .bx-prev{background:url(https://res.kurly.com/pc/service/main/1908/btn_prev_default_x2.png?v=1) no-repeat 50% 50%;background-size:60px 60px}
-            .page_main .bx-controls-direction .bx-prev:hover{background:url(https://res.kurly.com/pc/service/main/1908/btn_prev_default_hover_x2.png?v=1) no-repeat 50% 50%;background-size:60px 60px}
-            .page_main .bx-controls-direction .bx-next{background:url(https://res.kurly.com/pc/service/main/1908/btn_next_default_x2.png?v=1) no-repeat 50% 50%;background-size:60px 60px}
-            .page_main .bx-controls-direction .bx-next:hover{background:url(https://res.kurly.com/pc/service/main/1908/btn_next_default_hover_x2.png?v=1) no-repeat 50% 50%;background-size:60px 60px}
-            .page_main .bg .bx-controls-direction .bx-prev{background:url(https://res.kurly.com/pc/service/main/1908/btn_prev_gray_x2.png?v=1) no-repeat 50% 50%;background-size:60px 60px}
-            .page_main .bg .bx-controls-direction .bx-prev:hover{background:url(https://res.kurly.com/pc/service/main/1908/btn_prev_gray_hover_x2.png?v=1) no-repeat 50% 50%;background-size:60px 60px}
-            .page_main .bg .bx-controls-direction .bx-next{background:url(https://res.kurly.com/pc/service/main/1908/btn_next_gray_x2.png?v=1) no-repeat 50% 50%;background-size:60px 60px}
-            .page_main .bg .bx-controls-direction .bx-next:hover{background:url(https://res.kurly.com/pc/service/main/1908/btn_next_gray_hover_x2.png?v=1) no-repeat 50% 50%;background-size:60px 60px}
-            .page_main .tit_goods .name .ico{background:url(https://res.kurly.com/pc/service/main/1908/ico_title_link_x2.png) no-repeat 100% 50%;background-size:32px 32px}
-            .main_type1 .bx-controls-direction .bx-prev:hover,
-            .main_type1 .bx-controls-direction .bx-prev{background:url(https://res.kurly.com/pc/service/main/1908/ico_prev1_x2.png) no-repeat 50% 50%;background-size:52px 52px}
-            .main_type1 .bx-controls-direction .bx-next:hover,
-            .main_type1 .bx-controls-direction .bx-next{background:url(https://res.kurly.com/pc/service/main/1908/ico_next1_x2.png) no-repeat 50% 50%;background-size:52px 52px}
-            .main_md .link_more .ico{background:url(https://res.kurly.com/pc/service/main/1903/ico_more_link_x2.png) no-repeat 100% 50%;background-size:20px 20px}
-            .category_type .link_more .ico{background-image:url(https://res.kurly.com/pc/service/main/1903/ico_more_link_x2.png);background-size:20px 20px}
-            .main_special .sub_hook{background:url(https://res.kurly.com/pc/service/main/1907/ico_hook_x2.png) no-repeat 0 2px;background-size:18px 18px}
-        }
-    
-        #footer{opacity:0}
-    </style>
-    
-    <div id="mainNotice">
-    <div id="mainNoticePop"></div>
-    </div>
-    <script src="/common_js/main_notice_v1.js?ver=1.22.14"></script>
-    <script>
-        mainNotice.type='pc';
-    </script>
-    
-    <div id="kurlyMain" class="page_aticle page_main" style="opacity: 1;">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h2 class="screen_out">1월의 MDPick</h2> 
-    <div>
-        
-        
-    <div class="main_type1">
-        <div class="list_goods"><div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 370px;"><ul data-section="main_banner" class="list" style="width: 1415%; position: relative; transition-timing-function: ease-in-out; transition-duration: 0.5s; transform: translate3d(-7350px, 0px, 0px);"><li data-index="12" style="float: left; list-style: none; position: relative; width: 1050px;" class="bx-clone" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1596164134.jpg&quot;);">메인배너</a> <!----></li><li data-index="1" style="float: left; list-style: none; position: relative; width: 1050px;" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1604661077.jpg&quot;);">메인배너</a> <!----></li><li data-index="2" style="float: left; list-style: none; position: relative; width: 1050px;" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1604480163.jpg&quot;);">메인배너</a> <!----></li><li data-index="3" style="float: left; list-style: none; position: relative; width: 1050px;" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1604661004.jpg&quot;);">메인배너</a> <!----></li><li data-index="4" style="float: left; list-style: none; position: relative; width: 1050px;" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1604906222.jpg&quot;);">메인배너</a> <!----></li><li data-index="5" style="float: left; list-style: none; position: relative; width: 1050px;" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1604660241.jpg&quot;);">메인배너</a> <!----></li><li data-index="6" style="float: left; list-style: none; position: relative; width: 1050px;" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1604660399.jpg&quot;);">메인배너</a> <!----></li><li data-index="7" style="float: left; list-style: none; position: relative; width: 1050px;" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1604633787.jpg&quot;);">메인배너</a> <!----></li><li data-index="8" style="float: left; list-style: none; position: relative; width: 1050px;" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1604279661.jpg&quot;);">메인배너</a> <!----></li><li data-index="9" style="float: left; list-style: none; position: relative; width: 1050px;" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1603331432.jpg&quot;);">메인배너</a> <!----></li><li data-index="10" style="float: left; list-style: none; position: relative; width: 1050px;" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1602809211.jpg&quot;);">메인배너</a> <!----></li><li data-index="11" style="float: left; list-style: none; position: relative; width: 1050px;" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1590037622.jpg&quot;);">메인배너</a> <!----></li><li data-index="12" style="float: left; list-style: none; position: relative; width: 1050px;" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1596164134.jpg&quot;);">메인배너</a> <!----></li><li data-index="1" style="float: left; list-style: none; position: relative; width: 1050px;" class="bx-clone" data-name="main_banner"><a class="thumb_goods" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/1/pc_img_1604661077.jpg&quot;);">메인배너</a> <!----></li></ul></div><div class="bx-controls bx-has-controls-direction bx-has-controls-auto"><div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div><div class="bx-controls-auto"><div class="bx-controls-auto-item"><a class="bx-start active" href="">Start</a></div><div class="bx-controls-auto-item"><a class="bx-stop" href="">Stop</a></div></div></div></div> <!----></div></div></div>
-        <div>
-            <div class="main_type2">
-                <div class="product_list">
-                    <div class="tit_goods">
-                        <h3 class="tit">
-                            <span class="name">
-                                MDPick 자세히 보기
-                            </span>
-                        </h3>
-                    </div>
-                <div class="list_goods">
-                    <div class="bx-wrapper" style="max-width: 1050px; margin: 0px auto;">
-                        <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 506px;">
-                            <ul data-title="이 상품 어때요?" data-section="today_recommendation" class="list" style="width: 1015%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);"><li data-index="1" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><!----> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/156454938946l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[고래사] 스페셜 어묵 4종</a></span> <span class="price">2,500원</span> <!----></div></li><li data-index="2" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><!----> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1602665324292l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[디어커스] 누볼라 미끄럼 방지 욕실화 6종</a></span> <span class="price">14,900원</span> <!----></div></li><li data-index="3" class="cut" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><img src="https://img-cf.kurly.com/shop/data/my_icon/icon_save_10.png" alt="SALE" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_45x39.png'" class="ico"> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1510735896118l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[한성젓갈] 멸치 액젓 500g(냉장)</a></span> <span class="price">2,610원</span> <span class="cost">2,900원</span></div></li><li data-index="4" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><!----> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/160283917282l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[오뚜기] 컵밥 덮밥 8종</a></span> <span class="price">2,480원</span> <!----></div></li><li data-index="5" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><img src="https://img-cf.kurly.com/shop/data/my_icon/icon_save_25.png" alt="SALE" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_45x39.png'" class="ico"> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/151738121416l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[린트] 린도르 초콜릿 4종</a></span> <span class="price">10,500원</span> <span class="cost">14,000원</span></div></li><li data-index="6" class="cut" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><img src="https://img-cf.kurly.com/shop/data/my_icon/icon_save_10.png" alt="SALE" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_45x39.png'" class="ico"> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1578474114870l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[만전김] 쉽게 뿌려먹는 김자반 40g</a></span> <span class="price">2,610원</span> <span class="cost">2,900원</span></div></li><li data-index="7" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><!----> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1582679286838l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[남향푸드또띠아] 간편 간식 브리또 8종</a></span> <span class="price">2,800원</span> <!----></div></li><li data-index="8" class="" data-name="today_recommendation" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><!----> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1535444907650l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[프레시고] 덮밥소스 4종 (냉동)</a></span> <span class="price">2,900원</span> <!----></div></li> <!----></ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev disabled" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div></div> <!----></div></div></div><div><div class="main_type3 bg"><div class="main_event"><div class="tit_goods">
-                            
-                     <div><div class="main_type2"><div class="category_type"><div class="tit_goods"><h3 class="tit"><!----> <span class="name">                       상품 전체보기                        <!----></span></h3></div> <div class="category_menu"><div class="bg_category"><span class="bg_shadow shadow_before"></span> <span class="bg_shadow shadow_after"></span></div> <div class="category"><ul class="list_category"><li data-start="34" data-end="75"><a data-no="907" href="#none" class="menu on"> 채소 </a></li><li data-start="100" data-end="196"><a data-no="908" href="#none" class="menu"> 과일·견과·쌀 </a></li><li data-start="222" data-end="343"><a data-no="909" href="#none" class="menu"> 수산·해산·건어물 </a></li><li data-start="368" data-end="443"><a data-no="910" href="#none" class="menu"> 정육·계란 </a></li><li data-start="469" data-end="590"><a data-no="911" href="#none" class="menu"> 국·반찬·메인요리 </a></li><li data-start="615" data-end="716"><a data-no="912" href="#none" class="menu"> 샐러드·간편식 </a></li><li data-start="741" data-end="837"><a data-no="913" href="#none" class="menu"> 면·양념·오일 </a></li><li data-start="863" data-end="992"><a data-no="914" href="#none" class="menu cut"> 음료·우유·떡·간식 </a></li><li data-start="1018" data-end="1152"><a data-no="915" href="#none" class="menu"> 베이커리·치즈·델리 </a></li><li data-start="1177" data-end="1244"><a data-no="032" href="#none" class="menu"> 건강식품 </a></li><li data-start="1269" data-end="1370"><a data-no="918" href="#none" class="menu"> 생활용품·리빙 </a></li><li data-start="1395" data-end="1496"><a data-no="012" href="#none" class="menu"> 뷰티·바디케어 </a></li><li data-start="1522" data-end="1589"><a data-no="916" href="#none" class="menu"> 주방용품 </a></li><li data-start="1614" data-end="1681"><a data-no="085" href="#none" class="menu"> 가전제품 </a></li><li data-start="1706" data-end="1794"><a data-no="919" href="#none" class="menu"> 베이비·키즈 </a></li><li data-start="1819" data-end="1886"><a data-no="991" href="#none" class="menu"> 반려동물 </a></li> <!----></ul></div></div> <div class="list_goods"><div class="bx-wrapper" style="max-width: 1050px; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 462px;"><ul data-title="MD의 추천" data-section="md_choice" class="list" style="width: 815%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);"><li data-index="1" class="" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;" data-name="md_choice"><a class="thumb_goods"><!----> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1603341830665l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">유기농 '햇' 생강 1kg</a></span> <span class="price">14,800원</span> <!----></div></li><li data-index="2" class="" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;" data-name="md_choice"><a class="thumb_goods"><img src="https://img-cf.kurly.com/shop/data/my_icon/icon_kimchi_20_percent.png" alt="SALE" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_45x39.png'" class="ico"> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1603341511420l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">영주 '햇' 생강 300g</a></span> <span class="price">3,141원</span> <span class="cost">3,490원</span></div></li><li data-index="3" class="cut" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;" data-name="md_choice"><a class="thumb_goods"><!----> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1574997227970l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">무농약 청도 한재 미나리 200g</a></span> <span class="price">3,490원</span> <!----></div></li><li data-index="4" class="" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;" data-name="md_choice"><a class="thumb_goods"><img src="https://img-cf.kurly.com/shop/data/my_icon/icon_kimchi_20_percent.png" alt="SALE" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_45x39.png'" class="ico"> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1583476232986l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[KF365] 양파 1.8kg</a></span> <span class="price">3,790원</span> <!----></div></li><li data-index="5" class="" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;" data-name="md_choice"><a class="thumb_goods"><img src="https://img-cf.kurly.com/shop/data/my_icon/icon_kimchi_20_percent.png" alt="SALE" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_45x39.png'" class="ico"> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1532598080657l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[KF365] 깐마늘 200g</a></span> <span class="price">2,000원</span> <!----></div></li><li data-index="6" class="cut" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;" data-name="md_choice"><a class="thumb_goods"><!----> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1593066585801l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[KF365]국산 브로콜리 1입</a></span> <span class="price">2,000원</span> <!----></div></li> <!----></ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev disabled" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div></div> <div class="link_cate"><a class="link"><span class="ico">채소 전체보기</span></a></div></div></div></div><div><div class="bnr_main"><a class="link" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/main/7/pc_img_1604899186.jpg&quot;);"><span class="inner_link"><!----> <!----> <img src="//img-cf.kurly.com/shop/data/main/7/pc_img_1604899186.jpg"></span> <!----></a></div></div><div><div class="main_type2"><div class="product_list"><div class="tit_goods"><h3 class="tit"><a class="name"><span class="ico">오늘의 신상품</span> <span class="tit_desc">매일 정오, 컬리의 새로운 상품을 만나보세요</span></a> <!----></h3></div> <!----> <div class="list_goods"><div class="bx-wrapper" style="max-width: 1050px; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 506px;"><ul data-title="오늘의 신상품" data-section="today_new" class="list" style="width: 815%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);"><li data-index="1" class="" data-name="today_new" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><!----> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/15433075149l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">포항초 250g</a></span> <span class="price">3,480원</span> <!----></div></li><li data-index="2" class="" data-name="today_new" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><!----> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/157707817580l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">GAP 대봉 4입</a></span> <span class="price">6,980원</span> <!----></div></li><li data-index="3" class="cut" data-name="today_new" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><!----> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/157889220532l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">비금도 재래 섬초 200g</a></span> <span class="price">3,700원</span> <!----></div></li><li data-index="4" class="" data-name="today_new" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><img src="https://img-cf.kurly.com/shop/data/my_icon/icon_marine_20_percent_1105.png" alt="SALE" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_45x39.png'" class="ico"> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1580885523152l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[삼삼물산] 통영해삼 300g(생물)</a></span> <span class="price">19,800원</span> <span class="cost">22,000원</span></div></li><li data-index="5" class="" data-name="today_new" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><img src="https://img-cf.kurly.com/shop/data/my_icon/icon_marine_20_percent_1105.png" alt="SALE" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_45x39.png'" class="ico"> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1585111378492l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[윤슬] 자연산 남해안 바지락(대) 800g(생물)</a></span> <span class="price">8,800원</span> <span class="cost">11,000원</span></div></li><li data-index="6" class="cut" data-name="today_new" style="float: left; list-style: none; position: relative; width: 249px; margin-right: 18px;"><a class="thumb_goods"><!----> <img src="https://res.kurly.com/mobile/service/main/1903/bg_150x195.png" alt="상품이미지" class="thumb" style="background-image: url(&quot;https://img-cf.kurly.com/shop/data/goods/1604628951987l0.jpg&quot;);"></a> <div class="info_goods"><span class="name"><a class="txt">[일품식탁] 멸치조림 꼬마김밥세트</a></span> <span class="price">6,900원</span> <!----></div></li> <!----></ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev disabled" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div></div> <!----></div></div></div><div><div class="main_type2 bg" style="background-color: rgb(247, 247, 247);"><div class="product_list"><div class="tit_goods">
-            <h3 class="tit"><a class="name"><span class="ico">함께 즐기실 분 여기에</span> <!----></a> <!----></h3></div> <div class="list_goods"><div class="bx-wrapper" style="max-width: 1050px; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 303px;"><ul data-title="컬리의 레시피" data-section="kurly_recipe" class="list" style="width: 715%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);"> <li style="float: left; list-style: none; position: relative; width: 338px; margin-right: 18px;"><a class="thumb_goods"><img src="https://res.kurly.com/mobile/service/main/1903/bg_240x160.png?v2" alt="상품이미지" class="thumb" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/board/recipe/m/main_v2_8b06410896645e33.jpg&quot;);"></a> <div class="info_goods"><div class="inner_info"><span class="name"><a class="txt">티라미수</a></span></div></div></li><li style="float: left; list-style: none; position: relative; width: 338px; margin-right: 18px;"><a class="thumb_goods"><img src="https://res.kurly.com/mobile/service/main/1903/bg_240x160.png?v2" alt="상품이미지" class="thumb" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/board/recipe/m/main_v2_8c159e9c2e3bfb34.jpg&quot;);"></a> <div class="info_goods"><div class="inner_info"><span class="name"><a class="txt">도다리 양념구이</a></span></div></div></li><li style="float: left; list-style: none; position: relative; width: 338px; margin-right: 18px;"><a class="thumb_goods"><img src="https://res.kurly.com/mobile/service/main/1903/bg_240x160.png?v2" alt="상품이미지" class="thumb" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/board/recipe/m/main_v2_7a5597e725b03e2d.jpg&quot;);"></a> <div class="info_goods"><div class="inner_info"><span class="name"><a class="txt">황태양념구이</a></span></div></div></li><li style="float: left; list-style: none; position: relative; width: 338px; margin-right: 18px;"><a class="thumb_goods"><img src="https://res.kurly.com/mobile/service/main/1903/bg_240x160.png?v2" alt="상품이미지" class="thumb" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/board/recipe/m/main_v2_9c7715d77c3a7667.jpg&quot;);"></a> <div class="info_goods"><div class="inner_info"><span class="name"><a class="txt">도다리 냉이국</a></span></div></div></li><li style="float: left; list-style: none; position: relative; width: 338px; margin-right: 18px;"><a class="thumb_goods"><img src="https://res.kurly.com/mobile/service/main/1903/bg_240x160.png?v2" alt="상품이미지" class="thumb" style="background-image: url(&quot;//img-cf.kurly.com/shop/data/board/recipe/m/main_v2_42f045fa69eb2d84.jpg&quot;);"></a> <div class="info_goods"><div class="inner_info"><span class="name"><a class="txt">메로 미소된장조림</a></span></div></div></li> <!----></ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev disabled" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div></div></div></div></div><div><div class="main_type4"><div class="tit_goods"><h3 class="tit">인스타그램 고객 후기</h3></div> <div class="list_goods"><div class="bx-wrapper" style="max-width: 1050px; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 175px;"><ul data-title="인스타그램 고객 후기" data-section="instagram" class="list" style="width: 2715%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);"><li data-index="1" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/123574717_454679648830626_1045140718204401184_n.jpg?_nc_cat=109&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=emOxCiGvZZYAX-mvqAl&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=216b71970e8e56872510e659a6b7ed7e&amp;oe=5FCF3BA6" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="2" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/123402312_367167987865695_7039378067994252612_n.jpg?_nc_cat=101&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=GvzESpIyjGoAX-HXIMC&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=0b5bfeaf6da37014bc7ebf83319e44e8&amp;oe=5FCEA576" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="3" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/123209899_362809381494076_5654415635338573843_n.jpg?_nc_cat=1&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=Py3CBTeC94sAX8Rbui_&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=389583f5fa8a3768f7b0f05982ea19a1&amp;oe=5FCE7FAE" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="4" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/123026432_413036506366718_280154735272961251_n.jpg?_nc_cat=107&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=fkKy1SBUE04AX9q4XVU&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=ca6bbd887f9e1cbadd294bfdb3d73a7c&amp;oe=5FCE0704" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="5" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/122789776_975849242927745_807006214198037394_n.jpg?_nc_cat=103&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=wMmghLy8gEUAX9onFA5&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=079d9a5c1dc4e2ecffc458a0d39cddbb&amp;oe=5FCC7E53" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="6" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/121645919_394404811926555_8878428350363155323_n.jpg?_nc_cat=107&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=kvDkLhmSTG0AX9YP30P&amp;_nc_oc=AQma6yO_riMT1Jsu7AyMz1nVhDBB2Bm1HkIf0t6uVqKJq27lxca_QSGXFirMO2pcYWw&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=2aee5d721c0c974c991b739c193549c3&amp;oe=5FCCFBC8" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="7" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/122150703_351943572684342_7760449618705302318_n.jpg?_nc_cat=110&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=SwD1cQIIYBcAX8Acpmt&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=378b97e3ab875ce84cfee6fe896a9600&amp;oe=5FCCB0B2" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="8" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/122049909_385268372505155_655063904791600733_n.jpg?_nc_cat=106&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=B_Wc0I5JsvgAX-PHah0&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=d2061c24508a8112bf8bb35a3203613f&amp;oe=5FCF8922" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="9" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/118589260_319213122720363_2667694749703736834_n.jpg?_nc_cat=103&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=NEGKmcxzeYsAX9qL0JV&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=297771e275466128eb073f4528a32822&amp;oe=5FCCB39A" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="10" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/118320022_225993672166521_3751909425305237226_n.jpg?_nc_cat=1&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=bIhSaNc84d4AX_iMNIV&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=52174683498c84e0a916d3c5e2a90466&amp;oe=5FCF354D" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="11" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/118281375_677827716151596_2476991557546022886_n.jpg?_nc_cat=108&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=l84u5qTs48kAX9tYCHD&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=fc34679ea28a43033eb9a96b37061fd7&amp;oe=5FCE1A75" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="12" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/118331727_113204823713978_1949285426450626350_n.jpg?_nc_cat=101&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=n2t2JYoYuloAX_mWCqZ&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=fa48e2af4e55284c99875aeb016210d7&amp;oe=5FCE5725" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="13" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/118198220_314032153378402_8957258343434779518_n.jpg?_nc_cat=101&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=ce4B6a5n71AAX_lBmB8&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=f305e9b05062ee6f9ab718d87c8f9e02&amp;oe=5FCCB1EB" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="14" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/117406440_2579234605723702_3045836139856412724_n.jpg?_nc_cat=103&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=EFi0Ff1W3EsAX8_-r9U&amp;_nc_oc=AQlF-2moJ89TkywhLGdKkqmZ1sYJAegq5StoEFEUeuMoM2Mb5H-sxOxIlM4AKOwD5KE&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=8665f2b71d4f6181ee6508cecaff00b2&amp;oe=5FCFF35F" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="15" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/117353885_316381819776591_8835154447468763383_n.jpg?_nc_cat=1&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=pglwJahfaXkAX87ee3Y&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=ac5a634032caf69aa5bc26fe3f3a2b52&amp;oe=5FCD06D3" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="16" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/117672783_321809032566596_4489103200036257879_n.jpg?_nc_cat=101&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=12lfREAqpRwAX-5bp-9&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=090a8ba5897816b26e6019349eef57d7&amp;oe=5FCF5D5B" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="17" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/117699508_1401667226693194_27685590850539261_n.jpg?_nc_cat=106&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=_jvQ-OQo0PMAX_tQyIK&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=cfa75d5984226887ef977d61f925c479&amp;oe=5FCECA57" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="18" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/117334449_3264159933668345_2220357627885782498_n.jpg?_nc_cat=109&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=onukPyc1OPwAX_uTQVr&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=cbbaab995ebdd3f7ac6d3698670e75f2&amp;oe=5FCFB1CC" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="19" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/117748921_299572648037398_8477892740231975428_n.jpg?_nc_cat=104&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=Z4DGpcEvJEUAX_LGVFF&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=8043d0ab2b6ea0c7d93f4c72fb9bef24&amp;oe=5FCD03C7" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="20" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/116883302_364112054712979_5829531528026052748_n.jpg?_nc_cat=1&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=BrPhA8F4_fEAX8Mwvis&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=3d5dbbd7ebaa9f3ec3fbab11b4b2d2e2&amp;oe=5FCD3AB1" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="21" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/116869566_313238659798080_9222840833893045199_n.jpg?_nc_cat=107&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=sqFjmeMbKuAAX_zrbgy&amp;_nc_oc=AQnl5C81S2fZA8gWhAuFeOuerZWI_DIbQPKwto85-B5gCWLBjUGUPMe35s6HnkHwvU4&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=af3b33c697c604144fafe0fa9148b62a&amp;oe=5FCE1804" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="22" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/114586863_643886362895664_3454674218510117978_n.jpg?_nc_cat=104&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=bxZnqTHox2YAX_zd_h2&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=b779e3555647da37e3653a38859f3fbf&amp;oe=5FCED33E" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="23" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/116009638_284675536286950_3795990599747156967_n.jpg?_nc_cat=106&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=DbanSF_J1XcAX_c6J7a&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=9ea5a904452bb87966e9ee2ef8f994b3&amp;oe=5FCD8567" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="24" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.2885-15/106292266_901346570344741_751990585231866938_n.jpg?_nc_cat=102&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=H30LdqemOZ4AX_YNRLD&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=4eef7c9deb6129331e4540ad6628e435&amp;oe=5FCCA6AB" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li><li data-index="25" data-name="instagram" style="float: left; list-style: none; position: relative; width: 175px;"><a target="_blank" class="thumb_goods"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.2885-15/105299945_2863245100469640_437596639219726318_n.jpg?_nc_cat=1&amp;ccb=2&amp;_nc_sid=8ae9d6&amp;_nc_ohc=hVJmtQlvYnQAX95MfbE&amp;_nc_oc=AQnHdCoXd1xVnxZYxQSbBHSX9kf73SYf2y5Fqmur1e-tpNdxcXDadwyydcsKOg4NNpA&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;oh=35b4e3708566f32a19ec9ef5c3517b54&amp;oe=5FCDF7FC" alt="상품이미지" onerror="this.src='https://res.kurly.com/mobile/service/main/1903/bg_94x94.png'" class="thumb"></a></li></ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev disabled" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div></div> <div class="bnr"><span class="txt">더 많은 고객 후기가 궁금하다면?</span> <a href="https://www.instagram.com/boeunbox/" target="_blank">@boeunbox</a></div></div></div>
-    <div class="bg_loading" id="bgLoading" style="display: none;">
-    <div class="loading_show"></div>
-    </div>
-    <script src="https://res.kurly.com/js/lib/moment.min.js"></script>
-    <script src="https://res.kurly.com/js/lib/jquery.bxslider.min.js"></script>
-    <script src="/common_js/common_filter.js?ver=1.22.14"></script>
-    <script src="/common_js/main_v1.js?ver=1.22.14"></script>
-    <script>
-    $(document).ready(function(){
-        kurlyMain.type = 'pc';
-        kurlyMain.update();
-    
-        // GNB Logo checking
-        chkGNBLogo('pc');
-    });
-    </script>
-    </div>
-    </div>
-    
-    
-    <a href="#top" id="pageTop">맨 위로가기</a>
-    <script>
-        $(document).ready(function(){
-            var pageTop = {
-                $target : $('#pageTop'),
-                $targetDefault : 0,
-                $scrollTop : 0,
-                $window : $(window),
-                $windowHeight : 0,
-                setTime : 500,
-                saveHeight : 0,
-                init:function(){
-                },
-                action:function(){
-                    var $self = this;
-                    $self.$windowHeight = parseInt($self.$window.height());
-                    $self.$window.on('scroll', function(){
-                        $self.$scrollTop = parseInt($self.$window.scrollTop());
-                        if($self.$scrollTop >= $self.$windowHeight){
-                            if(!$self.$target.hasClass('on')){
-                                $self.position();
-                                $self.$target.addClass('on');
-                                $self.showAction();
-                            }
-                        }else{
-                            if($self.$target.hasClass('on')){
-                                $self.position();
-                                $self.$target.removeClass('on');
-                                $self.hideAction();
-                            }
-                        }
-                    });
-    
-                    $self.$target.on('click', function(e){
-                        e.preventDefault();
-                        $self.topAction();
-                    });
-                },
-                showAction:function(){
-                    var $self = this;
-                    $self.$target.stop().animate({
-                        opacity:1,
-                        bottom:$self.saveHeight
-                    }, $self.setTime);
-                },
-                hideAction:function(){
-                    var $self = this;
-                    $self.$target.stop().animate({
-                        opacity:0,
-                        bottom:-$self.$target.height()
-                    }, $self.setTime);
-                },
-                topAction:function(){
-                    var $self = this;
-                    $self.hideAction();
-                    $('html,body').animate({
-                        scrollTop:0
-                    }, $self.setTime);
-                },
-                position:function(){
-                    var $self = this;
-                    $self.saveHeight = 15;
-                    if($('#sectionView').length > 0){
-                        $self.saveHeight = 25;
-                    }
-                    if($('#branch-banner-iframe').length > 0 && parseInt( $('#branch-banner-iframe').css('bottom') ) > 0){
-                        $('#footer').addClass('bnr_app');
-                        $self.saveHeight += $('#branch-banner-iframe').height();
-                    }
-                }
-            }
-            pageTop.action();
-        });
-    </script>
-    
-    <script>
-    // 클릭인인경우(푸터에 있으나, 아직공용작업은 못함) => bgLoading 이부분 처리필요
-    var bodyScroll = {
-        winScrollTop : 0,
-        body : $('body'),
-        gnb : $('#gnb'),
-        bg : $('#bgLoading'),
-        bodyFixed : function(){
-            var $self = this;
-            var gnbCheck = false;
-            $self.gnb = $('#gnb');
-            if($self.gnb.hasClass('gnb_stop')){
-                gnbCheck = true;
-            }
-            $self.body = $('body');
-            $self.bg = $('#bgLoading');
-            $self.winScrollTop = $(window).scrollTop();
-            $self.bg.show();
-            $self.body.addClass('noBody').css({
-                'top' : -$self.winScrollTop
-            });
-        },
-        bodyDefault : function(type){
-            var $self = this;
-            $self.body.removeClass('noBody').removeAttr('style');
-            $self.bg.hide();
-            if(type === undefined){
-                window.scrollTo(0, $self.winScrollTop);
-            }
-        }
-    }
-    </script>
-    
-    </body></html>
+    </body>
+</html>
+
 
 {% endblock %}
