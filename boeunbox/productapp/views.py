@@ -13,3 +13,8 @@ def product(request):
 
 class PostDetailView(generic.DetailView):
     model = Post
+
+
+def product_recommend(request):
+
+    return render(request, 'productapp/about.html')
