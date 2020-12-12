@@ -1,5 +1,9 @@
 /* -----------공통------------- */
 
+button {
+    outline: 0;
+}
+
 #top_line {
     border-top: 1px solid rgb(210, 210, 210);
     margin-top:49px;
@@ -83,3 +87,7 @@ a {
 }
 
 /* -----------단독------------- */
+
+#bold_rv {
+    font-weight: bold;
+}
