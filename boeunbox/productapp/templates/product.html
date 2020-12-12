@@ -11,19 +11,205 @@
 
 {% block contents %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>전체상품보기</title>
-</head>
-<body>
-    <h2>1월의 MDPick</h2>
-    <script>
-        alert("1월의 MDPick을 소개합니다.")
-    </script>
+    <html lang="en-US" style="overflow: hidden;">
+    <head>
+        <title> 전체상품보기 </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Template by Colorlib">
+        <meta name="keywords" content="HTML, CSS, JavaScript, PHP">
+        <meta name="author" content="Colorlib">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+        {% load static %}
+       
+        <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CLibre+Baskerville:400,400italic,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/clear.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/common.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/carouFredSel.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/sm-clean.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+                
+    </head>
+        
+        
+    <body class="home blog">
+        {% load static %}
+        <!-- <script src="{% static 'js/test.js' %}"></script> -->
 
-</body>
+        <!-- Preloader Gif -->
+            <table class="doc-loader" style="display: none;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="{% static 'images/ajax-document-loader.gif' %}" alt="Loading...">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <!-- Left Sidebar -->
+            <div id="sidebar" class="sidebar" style="min-height: 1465px;">
+                <div class="menu-left-part" tabindex="0" style="overflow: hidden; outline: none;">
+                    <div class="search-holder">
+                        <label>
+                            <input type="search" class="search-field" placeholder="Type here to search..." value="" name="s" title="Search for:">
+                        </label>
+                    </div>
+                    <div class="site-info-holder">
+                        <h1 class="site-title">보은박스</h1>
+                        <p class="site-description">
+                            보은박스는 마음을 담습니다.
+                        </p>
+                    </div>
+                    <nav id="header-main-menu">
+                        <ul class="main-menu sm sm-clean" data-smartmenus-id="16065535904678486">
+                            <li><a href="{% url 'product' %}" class="current">이달의 MDPick</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="about.html">나의 보은님 맞춤 추천</a></li>
+                            {% else %}
+                            <!-- 로그인 연결시키기 -->
+                            <li><a href="{% url 'login' %}">로그인</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    <footer>
+                        <div class="footer-info">
+                            © 2018 SUPPABLOG HTML TEMPLATE. <br> CRAFTED WITH <i class="fa fa-heart"></i> BY <a href="https://colorlib.com">COLORLIB</a>.
+                        </div>
+                    </footer>
+                </div>
+                <div class="menu-right-part">
+                    <div class="logo-holder">
+                        <a href="{% url 'product' %}">
+                            <img src="{% static 'images/logo.png' %}" alt="Suppablog WP">
+                        </a>
+                    </div>
+                    <div class="toggle-holder">
+                        <div id="toggle">
+                            <div class="menu-line"></div>
+                        </div>
+                    </div>
+                    <div class="social-holder">
+                        <div class="social-list">
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </div>
+                    </div>
+                    <div class="fixed scroll-top"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></div>
+                </div>
+                <div class="clear"></div>
+            <div id="ascrail2001" class="nicescroll-rails nicescroll-rails-vr" style="width: 12px; z-index: 3; cursor: default; position: absolute; top: 0px; left: 308px; height: 698px; touch-action: none; opacity: 0; display: none;"><div class="nicescroll-cursors" style="position: relative; top: 0px; float: right; width: 12px; height: 616px; background-color: rgb(91, 91, 91); border: none; background-clip: padding-box; border-radius: 0px; touch-action: none;"></div></div><div id="ascrail2001-hr" class="nicescroll-rails nicescroll-rails-hr" style="height: 12px; z-index: 3; top: 686px; left: 0px; position: absolute; cursor: default; display: none; width: 308px; opacity: 0;"><div class="nicescroll-cursors" style="position: absolute; top: 0px; height: 12px; width: 320px; background-color: rgb(91, 91, 91); border: none; background-clip: padding-box; border-radius: 0px;"></div></div></div>
+        
+            <!-- Home Content -->
+            <div id="content" class="site-content">
+                <div id="blog-wrapper">
+                    <div class="blog-holder center-relative">
+                        {% for post in post_latest %}
+                            {% if forloop.first %}
+                            <article id="post-1" class="blog-item-holder featured-post">
+                                <div class="entry-content relative">
+                                    <div class="content-1170 center-relative">
+                                        <div class="cat-links">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <!-- 카테고리 두개 나타날 수 있게 -->
+                                                        {% for c in post.category.all %}
+                                                            {{ c }}
+                                                            {% if not forloop.last %}
+                                                                ,
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h2 class="entry-title">
+                                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                        </h2>
+                                        <div class="excerpt">
+                                            {% if post.is_content_more300 %}
+                                                {{ post.get_content_under300 }}
+                                            {% else %}
+                                                {{ post.content }}
+                                            {% endif %}
+                                            <a class="read-more" href="{{ post.get_absolute_url }}"></a>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </article>
+                            {% else %}
+                            <article id="post-{{ forloop.counter }}" class="blog-item-holder">
+                                <div class="entry-content relative">
+                                    <div class="content-1170 center-relative">
+                                        <h2 class="entry-title">
+                                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                        </h2>
+                                        <div class="excerpt">
+                                            {% if post.is_content_more300 %}
+                                                {{ post.get_content_under300 }}
+                                            {% else %}
+                                                {{ post.content }}
+                                            {% endif %}
+                                            <a class="read-more" href="{{ post.get_absolute_url }}"></a>
+                                        </div>
+                                        <div class="cat-links">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        {% for c in post.category.all %}
+                                                            {{ c }}
+                                                            {% if not forloop.last %}
+                                                                ,
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </article>
+                            {% endif %}
+                        {% endfor %}
+        
+        
+                    </div>
+                    <div class="clear"></div>
+                    <div class="block load-more-holder">회원가입 후 맞춤형 제안과 여가도움 서비스를 이용해보세요 :) </div>
+                </div>
+        
+                <div class="featured-image-holder">
+                    <div class="featured-post-image" style="background-image: url({% static 'demo-images/featured-image.jpg' %})"></div>
+        
+                </div>
+                <div class="clear"></div>
+            </div>
+        
+        
+        
+            <!--Load JavaScript-->
+            <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/imagesloaded.pkgd.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.smartmenus.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.carouFredSel-6.0.0-packed.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.mousewheel.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.touchSwipe.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+        
+        
+        <div id="ascrail2000" class="nicescroll-rails nicescroll-rails-vr" style="width: 12px; z-index: auto; cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; touch-action: none; opacity: 0; display: block;"><div class="nicescroll-cursors" style="position: relative; top: 0px; float: right; width: 12px; height: 424px; background-color: rgb(91, 91, 91); border: none; background-clip: padding-box; border-radius: 0px; touch-action: none;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails nicescroll-rails-hr" style="height: 12px; z-index: auto; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;"><div class="nicescroll-cursors" style="position: absolute; top: 0px; height: 12px; width: 1536px; background-color: rgb(91, 91, 91); border: none; background-clip: padding-box; border-radius: 0px; left: 0px;"></div></div></body></html>
+
+    
+    
+    </body>
 </html>
+
 
 {% endblock %}

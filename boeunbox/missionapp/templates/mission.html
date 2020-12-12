@@ -2,41 +2,19 @@
 {% load static %}
 
 {% block title %}
-보은박스 - 메인
+보은박스 - 소개
 {% endblock %}
 
 {% block extrahead %}
-
+<link rel="stylesheet" href="{% static 'css/mission.css' %}" />
 {% endblock %}
 
 <!-- body 작성 시작 -->
 {% block contents %}
-<!-- 자바스크립트 -->
-<script src="{% static 'js/scripts.js' %}"></script>
-
+<hr id="top-line">
 <div class="wrap">
-    <!-- 섹션1 -->
-    <div class="top">
-        <div class="container d-flex h-100 align-items-center">
-            <div class="mx-auto text-center">
-                <h1 class="mx-auto my-0"> </h1>
-                <h2 class="text-white-50 mx-auto mt-2 mb-5"> </h2>
-                <a class="btn btn-primary js-scroll-trigger" href="{% url 'product' %}">글 쓰는게 제일 신경쓰여서 계속 고치고 있는 중이에요</a>
-            </div>
-        </div>
-    </div>
-    <!-- 섹션2 -->
-    <div class="s1">
-        <div class="container">
-            <p>두번째 내용</p>
-            
-        </div>
-    </div>
-    <!-- 섹션3 -->
-    <div class="s2">
-        <div class="container">
-            <p>세번째 내용</p>
-        </div>
+    <div class="content">
+        <p class="content-text">공사중 헤헷</p>
     </div>
 </div>
 {% endblock %}

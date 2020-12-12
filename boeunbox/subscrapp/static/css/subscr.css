@@ -2,9 +2,14 @@ body {
     font-family: 'MapoFlowerIsland';
 }
 
+#top-line {
+    border-top: 1px solid #d2d2d2;
+    margin-top: 49px;
+}
+
 .startB_img {
-    width: 50%;
-    height: 50%;
+    width: 800px;
+    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -260,6 +265,13 @@ li {
     }
     .month_wrap{
         width: 300px;
+    }
+    .startB_img {
+        width: 600px;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

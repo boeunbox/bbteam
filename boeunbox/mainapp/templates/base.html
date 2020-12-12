@@ -12,6 +12,8 @@
         {% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="shortcut icon" href="{% static 'image/favicon.ico' %}" />
+    <link rel="icon" href="{% static 'image/favicon.ico' %}" />
     <!-- Font Awesome icons -->
     <script src="https://kit.fontawesome.com/0b88962ca7.js" crossorigin="anonymous"></script>
     <!-- 눈누 웹폰트 '마포꽃섬' -->
@@ -42,9 +44,8 @@
                 <li><a href="{% url 'mission' %}">보은박스 소개</a></li>
                 <li><a href="{% url 'subscr' %}">보은 시작하기</a></li>
                 <li><a href="{% url 'product' %}">전체 상품 보기</a></li>
-                <li><a href="{% url 'cscenter' %}">고객센터</a></li>
+                <li><a href="{% url 'cscenterapp:cscenter' %}">고객센터</a></li>
                 <li><a href="{% url 'myboeun' %}">나의 보은</a></li>
-                </li>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'logout' %}">로그아웃</a></li>
                 {% else %}
@@ -62,7 +63,7 @@
                 <li><a href="{% url 'mission' %}">보은박스 소개</a></li>
                 <li><a href="{% url 'subscr' %}">보은 시작하기</a></li>
                 <li><a href="{% url 'product' %}">전체 상품 보기</a></li>
-                <li><a href="{% url 'cscenter' %}">고객센터</a></li>
+                <li><a href="{% url 'cscenterapp:cscenter' %}">고객센터</a></li>
                 <li>
                     <button class="myboeun_btn" id="myDropdown" onclick="dropFunction()">나의 보은 <div class="down"><i
                                 class="fas fa-caret-down"></i></div>
@@ -92,10 +93,10 @@
 
     <!-- 공통 FOOTER -->
     <footer class="footer">
-        <div class="copyright">Copyright © BOEUNBOX All rights reserved.</div>
+        <div class="copyright">© BOEUNBOX 2020 All rights reserved.</div>
         <div class="terms">
-            <div class="terms-content"><a href="#">이용약관</a></div>
-            <div class="terms-content"><a href="#">개인정보 처리방침</a></div>
+            <div class="terms-content"><a href="{% url 'terms' %}">이용약관</a></div>
+            <div class="terms-content"><a href="{% url 'privacy' %}">개인정보 처리방침</a></div>
         </div>
     </footer>
 

@@ -15,32 +15,25 @@
 {% block contents %}
 <hr id="top_line">
 <div class="wrap">
-    <div class="container">
-        <div class="content">
-            <p class="text-title">1:1 문의하기</p>
-            <div class="table-board">
-                {% for i in all_QNA %}
-                <table class="qnatable">
-                    <tr>
-                        <td class="cell-title">
-                            <a href="{% url 'detail' i.id %}">
-                                <p>{{i.title}}</p>
-                            </a>
-                        </td>
-                        <td class="cell-time" rowspan="2">
-                            <p>{{i.created_at}}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cell-content">
-                            <p>{{i.desc}}</p>
-                        </td>
-                    </tr>
-                </table>
-                {% endfor %}
-            </div>
-            <button class="btn"><a href="{% url 'create' %}">글쓰기</a></button>
+    <div class="content">
+        <p class="text-title">1:1 문의하기</p>
+        <div class="table-board">
+            {% for i in all_QNA %}
+            <table class="qnatable">
+                <tr>
+                    <td class="cell-title">
+                        <a href="{% url 'cscenterapp:detail' i.id %}">
+                            <p>{{i.title}}</p>
+                        </a>
+                    </td>
+                    <td class="cell-time">
+                        <p>{{i.created_at}}</p>
+                    </td>
+                </tr>
+            </table>
+            {% endfor %}
         </div>
+        <button class="btn"><a href="{% url 'cscenterapp:create' %}">글쓰기</a></button>
     </div>
 </div>
 {% endblock %}

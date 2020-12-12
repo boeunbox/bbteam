@@ -1,16 +1,35 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
-{% block container %}
+{% block extrahead%}
+<style>
+    .hey > input{
+        background:none;
+        border:none;
+        outline: none;
+        border:2px solid #777;
+        border-radius: 5px;
+        background-color: #ddd;
+        padding:10px;
+    }
+  
+</style>
+{%endblock%}
+{% block contents %}
 
 <body>
     <h1>User Edit</h1>
+    <div>
+        <div>
+            <input>
+        </div>
+    </div>
 
     <form method="POST">
         {% csrf_token %}
 
-        {% bootstrap_form user_change_form %}
+        {{ user_change_form.username.label }}
+        <div class="hey">{{ user_change_form.username }}</div>
         <input type="submit" value="Submit" />
     </form>
 

@@ -17,10 +17,18 @@
             <p class="text-title">회원가입</p>
             <form method="POST" class="form-signup">
                 {% csrf_token %}
-                {{userForm}}
+                {{userForm.as_p}}
+                {{BoeunForm.as_p}}
                 <button class="btn-signup" type="submit">회원가입</button>
             </form>
         </div>
     </div>
 </div>
+
+<script>
+    var labels = document.querySelectorAll('label')
+    for (var i = 0; i < labels.length; i++) {
+        labels[i].innerText = labels[i].innerText.slice(0, -1)
+    }
+</script>
 {% endblock %}

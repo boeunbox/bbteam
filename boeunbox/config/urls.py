@@ -16,12 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from mainapp.views import index
-from cscenterapp.views import cscenter
+from mainapp.views import index, terms, privacy
+from cscenterapp import views
 from missionapp.views import mission
 from myboeunapp.views import myboeun
 from productapp.views import product
-from signupapp.views import signup, login
 from subscrapp.views import subscr
 
 from django.conf import settings
@@ -30,14 +29,18 @@ from django_summernote.widgets import SummernoteWidget
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name="index"),
-    path('mission/', mission, name="mission"),
-    path('myboeun/', myboeun, name="myboeun"),
+    path('', index, name='index'),
+    path('terms-of-use/', terms, name='terms'),
+    path('privacy-policy/', privacy, name='privacy'),
+    path('mission/', mission, name='mission'),
     path('productapp/', include('productapp.urls')),
     path('subscr/', subscr, name="subscr"),
-    path('signupapp/', include("signupapp.urls")),
+    path('signupapp/', include('signupapp.urls')),
     path('cscenterapp/', include('cscenterapp.urls')),
     path('myboeun/', include('myboeunapp.urls')),
     path('accounts/', include('allauth.urls')),
    
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] 
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
