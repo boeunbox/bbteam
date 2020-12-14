@@ -56,7 +56,6 @@ INSTALLED_APPS = [
 
     'mainapp',
     'cscenterapp',
-    'missionapp',
     'myboeunapp',
     'productapp',
     'signupapp',
