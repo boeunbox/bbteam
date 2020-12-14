@@ -7,7 +7,7 @@ body {
   padding: 0;
   width: 100%;
   /* max-width:100vw; */
-  font-family: 'MapoFlowerIsland';
+  font-family: 'MapoGoldenPier';
 }
 
 /* 공통 navbar */
@@ -79,7 +79,7 @@ a{
 .btn-sidebar{
   position: absolute;
   text-align: left;
-  left: 12px;
+  left: 8px;
   top: 12px;
   font-size: 1.2rem;
   color: #b1b34d;
@@ -187,7 +187,7 @@ a{
     cursor: pointer;
     font-size: 1.2rem;
     position: absolute;
-    left: 12px;
+    left: 8px;
     top: 14px;
   }
 
@@ -221,7 +221,7 @@ a{
     color: #e6e6e6;
     padding-top: 0.7rem;
     font-size: 0.9rem;
-    padding-left: 0;
+    padding-left: 3px;
   }
 
   .submenu_li {
