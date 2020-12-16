@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import QNAform, CommentForm
+from .forms import QNAform, CommentForm, UpdateForm
 from .models import QNA, Comment
 from django.contrib.auth.decorators import login_required
 
@@ -22,7 +22,7 @@ def create(request):
         myform = QNAform(request.POST, request.FILES)
         if myform.is_valid():
             myform.save()
-            return redirect('enquiry')
+            return redirect('cscenterapp:enquiry')
         else:
             context['QNAform'] = myform
     return render(request,'create.html',context)
@@ -36,19 +36,31 @@ def detail(request,detail_id):
 
     return render(request, 'detail.html', context)
 
-def update(request,upadte_id):
+def modify(request):
+    context = {}
+    context['updateform'] = UpdateForm()
+    if request.method == "POST":
+        tempform = UpdateForm(request.POST, request.FILES)
+        if tempform.is_valid():
+            tempform.save()
+            return redirect('index')
+        else:
+            context['updateform'] = tempform
+    return render(request, 'modify.html', context)
+
+def update(request,update_id):
     context={}
-    context['baboform'] = BaboForm(instance=QNA.objects.get(id=update_id))
+    context['updateform'] = UpdateForm(instance=QNA.objects.get(id=update_id))
     
     if request.method=="POST":
-        tempform = BaboForm(request.POST, request.FILES,
+        tempform = UpdateForm(request.POST, request.FILES,
                             instance=QNA.objects.get(id=update_id))
         if tempform.is_valid():
             tempform.save()
-            return redirect('detail', update_id)
+            return redirect('cscenterapp:detail', update_id)
         else:
-            context['baboform'] = tempform
-    return render(request, 'new.html', context)
+            context['updateform'] = tempform
+    return render(request, 'modify.html', context)
 
 def delete(request,delete_id):
 

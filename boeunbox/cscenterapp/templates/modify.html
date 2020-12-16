@@ -2,22 +2,22 @@
 {% load static %}
 
 {% block title %}
-보은박스 - 1:1문의 작성
+보은박스 - 1:1문의 수정
 {% endblock %}
 
 {% block extrahead %}
-<link rel="stylesheet" href="{% static 'css/create.css' %}" />
+<link rel="stylesheet" href="{% static 'css/modify.css' %}" />
 {% endblock %}
 
 {% block contents %}
 <hr id="top_line">
 <div class="wrap">
     <div class="container">
-        <p class="text-title">1:1문의하기</p>
+        <p class="text-title">1:1문의 수정</p>
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{QNAform.as_p}}
-            <input type="submit" value="작성완료" id="submitbtn">
+            {{updateform.as_p}}
+            <button type="submit" class="submitbtn">수정완료</button>
         </form>
     </div>
 </div>

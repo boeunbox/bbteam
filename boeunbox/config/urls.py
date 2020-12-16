@@ -37,6 +37,7 @@ urlpatterns = [
     path('cscenterapp/', include('cscenterapp.urls')),
     path('myboeun/', include('myboeunapp.urls')),
     path('accounts/', include('allauth.urls')),
+    path('summernote/', include('django_summernote.urls')),
 
 ]
 
