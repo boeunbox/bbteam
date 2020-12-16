@@ -18,6 +18,7 @@ a {
 .content {
     margin: auto;
     align-items: center;
+    padding: 0 8px;
 }
 
 .text-title {
@@ -31,38 +32,27 @@ a {
 .table-board {
     display: block;
     margin-top: 1rem;
+    width: 700px;
 }
 
 .qnatable {
-    width: 700px;
-    height: 80px;
+    width: 100%;
+    height: 70px;
 }
 
-.cell-title {
-    border: 1px solid black;
-    width: 100px;
+.qna-head {
+    color: #04172e;
+    background-color: #f8e5ce;
+    border: 0;
+    height: 40px;
+}
+
+.qna-body {
     text-align: center;
-    font-size: 1.1rem;
-    font-weight: bolder;
-    color: #366869;
 }
 
-.cell-title a {
-    color: #366869;
-}
-
-.cell-content {
-    border: 1px solid black;
-    width: 100px;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.cell-time {
-    border: 1px solid black;
-    width: 20px;
-    text-align: center;
-    font-size: 0.8rem;
+.qna-body a {
+    color: black;
 }
 
 .btn {

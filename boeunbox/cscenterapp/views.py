@@ -2,6 +2,9 @@ from django.shortcuts import render,redirect
 from .forms import QNAform, CommentForm, UpdateForm
 from .models import QNA, Comment
 from django.contrib.auth.decorators import login_required
+from signupapp.models import User
+from django.contrib import auth
+
 
 # Create your views here.
 
@@ -11,7 +14,7 @@ def cscenter(request):
 @login_required
 def enquiry(request):
     context = dict()
-    all_QNA = QNA.objects.all()
+    all_QNA = QNA.objects.all().order_by('-id')
     context['all_QNA'] = all_QNA
     return render(request, 'enquiry.html', context)
 
