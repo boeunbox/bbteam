@@ -16,7 +16,9 @@
         <p class="text-title">1:1문의 내용</p>
         <div class="qna">
             <p class="qna-title">{{one_QNA.title}}</p>
+            {% autoescape off %}
             <p class="qna-content">{{one_QNA.desc}}</p>
+            {% endautoescape %}
             <a href="{% url 'cscenterapp:update' one_QNA.id %}"><button class="qna-btn">내용수정</button></a>
             <a href="{% url 'cscenterapp:delete' one_QNA.id %}"><button class="qna-btn">문의삭제</button></a>
         </div>

@@ -6,13 +6,36 @@ class QNAform(ModelForm):
 
     class Meta:
         model = QNA
-        fields = ('title','desc','pic')  
+        fields = ('title','desc','pic',)
         widgets = {
-            'deco': SummernoteWidget(),
+            'desc': SummernoteWidget(),
         } 
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['title'].help_text = None
+        self.fields['title'].widget.attrs.update({
+            'placeholder': "제목을 입력하세요"
+        })
 
 class CommentForm(QNAform):
 
     class Meta:
         model = Comment
         fields = ('desc',)
+
+class UpdateForm(ModelForm):
+
+    class Meta:
+        model = QNA
+        fields = ('title', 'desc', 'pic',)
+        widgets = {
+            'desc': SummernoteWidget(),
+        }
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['title'].help_text = None
+        self.fields['title'].widget.attrs.update({
+            'placeholder': "제목을 입력하세요"
+        })

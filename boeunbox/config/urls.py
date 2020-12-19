@@ -18,7 +18,6 @@ from django.urls import path, include
 
 from mainapp.views import index, terms, privacy
 from cscenterapp import views
-from missionapp.views import mission
 from myboeunapp.views import myboeun
 from productapp.views import product
 from subscrapp.views import subscr
@@ -32,13 +31,13 @@ urlpatterns = [
     path('', index, name='index'),
     path('terms-of-use/', terms, name='terms'),
     path('privacy-policy/', privacy, name='privacy'),
-    path('mission/', mission, name='mission'),
     path('productapp/', include('productapp.urls')),
     path('subscr/', subscr, name="subscr"),
     path('signupapp/', include('signupapp.urls')),
     path('cscenterapp/', include('cscenterapp.urls')),
     path('myboeun/', include('myboeunapp.urls')),
     path('accounts/', include('allauth.urls')),
+    path('summernote/', include('django_summernote.urls')),
 
 ]
 
