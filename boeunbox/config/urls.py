@@ -28,7 +28,7 @@ from django.conf.urls.static import static
 from django_summernote.widgets import SummernoteWidget
 
 urlpatterns = [
-    path('admin', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('terms-of-use/', terms, name='terms'),
     path('privacy-policy/', privacy, name='privacy'),
