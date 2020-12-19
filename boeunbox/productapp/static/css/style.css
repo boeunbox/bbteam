@@ -233,20 +233,18 @@ input, textarea, select
 
 .site-title
 {
-    font-family: 'Montserrat', sans-serif, Arial;
     color: #fff;
-    font-size: 30px;
-    line-height: 38px;
+    font-size: 40px;
+    line-height: 48px;
     font-weight: 700;
     padding: 20px 0;
 }
 
 .site-description
 {
-    font-family: 'Montserrat', sans-serif, Arial;
     color: #848484;
-    font-size: 14px;
-    line-height: 23px;
+    font-size: 20px;
+    line-height: 26px;
     max-width: 200px;
 }
 
@@ -465,14 +463,14 @@ body.open .site-content
 
 .blog-item-holder .entry-content .entry-title a:hover
 {
-    color: #0697ae;
+    color: #65662d;
 }
 
 .blog-item-holder .entry-content .entry-title
 {
     font-family: 'Montserrat', sans-serif, Arial;
-    font-size: 30px;
-    line-height: 30px;
+    font-size: 40px;
+    line-height: 50px;
     padding-top: 35px;
     padding-bottom: 0;
 }
@@ -557,13 +555,15 @@ body.open .site-content
 
 .cat-links ul li a
 {
-    color: #D8588C;
-    font-size: 14px;    
+    font-family: 'Montserrat', sans-serif, Arial;
+    color: rgb(189, 63, 126) ;
+    background-color: #e6e6e6;
+    font-size: 19px;    
 }
 
 .cat-links ul li:after 
 {
-    content: ",";
+    content: " ";
 }
 
 .cat-links ul li:last-child:after 
@@ -591,7 +591,7 @@ body.open .site-content
 
 .blog .excerpt
 {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 28px;
     color: #5d5d5d;
 }
