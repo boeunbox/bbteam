@@ -496,10 +496,9 @@ body.open .site-content
 
 .load-more-holder
 {
-    font-family: 'Montserrat', sans-serif, Arial;
     font-size: 18px;    
     font-weight: 700;
-    color: #c0d3d3;
+    color: #102836;
     display: block;
     max-width: 470px;
     margin-left: auto;
