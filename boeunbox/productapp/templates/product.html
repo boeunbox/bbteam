@@ -144,9 +144,9 @@
                             </h2>
                             <div class="excerpt">
                                 {% if post.is_content_more300 %}
-                                {{ post.get_content_under300|linebreaks }}
+                                {{ post.get_content_under300 }}
                                 {% else %}
-                                {{ post.content|linebreaks }}
+                                {{ post.content }}
                                 {% endif %}
                                 <a class="read-more" href="{{ post.get_absolute_url }}"></a>
                             </div>
@@ -163,9 +163,9 @@
                             </h2>
                             <div class="excerpt">
                                 {% if post.is_content_more300 %}
-                                {{ post.get_content_under300|linebreaks }}
+                                {{ post.get_content_under300 }}
                                 {% else %}
-                                {{ post.content|linebreaks }}
+                                {{ post.content }}
                                 {% endif %}
                                 <a class="read-more" href="{{ post.get_absolute_url }}"></a>
                             </div>
