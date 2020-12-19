@@ -496,10 +496,9 @@ body.open .site-content
 
 .load-more-holder
 {
-    font-family: 'Montserrat', sans-serif, Arial;
     font-size: 18px;    
     font-weight: 700;
-    color: #c0d3d3;
+    color: #102836;
     display: block;
     max-width: 470px;
     margin-left: auto;
@@ -591,7 +590,7 @@ body.open .site-content
 
 .blog .excerpt
 {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 28px;
     color: #5d5d5d;
 }
