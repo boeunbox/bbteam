@@ -29,6 +29,11 @@ a {
     display: block;
 }
 
+/* table style */
+table {
+    border-collapse: collapse;
+}
+
 .table-board {
     display: block;
     margin-top: 1rem;
@@ -49,6 +54,7 @@ a {
 
 .qna-body {
     text-align: center;
+    border-bottom: 1px solid #B4B4B4;
 }
 
 .qna-body a {
@@ -61,7 +67,7 @@ a {
     padding: 1rem 0.8rem;
     border-radius: 6px 6px;
     background-color: #366869;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 800;
     color: #e6e6e6;
     float: right;

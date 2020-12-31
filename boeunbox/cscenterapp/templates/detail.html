@@ -15,12 +15,27 @@
     <div class="container">
         <p class="text-title">1:1문의 내용</p>
         <div class="qna">
-            <p class="qna-title">{{one_QNA.title}}</p>
-            {% autoescape off %}
-            <p class="qna-content">{{one_QNA.desc}}</p>
-            {% endautoescape %}
+            <table class="showtable">
+                <thead>
+                    <tr>
+                        <th scope="col" class="table-head">
+                            <p class="qna-title">{{one_QNA.title}}</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table-content">
+                            {% autoescape off %}
+                            <p class="qna-content">{{one_QNA.desc}}</p>
+                            {% endautoescape %}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <a href="{% url 'cscenterapp:update' one_QNA.id %}"><button class="qna-btn">내용수정</button></a>
             <a href="{% url 'cscenterapp:delete' one_QNA.id %}"><button class="qna-btn">문의삭제</button></a>
+            <a href="{% url 'cscenterapp:enquiry' %}"><button class="qna-btn">목록</button></a>
         </div>
     </div>
 </div>

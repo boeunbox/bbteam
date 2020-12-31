@@ -31,16 +31,31 @@ a {
 .qna {
     display: block;
     margin-top: 1rem;
-    max-width: 700px;
+    max-width: 600px;
+}
+
+.showtable {
+    width: 100%;
+}
+
+.table-head {
+    font-size: 1.125rem;
+    font-weight: 700;
+    border-bottom: 1px solid #B4B4B4;
+    background: #f8e5ce;
 }
 
 .qna-title {
-    font-size: 1.2rem;
-    font-weight: 700;
+    margin: 0.5rem;
+}
+
+.table-content {
+    text-align: left;
 }
 
 .qna-content {
     font-size: 1rem;
+    margin: 0.5rem;
 }
 
 .qna-btn {
@@ -49,11 +64,11 @@ a {
     padding: 1rem 0.8rem;
     border-radius: 6px 6px;
     background-color: #366869;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 800;
     color: #e6e6e6;
     display: inline-block;
-    margin: 1rem 0.8rem;
+    margin: 1rem 0.5rem;
     cursor: pointer;
 }
 

@@ -30,10 +30,10 @@
                     {% for i in all_QNA %}
                     <tr class="qna-body">
                         <th scope="row">{{ i.id }}</th>
-                        <td><a href="{% url 'cscenterapp:detail' i.id %}">
+                        <td class="line"><a href="{% url 'cscenterapp:detail' i.id %}">
                                 <p>{{i.title}}</p>
                             </a></td>
-                        <td>{{ i.created_at }}</td>
+                        <td class="line">{{ i.created_at }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
