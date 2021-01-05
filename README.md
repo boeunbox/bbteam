@@ -8,10 +8,13 @@ You can only refer to the codes.
 ## Role of each members (in order of alphabet)
 ####Geonhee Nam (Team Lead)
 - core idea, brand idea, shopping mall function
+
 ####Jungbin Hong
 - managing information of memebers function
+
 ####Minah Jung
 - taking charge of designing main page (index), terms of use page, privace policy page, and all the webpages in the application named cscenterapp with HTML, CSS and JavaScript
+
 ####Sungyeol Park
 - accounts function including signing up and signing in
 
