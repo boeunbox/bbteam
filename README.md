@@ -16,27 +16,7 @@ MD가 직접 엄선한 물품으로 가득 채운 상자를 타겟 소비자층�
 </div>
 보은박스 웹사이트는 크게 메인페이지, 서비스 소개 페이지, MD상품 페이지, 고객센터 페이지, 회원정보관리 페이지, 로그인/회원가입 페이지로 구성되어 있습니다.
 각 대표 페이지는 부속 페이지들과 함께 application에 속해 있습니다.
-1. mainapp
-- base.html: 글로벌 네비게이션바
-- index.html: 인덱스 페이지
-- terms-of-use.html: 사이트 이용약관 페이지
-- privacy-policy.html: 사이트 개인정보처리방침 안내 페이지
-
-2. subscrapp
-
-3. productapp
-
-4. cscenterapp
-- cscenter.html: 고객센터 faq게시판 페이지
-- enquiry.html: 고객센터 1:1문의 게시판 페이지
-- detail.html: 고객센터 1:1문의 게시글 확인 페이지
-- update.html: 고객센터 1:1문의 게시글 수정 페이지
-
-5. myboeunapp
-
-6. signupapp
-- signup.html: 회원가입 페이지
-- login.html: 로그인 페이지
+<
 
 ### 1. mainapp
 index.html은 이미지를 통해 보은박스의 브랜드를 나타내고자 하였기 때문에 텍스트 사용을 최소화하였습니다.
