@@ -30,6 +30,9 @@ index.html은 이미지를 통해 보은박스의 브랜드를 나타내고자 �
 
 ### 2. subscrapp by. jungbin hong
 - subscrapp.html
+보은박스 이용방법과 비용 등을 안내하는 페이지입니다.
+페이지의 내용들은 모두 반응형으로 만들었습니다.
+비용안내 부분은 wrap을 이용해 가격표를 배치했습니다.
 
 ### 3. productapp by. geonhnam
 - product.html
@@ -47,6 +50,7 @@ FAQ 게시판 아래의 1:1문의 페이지로 이동하는 버튼을 누르면 
 
 ### 5. myboeunapp by. jungbin hong
 - myboeun.html
+
 
 ### 6. signupapp by. seongyeol park
 - signup.html
