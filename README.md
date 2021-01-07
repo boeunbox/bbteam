@@ -27,3 +27,27 @@ index.html은 이미지를 통해 보은박스의 브랜드를 나타내고자 �
 사이드 네비게이션바로 각 이미지를 페이지 넘기듯 이동할 수 있으며, 각 이미지별로 다른 페이지로 이동할 수 있는 버튼이 다르게 적용되어 있습니다.
 - terms-of-use.html, privacy-policy.html: 
 웹서비스 개발 시 자칫 빠뜨릴 수 있는 사이트 이용약관과 개인정보처리방침 페이지를 빠뜨리지 않고 제작하였습니다.
+
+### 2. subscrapp by. jungbin hong
+- subscrapp.html
+
+### 3. productapp by. geonhnam
+- product.html
+
+### 4. cscenterapp by. minami-cs
+- cscenter.html:
+고객센터 메뉴를 클릭하면 나타나는 고객센터의 메인페이지입니다.
+FAQ 게시판은 input과 label만을 이용해서 내용을 접었다 펼칠 수 있는 간단한 기능으로 구현하였습니다.
+FAQ 게시판 아래의 1:1문의 페이지로 이동하는 버튼을 누르면 login_required 기능에 따라 로그인 여부를 즉시 판별하여 로그인하지 않았다면 로그인 또는 회원가입을 하도록 합니다.
+- enquiry.html, create.html, modify.html: 
+회원 로그인 후에만 이동할 수 있는 1:1문의 게시판 페이지로, Django의 modelform을 사용했습니다.
+게시글 작성과 수정에 쓰이는 editor는 summernote를 사용하여 디자인을 css로 수정하였습니다.
+- detail.html: 
+게시글 상세보기 페이지는 css로 디자인하였고, 역시 Django의 modelform을 사용합니다.
+
+### 5. myboeunapp by. jungbin hong
+- myboeun.html
+
+### 6. signupapp by. seongyeol park
+- signup.html
+- login.html
