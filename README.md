@@ -28,7 +28,7 @@ index.html은 이미지를 통해 보은박스의 브랜드를 나타내고자 �
 - terms-of-use.html, privacy-policy.html: 
 웹서비스 개발 시 자칫 빠뜨릴 수 있는 사이트 이용약관과 개인정보처리방침 페이지를 빠뜨리지 않고 제작하였습니다.
 
-### 2. subscrapp by. jungbin hong
+### 2. subscrapp by. Jeong-Bin
 - subscrapp.html:
 보은박스 이용방법과 비용 등을 안내하는 페이지입니다.
 페이지의 내용들은 모두 반응형으로 만들었습니다.
@@ -48,7 +48,7 @@ FAQ 게시판 아래의 1:1문의 페이지로 이동하는 버튼을 누르면 
 - detail.html: 
 게시글 상세보기 페이지는 css로 디자인하였고, 역시 Django의 modelform을 사용합니다.
 
-### 5. myboeunapp by. jungbin hong
+### 5. myboeunapp by. Jeong-Bin
 - myboeun.html
 
 
